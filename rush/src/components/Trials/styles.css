@@ -1,0 +1,434 @@
+.Trials__ContainerContainer{
+    height: 850px;
+    display: flex;
+    overflow: hidden auto;
+    background-color: #ececec;
+    width: 100%;
+}
+.Trials__DetailsContainer {
+    height: 850px;
+    overflow: hidden auto;
+    background-color: white;
+    width: 1300px;
+}
+
+.Trials__Container {
+    height: 850px;
+    overflow: hidden auto;
+    background-color: #ececec;
+    width: 450px;
+}
+.Trials__Panel {
+    height: 150px;
+    width: 448px;
+    position: fixed;
+    background-color: #ececec;
+    border-bottom: 1px solid #919191;
+}
+.Trials__Panel_Wrapper {
+    height: 150px;
+}
+.Trials__Buttons {
+    height: 50px;
+    width: 350px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.Trials__Filter {
+    height: 80px;
+    width: 448px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.Trials__Label {
+    font-size: 0.8rem;
+}
+.Trials__Title {
+    padding-top: 10px;
+    font-size: 1.5rem;
+}
+.Trials {
+    height: 100%;
+    overflow: hidden auto;
+    background-color: #ececec;
+    width: 450px;
+    min-width: 250px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right: 2px solid #919191;
+}
+
+.Trials__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Trials__item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #919191;
+    cursor: pointer;
+}
+
+.Trials__selected_item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #919191;
+    cursor: pointer;
+    color: blue;
+}
+.btn {
+    display: inline-block;
+    background-color: #005198;
+    color: #cccccc;
+    padding: 0.4rem 0.4rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    margin-left: 0.4rem;
+    outline: none;
+    transition: all 0.2s ease-in;
+}
+.btn:disabled {
+    text-decoration: line-through;
+}
+.btn.btn-primary {
+    background-color: #005198;
+    color: #fff;
+}
+.btn.btn-primary:hover {
+    background: #1ab6cf;
+}
+.btn.btn-dark {
+    background-color: #343a40;
+    color: #fff;
+}
+.btn.btn-dark:hover {
+    background: #3f474e;
+}
+.btn.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+.btn.btn-success:hover {
+    background: #2dbc4e;
+}
+.btn.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+.btn.btn-danger:hover {
+    background: #e04b59;
+}
+.btn:hover {
+    background: #626d78;
+    color: #fff;
+}
+
+.filter_text_input {
+    text-align: left;
+    width: 220px;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    font: inherit;
+    margin-right: 0.5rem;
+}
+
+
+.Trials__Details_Panel {
+    height: 800px;
+    width: 1200px;
+    padding-top: 10px;
+    padding-left: 20px;
+    background-color: white;
+}
+.Trials__Details_Panel_Select {
+    height: 450px;
+    width: 1200px;
+    padding-top: 10px;
+    /*padding-left: 20px;*/
+    background-color: white;
+}
+.Trials__DetailsTable {
+    display: table;
+    width: 1200px;
+}
+
+
+.Trials__DetailsRow {
+    display: table-row;
+}
+
+.Trials__DetailsCellLeft {
+    display: table-cell;
+    padding-left: 25px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: small;
+}
+.Trials__DetailsCellRight {
+    display: table-cell;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 250px;
+    font-family: 'Lato', sans-serif;
+    font-size: small;
+}
+.Trials__ShortTextarea {
+    display: block;
+    text-align: left;
+    width: 95%;
+    height: 25px;
+    /*padding: 0.4rem;*/
+    font-size: small;
+    border: 1px solid #ccc;
+    font: inherit;
+}
+
+.Trials__Table_Container
+{
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    background-color: white;
+    width: 1300px;
+    height: 350px;
+    border-bottom-style: solid;
+    border-width: thin;
+    border-color: #0055BF;
+    overflow: scroll;
+
+}
+.Trials__Table {
+    display: table;
+    width: 1300px;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-width: thin;
+    border-color: #0055BF;
+
+}
+.Trials__TableWrapper
+{
+    border: 1px solid red;
+    width: 1300px;
+    overflow: auto;
+}
+.Trials__Header_Row
+{
+    display: table-header-group;
+    font-weight: bold;
+    text-align: center;
+    width:auto;
+}
+
+.Trials__Row {
+    display: table-row;
+    width:auto;
+}
+
+.Trials__Table_Cell_Small
+{
+    display: table-cell;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-width: thin;
+    border-color: #0055BF;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100px;
+    font-size: small;
+    background-color:white;
+}
+.Trials__Table_Cell_Small_selected
+{
+    display: table-cell;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-width: thin;
+    border-color: #0055BF;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100px;
+    font-size: small;
+    background-color:cyan;
+}
+.Trials__Table_Cell_Medium
+{
+    display: table-cell;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-width: thin;
+    border-color: #0055BF;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 120px;
+    font-size: small;
+    background-color:white;
+
+}
+.Trials__Table_Cell_Large
+{
+    display: table-cell;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-width: thin;
+    border-color: #0055BF;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 200px;
+    font-size: small;
+    background-color:white;
+
+}
+.Trials__Table_Cell_Medium_selected
+{
+    display: table-cell;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-width: thin;
+    border-color: #0055BF;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 120px;
+    font-size: small;
+    background-color:cyan;
+
+}
+.Trials__Table_Cell_Large_selected
+{
+    display: table-cell;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-width: thin;
+    border-color: #0055BF;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 200px;
+    font-size: small;
+    background-color:cyan;
+
+}
+
+.Vertical_Spacer_10 {
+    height: 10px;
+}
+.Trials__Grants_Panel{
+    height: 265px;
+    width: 1200px;
+    padding-top: 10px;
+    padding-left: 20px;
+    background-color: bisque;
+}
+.Trials__Grants_Wrapper {
+    height: 215px;
+    overflow: hidden auto;
+    background-color: white;
+    width: 1150px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-right: 2px solid black;
+}
+
+.Trials__Grants_List {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Trials__Grants_Item {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+.Trials__Trials_Panel{
+    height: 265px;
+    width: 1200px;
+    padding-top: 10px;
+    padding-left: 20px;
+    background-color: lightcyan;
+}
+.Trials__Trials_Wrapper {
+    height: 215px;
+    overflow: hidden auto;
+    background-color: white;
+    width: 1150px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-right: 2px solid black;
+}
+
+.Trials__Trials_List {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Trials__Trials_Item {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+.Trials__Publications_Panel{
+    height: 265px;
+    width: 1200px;
+    padding-top: 10px;
+    padding-left: 20px;
+    background-color: #cccccc;
+}
+.Trials__Publications_Wrapper {
+    height: 215px;
+    overflow: hidden auto;
+    background-color: white;
+    width: 1150px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-right: 2px solid black;
+}
+
+.Trials__Publications_List {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Trials__Trials_Item {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}

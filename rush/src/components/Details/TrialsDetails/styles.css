@@ -1,0 +1,97 @@
+.TrialDetails__Details_Panel {
+    height: 190px;
+    width: 1200px;
+    /*padding-top: 10px;*/
+    padding-left: 20px;
+    background-color: white;
+    border-bottom: 1px solid blue;
+}
+.TrialDetails__Details_Panel_with_Abstract {
+    height: 350px;
+    width: 1200px;
+    /*padding-top: 10px;*/
+    padding-left: 20px;
+    background-color: white;
+    border-bottom: 1px solid blue;
+}
+.TrialDetails__DetailsTable {
+    display: table;
+    width: 1200px;
+}
+
+
+.TrialDetails__DetailsRow {
+    display: table-row;
+}
+
+.TrialDetails__DetailsCellLeft {
+    display: table-cell;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 150px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: small;
+}
+.TrialDetails__DetailsCellRight {
+    display: table-cell;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 250px;
+    font-family: 'Lato', sans-serif;
+    font-size: small;
+}
+
+
+.TrialDetails__DetailsCellRightSmall {
+    display: table-cell;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100px;
+    font-family: 'Lato', sans-serif;
+    font-size: small;
+}
+.TrialDetails__Details_Abstract {
+    height: 150px;
+    width: 1000px;
+    overflow: hidden auto;
+    /*padding-top: 10px;*/
+    padding-left: 10px;
+    background-color: white;
+    border: 1px solid blue;
+}
+.TrialDetails__Details_Conditions {
+    height: 50px;
+    width: 200px;
+    overflow: hidden auto;
+    /*padding-top: 10px;*/
+    padding-left: 10px;
+    background-color: white;
+    border: 1px solid blue;
+}
+.TrialDetails__Details_Authors {
+    height: 80px;
+    width: 1000px;
+    overflow: hidden auto;
+    /*padding-top: 10px;*/
+    padding-left: 10px;
+    background-color: white;
+    border: 1px solid blue;
+}
+
+.TrialDetails__Authors_List{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.TrialDetails__item {
+    padding-top: 10px;
+    cursor: pointer;
+}

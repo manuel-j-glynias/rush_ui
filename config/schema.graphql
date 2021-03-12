@@ -1,0 +1,5526 @@
+schema {
+  query: QueryType
+  mutation: MutationType
+}
+
+# This directive allows results to be deferred during execution
+directive @defer on FIELD
+# Relationship
+directive @relation on FIELD
+# default value
+directive @defaultValue on FIELD
+# field is unique in type
+directive @isUnique on FIELD
+# entity is a model type
+directive @model on FIELD
+# Cypher query to run
+directive @cypher on FIELD
+# Enable query profiling
+directive @profile on QUERY
+# Enable query explanation
+directive @explain on QUERY
+# Specify Cypher version
+directive @version(
+  # Cypher Version (3.0, 3.1, 3.2)
+  version: String = "3.4"
+) on QUERY
+# Filter Input Type for Author
+input _AuthorFilter {
+  # AND
+  AND: [_AuthorFilter!]
+  # OR
+  OR: [_AuthorFilter!]
+  # firstInitial
+  firstInitial: String
+  # firstInitial_contains
+  firstInitial_contains: String
+  # firstInitial_ends_with
+  firstInitial_ends_with: String
+  # firstInitial_gt
+  firstInitial_gt: String
+  # firstInitial_gte
+  firstInitial_gte: String
+  # firstInitial_in
+  firstInitial_in: [String!]
+  # firstInitial_lt
+  firstInitial_lt: String
+  # firstInitial_lte
+  firstInitial_lte: String
+  # firstInitial_not
+  firstInitial_not: String
+  # firstInitial_not_contains
+  firstInitial_not_contains: String
+  # firstInitial_not_ends_with
+  firstInitial_not_ends_with: String
+  # firstInitial_not_in
+  firstInitial_not_in: [String!]
+  # firstInitial_not_starts_with
+  firstInitial_not_starts_with: String
+  # firstInitial_starts_with
+  firstInitial_starts_with: String
+  # id
+  id: ID
+  # id_contains
+  id_contains: ID
+  # id_ends_with
+  id_ends_with: ID
+  # id_gt
+  id_gt: ID
+  # id_gte
+  id_gte: ID
+  # id_in
+  id_in: [ID!]
+  # id_lt
+  id_lt: ID
+  # id_lte
+  id_lte: ID
+  # id_not
+  id_not: ID
+  # id_not_contains
+  id_not_contains: ID
+  # id_not_ends_with
+  id_not_ends_with: ID
+  # id_not_in
+  id_not_in: [ID!]
+  # id_not_starts_with
+  id_not_starts_with: ID
+  # id_starts_with
+  id_starts_with: ID
+  # lower_case_search_string
+  lower_case_search_string: String
+  # lower_case_search_string_contains
+  lower_case_search_string_contains: String
+  # lower_case_search_string_ends_with
+  lower_case_search_string_ends_with: String
+  # lower_case_search_string_gt
+  lower_case_search_string_gt: String
+  # lower_case_search_string_gte
+  lower_case_search_string_gte: String
+  # lower_case_search_string_in
+  lower_case_search_string_in: [String!]
+  # lower_case_search_string_lt
+  lower_case_search_string_lt: String
+  # lower_case_search_string_lte
+  lower_case_search_string_lte: String
+  # lower_case_search_string_not
+  lower_case_search_string_not: String
+  # lower_case_search_string_not_contains
+  lower_case_search_string_not_contains: String
+  # lower_case_search_string_not_ends_with
+  lower_case_search_string_not_ends_with: String
+  # lower_case_search_string_not_in
+  lower_case_search_string_not_in: [String!]
+  # lower_case_search_string_not_starts_with
+  lower_case_search_string_not_starts_with: String
+  # lower_case_search_string_starts_with
+  lower_case_search_string_starts_with: String
+  # references
+  references: _LiteratureReferenceFilter
+  # references_every
+  references_every: _LiteratureReferenceFilter
+  # references_in
+  references_in: _LiteratureReferenceFilter
+  # references_none
+  references_none: _LiteratureReferenceFilter
+  # references_not
+  references_not: _LiteratureReferenceFilter
+  # references_not_in
+  references_not_in: _LiteratureReferenceFilter
+  # references_single
+  references_single: _LiteratureReferenceFilter
+  # references_some
+  references_some: _LiteratureReferenceFilter
+  # surname
+  surname: String
+  # surname_contains
+  surname_contains: String
+  # surname_ends_with
+  surname_ends_with: String
+  # surname_gt
+  surname_gt: String
+  # surname_gte
+  surname_gte: String
+  # surname_in
+  surname_in: [String!]
+  # surname_lt
+  surname_lt: String
+  # surname_lte
+  surname_lte: String
+  # surname_not
+  surname_not: String
+  # surname_not_contains
+  surname_not_contains: String
+  # surname_not_ends_with
+  surname_not_ends_with: String
+  # surname_not_in
+  surname_not_in: [String!]
+  # surname_not_starts_with
+  surname_not_starts_with: String
+  # surname_starts_with
+  surname_starts_with: String
+}
+
+# Ordering Enum for Author
+enum _AuthorOrdering {
+  # Ascending sort for firstInitial
+  firstInitial_asc
+  # Descending sort for firstInitial
+  firstInitial_desc
+  # Ascending sort for id
+  id_asc
+  # Descending sort for id
+  id_desc
+  # Ascending sort for lower_case_search_string
+  lower_case_search_string_asc
+  # Descending sort for lower_case_search_string
+  lower_case_search_string_desc
+  # Ascending sort for surname
+  surname_asc
+  # Descending sort for surname
+  surname_desc
+}
+
+# Filter Input Type for ClinicalTrial
+input _ClinicalTrialFilter {
+  # AND
+  AND: [_ClinicalTrialFilter!]
+  # OR
+  OR: [_ClinicalTrialFilter!]
+  # brief_summary
+  brief_summary: String
+  # brief_summary_contains
+  brief_summary_contains: String
+  # brief_summary_ends_with
+  brief_summary_ends_with: String
+  # brief_summary_gt
+  brief_summary_gt: String
+  # brief_summary_gte
+  brief_summary_gte: String
+  # brief_summary_in
+  brief_summary_in: [String!]
+  # brief_summary_lt
+  brief_summary_lt: String
+  # brief_summary_lte
+  brief_summary_lte: String
+  # brief_summary_not
+  brief_summary_not: String
+  # brief_summary_not_contains
+  brief_summary_not_contains: String
+  # brief_summary_not_ends_with
+  brief_summary_not_ends_with: String
+  # brief_summary_not_in
+  brief_summary_not_in: [String!]
+  # brief_summary_not_starts_with
+  brief_summary_not_starts_with: String
+  # brief_summary_starts_with
+  brief_summary_starts_with: String
+  # brief_title
+  brief_title: String
+  # brief_title_contains
+  brief_title_contains: String
+  # brief_title_ends_with
+  brief_title_ends_with: String
+  # brief_title_gt
+  brief_title_gt: String
+  # brief_title_gte
+  brief_title_gte: String
+  # brief_title_in
+  brief_title_in: [String!]
+  # brief_title_lt
+  brief_title_lt: String
+  # brief_title_lte
+  brief_title_lte: String
+  # brief_title_not
+  brief_title_not: String
+  # brief_title_not_contains
+  brief_title_not_contains: String
+  # brief_title_not_ends_with
+  brief_title_not_ends_with: String
+  # brief_title_not_in
+  brief_title_not_in: [String!]
+  # brief_title_not_starts_with
+  brief_title_not_starts_with: String
+  # brief_title_starts_with
+  brief_title_starts_with: String
+  # conditions
+  conditions: String
+  # conditions_contains
+  conditions_contains: String
+  # conditions_ends_with
+  conditions_ends_with: String
+  # conditions_gt
+  conditions_gt: String
+  # conditions_gte
+  conditions_gte: String
+  # conditions_in
+  conditions_in: [String!]
+  # conditions_lt
+  conditions_lt: String
+  # conditions_lte
+  conditions_lte: String
+  # conditions_not
+  conditions_not: String
+  # conditions_not_contains
+  conditions_not_contains: String
+  # conditions_not_ends_with
+  conditions_not_ends_with: String
+  # conditions_not_in
+  conditions_not_in: [String!]
+  # conditions_not_starts_with
+  conditions_not_starts_with: String
+  # conditions_starts_with
+  conditions_starts_with: String
+  # coreProject
+  coreProject: _CoreProjectFilter
+  # coreProject_in
+  coreProject_in: _CoreProjectFilter
+  # coreProject_not
+  coreProject_not: _CoreProjectFilter
+  # coreProject_not_in
+  coreProject_not_in: _CoreProjectFilter
+  # detailed_description
+  detailed_description: String
+  # detailed_description_contains
+  detailed_description_contains: String
+  # detailed_description_ends_with
+  detailed_description_ends_with: String
+  # detailed_description_gt
+  detailed_description_gt: String
+  # detailed_description_gte
+  detailed_description_gte: String
+  # detailed_description_in
+  detailed_description_in: [String!]
+  # detailed_description_lt
+  detailed_description_lt: String
+  # detailed_description_lte
+  detailed_description_lte: String
+  # detailed_description_not
+  detailed_description_not: String
+  # detailed_description_not_contains
+  detailed_description_not_contains: String
+  # detailed_description_not_ends_with
+  detailed_description_not_ends_with: String
+  # detailed_description_not_in
+  detailed_description_not_in: [String!]
+  # detailed_description_not_starts_with
+  detailed_description_not_starts_with: String
+  # detailed_description_starts_with
+  detailed_description_starts_with: String
+  # drugs
+  drugs: String
+  # drugs_contains
+  drugs_contains: String
+  # drugs_ends_with
+  drugs_ends_with: String
+  # drugs_gt
+  drugs_gt: String
+  # drugs_gte
+  drugs_gte: String
+  # drugs_in
+  drugs_in: [String!]
+  # drugs_lt
+  drugs_lt: String
+  # drugs_lte
+  drugs_lte: String
+  # drugs_not
+  drugs_not: String
+  # drugs_not_contains
+  drugs_not_contains: String
+  # drugs_not_ends_with
+  drugs_not_ends_with: String
+  # drugs_not_in
+  drugs_not_in: [String!]
+  # drugs_not_starts_with
+  drugs_not_starts_with: String
+  # drugs_starts_with
+  drugs_starts_with: String
+  # id
+  id: ID
+  # id_contains
+  id_contains: ID
+  # id_ends_with
+  id_ends_with: ID
+  # id_gt
+  id_gt: ID
+  # id_gte
+  id_gte: ID
+  # id_in
+  id_in: [ID!]
+  # id_lt
+  id_lt: ID
+  # id_lte
+  id_lte: ID
+  # id_not
+  id_not: ID
+  # id_not_contains
+  id_not_contains: ID
+  # id_not_ends_with
+  id_not_ends_with: ID
+  # id_not_in
+  id_not_in: [ID!]
+  # id_not_starts_with
+  id_not_starts_with: ID
+  # id_starts_with
+  id_starts_with: ID
+  # lower_case_search_string
+  lower_case_search_string: String
+  # lower_case_search_string_contains
+  lower_case_search_string_contains: String
+  # lower_case_search_string_ends_with
+  lower_case_search_string_ends_with: String
+  # lower_case_search_string_gt
+  lower_case_search_string_gt: String
+  # lower_case_search_string_gte
+  lower_case_search_string_gte: String
+  # lower_case_search_string_in
+  lower_case_search_string_in: [String!]
+  # lower_case_search_string_lt
+  lower_case_search_string_lt: String
+  # lower_case_search_string_lte
+  lower_case_search_string_lte: String
+  # lower_case_search_string_not
+  lower_case_search_string_not: String
+  # lower_case_search_string_not_contains
+  lower_case_search_string_not_contains: String
+  # lower_case_search_string_not_ends_with
+  lower_case_search_string_not_ends_with: String
+  # lower_case_search_string_not_in
+  lower_case_search_string_not_in: [String!]
+  # lower_case_search_string_not_starts_with
+  lower_case_search_string_not_starts_with: String
+  # lower_case_search_string_starts_with
+  lower_case_search_string_starts_with: String
+  # nct_id
+  nct_id: String
+  # nct_id_contains
+  nct_id_contains: String
+  # nct_id_ends_with
+  nct_id_ends_with: String
+  # nct_id_gt
+  nct_id_gt: String
+  # nct_id_gte
+  nct_id_gte: String
+  # nct_id_in
+  nct_id_in: [String!]
+  # nct_id_lt
+  nct_id_lt: String
+  # nct_id_lte
+  nct_id_lte: String
+  # nct_id_not
+  nct_id_not: String
+  # nct_id_not_contains
+  nct_id_not_contains: String
+  # nct_id_not_ends_with
+  nct_id_not_ends_with: String
+  # nct_id_not_in
+  nct_id_not_in: [String!]
+  # nct_id_not_starts_with
+  nct_id_not_starts_with: String
+  # nct_id_starts_with
+  nct_id_starts_with: String
+  # official_title
+  official_title: String
+  # official_title_contains
+  official_title_contains: String
+  # official_title_ends_with
+  official_title_ends_with: String
+  # official_title_gt
+  official_title_gt: String
+  # official_title_gte
+  official_title_gte: String
+  # official_title_in
+  official_title_in: [String!]
+  # official_title_lt
+  official_title_lt: String
+  # official_title_lte
+  official_title_lte: String
+  # official_title_not
+  official_title_not: String
+  # official_title_not_contains
+  official_title_not_contains: String
+  # official_title_not_ends_with
+  official_title_not_ends_with: String
+  # official_title_not_in
+  official_title_not_in: [String!]
+  # official_title_not_starts_with
+  official_title_not_starts_with: String
+  # official_title_starts_with
+  official_title_starts_with: String
+  # phases
+  phases: String
+  # phases_contains
+  phases_contains: String
+  # phases_ends_with
+  phases_ends_with: String
+  # phases_gt
+  phases_gt: String
+  # phases_gte
+  phases_gte: String
+  # phases_in
+  phases_in: [String!]
+  # phases_lt
+  phases_lt: String
+  # phases_lte
+  phases_lte: String
+  # phases_not
+  phases_not: String
+  # phases_not_contains
+  phases_not_contains: String
+  # phases_not_ends_with
+  phases_not_ends_with: String
+  # phases_not_in
+  phases_not_in: [String!]
+  # phases_not_starts_with
+  phases_not_starts_with: String
+  # phases_starts_with
+  phases_starts_with: String
+  # status
+  status: String
+  # status_contains
+  status_contains: String
+  # status_date
+  status_date: String
+  # status_date_contains
+  status_date_contains: String
+  # status_date_ends_with
+  status_date_ends_with: String
+  # status_date_gt
+  status_date_gt: String
+  # status_date_gte
+  status_date_gte: String
+  # status_date_in
+  status_date_in: [String!]
+  # status_date_lt
+  status_date_lt: String
+  # status_date_lte
+  status_date_lte: String
+  # status_date_not
+  status_date_not: String
+  # status_date_not_contains
+  status_date_not_contains: String
+  # status_date_not_ends_with
+  status_date_not_ends_with: String
+  # status_date_not_in
+  status_date_not_in: [String!]
+  # status_date_not_starts_with
+  status_date_not_starts_with: String
+  # status_date_starts_with
+  status_date_starts_with: String
+  # status_ends_with
+  status_ends_with: String
+  # status_gt
+  status_gt: String
+  # status_gte
+  status_gte: String
+  # status_in
+  status_in: [String!]
+  # status_lt
+  status_lt: String
+  # status_lte
+  status_lte: String
+  # status_not
+  status_not: String
+  # status_not_contains
+  status_not_contains: String
+  # status_not_ends_with
+  status_not_ends_with: String
+  # status_not_in
+  status_not_in: [String!]
+  # status_not_starts_with
+  status_not_starts_with: String
+  # status_starts_with
+  status_starts_with: String
+  # study_type
+  study_type: String
+  # study_type_contains
+  study_type_contains: String
+  # study_type_ends_with
+  study_type_ends_with: String
+  # study_type_gt
+  study_type_gt: String
+  # study_type_gte
+  study_type_gte: String
+  # study_type_in
+  study_type_in: [String!]
+  # study_type_lt
+  study_type_lt: String
+  # study_type_lte
+  study_type_lte: String
+  # study_type_not
+  study_type_not: String
+  # study_type_not_contains
+  study_type_not_contains: String
+  # study_type_not_ends_with
+  study_type_not_ends_with: String
+  # study_type_not_in
+  study_type_not_in: [String!]
+  # study_type_not_starts_with
+  study_type_not_starts_with: String
+  # study_type_starts_with
+  study_type_starts_with: String
+}
+
+# Ordering Enum for ClinicalTrial
+enum _ClinicalTrialOrdering {
+  # Ascending sort for brief_summary
+  brief_summary_asc
+  # Descending sort for brief_summary
+  brief_summary_desc
+  # Ascending sort for brief_title
+  brief_title_asc
+  # Descending sort for brief_title
+  brief_title_desc
+  # Ascending sort for conditions
+  conditions_asc
+  # Descending sort for conditions
+  conditions_desc
+  # Ascending sort for detailed_description
+  detailed_description_asc
+  # Descending sort for detailed_description
+  detailed_description_desc
+  # Ascending sort for drugs
+  drugs_asc
+  # Descending sort for drugs
+  drugs_desc
+  # Ascending sort for id
+  id_asc
+  # Descending sort for id
+  id_desc
+  # Ascending sort for lower_case_search_string
+  lower_case_search_string_asc
+  # Descending sort for lower_case_search_string
+  lower_case_search_string_desc
+  # Ascending sort for nct_id
+  nct_id_asc
+  # Descending sort for nct_id
+  nct_id_desc
+  # Ascending sort for official_title
+  official_title_asc
+  # Descending sort for official_title
+  official_title_desc
+  # Ascending sort for phases
+  phases_asc
+  # Descending sort for phases
+  phases_desc
+  # Ascending sort for status
+  status_asc
+  # Ascending sort for status_date
+  status_date_asc
+  # Descending sort for status_date
+  status_date_desc
+  # Descending sort for status
+  status_desc
+  # Ascending sort for study_type
+  study_type_asc
+  # Descending sort for study_type
+  study_type_desc
+}
+
+# Filter Input Type for CoreProject
+input _CoreProjectFilter {
+  # AND
+  AND: [_CoreProjectFilter!]
+  # OR
+  OR: [_CoreProjectFilter!]
+  # clinical_trials
+  clinical_trials: _ClinicalTrialFilter
+  # clinical_trials_every
+  clinical_trials_every: _ClinicalTrialFilter
+  # clinical_trials_in
+  clinical_trials_in: _ClinicalTrialFilter
+  # clinical_trials_none
+  clinical_trials_none: _ClinicalTrialFilter
+  # clinical_trials_not
+  clinical_trials_not: _ClinicalTrialFilter
+  # clinical_trials_not_in
+  clinical_trials_not_in: _ClinicalTrialFilter
+  # clinical_trials_single
+  clinical_trials_single: _ClinicalTrialFilter
+  # clinical_trials_some
+  clinical_trials_some: _ClinicalTrialFilter
+  # coreProjectNumber
+  coreProjectNumber: String
+  # coreProjectNumber_contains
+  coreProjectNumber_contains: String
+  # coreProjectNumber_ends_with
+  coreProjectNumber_ends_with: String
+  # coreProjectNumber_gt
+  coreProjectNumber_gt: String
+  # coreProjectNumber_gte
+  coreProjectNumber_gte: String
+  # coreProjectNumber_in
+  coreProjectNumber_in: [String!]
+  # coreProjectNumber_lt
+  coreProjectNumber_lt: String
+  # coreProjectNumber_lte
+  coreProjectNumber_lte: String
+  # coreProjectNumber_not
+  coreProjectNumber_not: String
+  # coreProjectNumber_not_contains
+  coreProjectNumber_not_contains: String
+  # coreProjectNumber_not_ends_with
+  coreProjectNumber_not_ends_with: String
+  # coreProjectNumber_not_in
+  coreProjectNumber_not_in: [String!]
+  # coreProjectNumber_not_starts_with
+  coreProjectNumber_not_starts_with: String
+  # coreProjectNumber_starts_with
+  coreProjectNumber_starts_with: String
+  # grants
+  grants: _NIHGrantFilter
+  # grants_every
+  grants_every: _NIHGrantFilter
+  # grants_in
+  grants_in: _NIHGrantFilter
+  # grants_none
+  grants_none: _NIHGrantFilter
+  # grants_not
+  grants_not: _NIHGrantFilter
+  # grants_not_in
+  grants_not_in: _NIHGrantFilter
+  # grants_single
+  grants_single: _NIHGrantFilter
+  # grants_some
+  grants_some: _NIHGrantFilter
+  # id
+  id: ID
+  # id_contains
+  id_contains: ID
+  # id_ends_with
+  id_ends_with: ID
+  # id_gt
+  id_gt: ID
+  # id_gte
+  id_gte: ID
+  # id_in
+  id_in: [ID!]
+  # id_lt
+  id_lt: ID
+  # id_lte
+  id_lte: ID
+  # id_not
+  id_not: ID
+  # id_not_contains
+  id_not_contains: ID
+  # id_not_ends_with
+  id_not_ends_with: ID
+  # id_not_in
+  id_not_in: [ID!]
+  # id_not_starts_with
+  id_not_starts_with: ID
+  # id_starts_with
+  id_starts_with: ID
+  # publications
+  publications: _LiteratureReferenceFilter
+  # publications_every
+  publications_every: _LiteratureReferenceFilter
+  # publications_in
+  publications_in: _LiteratureReferenceFilter
+  # publications_none
+  publications_none: _LiteratureReferenceFilter
+  # publications_not
+  publications_not: _LiteratureReferenceFilter
+  # publications_not_in
+  publications_not_in: _LiteratureReferenceFilter
+  # publications_single
+  publications_single: _LiteratureReferenceFilter
+  # publications_some
+  publications_some: _LiteratureReferenceFilter
+}
+
+# Ordering Enum for CoreProject
+enum _CoreProjectOrdering {
+  # Ascending sort for coreProjectNumber
+  coreProjectNumber_asc
+  # Descending sort for coreProjectNumber
+  coreProjectNumber_desc
+  # Ascending sort for id
+  id_asc
+  # Descending sort for id
+  id_desc
+}
+
+# Filter Input Type for FundedOrganization
+input _FundedOrganizationFilter {
+  # AND
+  AND: [_FundedOrganizationFilter!]
+  # OR
+  OR: [_FundedOrganizationFilter!]
+  # city
+  city: String
+  # city_contains
+  city_contains: String
+  # city_ends_with
+  city_ends_with: String
+  # city_gt
+  city_gt: String
+  # city_gte
+  city_gte: String
+  # city_in
+  city_in: [String!]
+  # city_lt
+  city_lt: String
+  # city_lte
+  city_lte: String
+  # city_not
+  city_not: String
+  # city_not_contains
+  city_not_contains: String
+  # city_not_ends_with
+  city_not_ends_with: String
+  # city_not_in
+  city_not_in: [String!]
+  # city_not_starts_with
+  city_not_starts_with: String
+  # city_starts_with
+  city_starts_with: String
+  # country
+  country: String
+  # country_contains
+  country_contains: String
+  # country_ends_with
+  country_ends_with: String
+  # country_gt
+  country_gt: String
+  # country_gte
+  country_gte: String
+  # country_in
+  country_in: [String!]
+  # country_lt
+  country_lt: String
+  # country_lte
+  country_lte: String
+  # country_not
+  country_not: String
+  # country_not_contains
+  country_not_contains: String
+  # country_not_ends_with
+  country_not_ends_with: String
+  # country_not_in
+  country_not_in: [String!]
+  # country_not_starts_with
+  country_not_starts_with: String
+  # country_starts_with
+  country_starts_with: String
+  # grants
+  grants: _NIHGrantFilter
+  # grants_every
+  grants_every: _NIHGrantFilter
+  # grants_in
+  grants_in: _NIHGrantFilter
+  # grants_none
+  grants_none: _NIHGrantFilter
+  # grants_not
+  grants_not: _NIHGrantFilter
+  # grants_not_in
+  grants_not_in: _NIHGrantFilter
+  # grants_single
+  grants_single: _NIHGrantFilter
+  # grants_some
+  grants_some: _NIHGrantFilter
+  # id
+  id: ID
+  # id_contains
+  id_contains: ID
+  # id_ends_with
+  id_ends_with: ID
+  # id_gt
+  id_gt: ID
+  # id_gte
+  id_gte: ID
+  # id_in
+  id_in: [ID!]
+  # id_lt
+  id_lt: ID
+  # id_lte
+  id_lte: ID
+  # id_not
+  id_not: ID
+  # id_not_contains
+  id_not_contains: ID
+  # id_not_ends_with
+  id_not_ends_with: ID
+  # id_not_in
+  id_not_in: [ID!]
+  # id_not_starts_with
+  id_not_starts_with: ID
+  # id_starts_with
+  id_starts_with: ID
+  # lower_case_search_string
+  lower_case_search_string: String
+  # lower_case_search_string_contains
+  lower_case_search_string_contains: String
+  # lower_case_search_string_ends_with
+  lower_case_search_string_ends_with: String
+  # lower_case_search_string_gt
+  lower_case_search_string_gt: String
+  # lower_case_search_string_gte
+  lower_case_search_string_gte: String
+  # lower_case_search_string_in
+  lower_case_search_string_in: [String!]
+  # lower_case_search_string_lt
+  lower_case_search_string_lt: String
+  # lower_case_search_string_lte
+  lower_case_search_string_lte: String
+  # lower_case_search_string_not
+  lower_case_search_string_not: String
+  # lower_case_search_string_not_contains
+  lower_case_search_string_not_contains: String
+  # lower_case_search_string_not_ends_with
+  lower_case_search_string_not_ends_with: String
+  # lower_case_search_string_not_in
+  lower_case_search_string_not_in: [String!]
+  # lower_case_search_string_not_starts_with
+  lower_case_search_string_not_starts_with: String
+  # lower_case_search_string_starts_with
+  lower_case_search_string_starts_with: String
+  # name
+  name: String
+  # name_contains
+  name_contains: String
+  # name_ends_with
+  name_ends_with: String
+  # name_gt
+  name_gt: String
+  # name_gte
+  name_gte: String
+  # name_in
+  name_in: [String!]
+  # name_lt
+  name_lt: String
+  # name_lte
+  name_lte: String
+  # name_not
+  name_not: String
+  # name_not_contains
+  name_not_contains: String
+  # name_not_ends_with
+  name_not_ends_with: String
+  # name_not_in
+  name_not_in: [String!]
+  # name_not_starts_with
+  name_not_starts_with: String
+  # name_starts_with
+  name_starts_with: String
+  # organizationID
+  organizationID: String
+  # organizationID_contains
+  organizationID_contains: String
+  # organizationID_ends_with
+  organizationID_ends_with: String
+  # organizationID_gt
+  organizationID_gt: String
+  # organizationID_gte
+  organizationID_gte: String
+  # organizationID_in
+  organizationID_in: [String!]
+  # organizationID_lt
+  organizationID_lt: String
+  # organizationID_lte
+  organizationID_lte: String
+  # organizationID_not
+  organizationID_not: String
+  # organizationID_not_contains
+  organizationID_not_contains: String
+  # organizationID_not_ends_with
+  organizationID_not_ends_with: String
+  # organizationID_not_in
+  organizationID_not_in: [String!]
+  # organizationID_not_starts_with
+  organizationID_not_starts_with: String
+  # organizationID_starts_with
+  organizationID_starts_with: String
+  # state
+  state: String
+  # state_contains
+  state_contains: String
+  # state_ends_with
+  state_ends_with: String
+  # state_gt
+  state_gt: String
+  # state_gte
+  state_gte: String
+  # state_in
+  state_in: [String!]
+  # state_lt
+  state_lt: String
+  # state_lte
+  state_lte: String
+  # state_not
+  state_not: String
+  # state_not_contains
+  state_not_contains: String
+  # state_not_ends_with
+  state_not_ends_with: String
+  # state_not_in
+  state_not_in: [String!]
+  # state_not_starts_with
+  state_not_starts_with: String
+  # state_starts_with
+  state_starts_with: String
+  # type
+  type: String
+  # type_contains
+  type_contains: String
+  # type_ends_with
+  type_ends_with: String
+  # type_gt
+  type_gt: String
+  # type_gte
+  type_gte: String
+  # type_in
+  type_in: [String!]
+  # type_lt
+  type_lt: String
+  # type_lte
+  type_lte: String
+  # type_not
+  type_not: String
+  # type_not_contains
+  type_not_contains: String
+  # type_not_ends_with
+  type_not_ends_with: String
+  # type_not_in
+  type_not_in: [String!]
+  # type_not_starts_with
+  type_not_starts_with: String
+  # type_starts_with
+  type_starts_with: String
+}
+
+# Ordering Enum for FundedOrganization
+enum _FundedOrganizationOrdering {
+  # Ascending sort for city
+  city_asc
+  # Descending sort for city
+  city_desc
+  # Ascending sort for country
+  country_asc
+  # Descending sort for country
+  country_desc
+  # Ascending sort for id
+  id_asc
+  # Descending sort for id
+  id_desc
+  # Ascending sort for lower_case_search_string
+  lower_case_search_string_asc
+  # Descending sort for lower_case_search_string
+  lower_case_search_string_desc
+  # Ascending sort for name
+  name_asc
+  # Descending sort for name
+  name_desc
+  # Ascending sort for organizationID
+  organizationID_asc
+  # Descending sort for organizationID
+  organizationID_desc
+  # Ascending sort for state
+  state_asc
+  # Descending sort for state
+  state_desc
+  # Ascending sort for type
+  type_asc
+  # Descending sort for type
+  type_desc
+}
+
+# Filter Input Type for Journal
+input _JournalFilter {
+  # AND
+  AND: [_JournalFilter!]
+  # OR
+  OR: [_JournalFilter!]
+  # id
+  id: ID
+  # id_contains
+  id_contains: ID
+  # id_ends_with
+  id_ends_with: ID
+  # id_gt
+  id_gt: ID
+  # id_gte
+  id_gte: ID
+  # id_in
+  id_in: [ID!]
+  # id_lt
+  id_lt: ID
+  # id_lte
+  id_lte: ID
+  # id_not
+  id_not: ID
+  # id_not_contains
+  id_not_contains: ID
+  # id_not_ends_with
+  id_not_ends_with: ID
+  # id_not_in
+  id_not_in: [ID!]
+  # id_not_starts_with
+  id_not_starts_with: ID
+  # id_starts_with
+  id_starts_with: ID
+  # lower_case_search_string
+  lower_case_search_string: String
+  # lower_case_search_string_contains
+  lower_case_search_string_contains: String
+  # lower_case_search_string_ends_with
+  lower_case_search_string_ends_with: String
+  # lower_case_search_string_gt
+  lower_case_search_string_gt: String
+  # lower_case_search_string_gte
+  lower_case_search_string_gte: String
+  # lower_case_search_string_in
+  lower_case_search_string_in: [String!]
+  # lower_case_search_string_lt
+  lower_case_search_string_lt: String
+  # lower_case_search_string_lte
+  lower_case_search_string_lte: String
+  # lower_case_search_string_not
+  lower_case_search_string_not: String
+  # lower_case_search_string_not_contains
+  lower_case_search_string_not_contains: String
+  # lower_case_search_string_not_ends_with
+  lower_case_search_string_not_ends_with: String
+  # lower_case_search_string_not_in
+  lower_case_search_string_not_in: [String!]
+  # lower_case_search_string_not_starts_with
+  lower_case_search_string_not_starts_with: String
+  # lower_case_search_string_starts_with
+  lower_case_search_string_starts_with: String
+  # name
+  name: String
+  # name_contains
+  name_contains: String
+  # name_ends_with
+  name_ends_with: String
+  # name_gt
+  name_gt: String
+  # name_gte
+  name_gte: String
+  # name_in
+  name_in: [String!]
+  # name_lt
+  name_lt: String
+  # name_lte
+  name_lte: String
+  # name_not
+  name_not: String
+  # name_not_contains
+  name_not_contains: String
+  # name_not_ends_with
+  name_not_ends_with: String
+  # name_not_in
+  name_not_in: [String!]
+  # name_not_starts_with
+  name_not_starts_with: String
+  # name_starts_with
+  name_starts_with: String
+  # references
+  references: _LiteratureReferenceFilter
+  # references_every
+  references_every: _LiteratureReferenceFilter
+  # references_in
+  references_in: _LiteratureReferenceFilter
+  # references_none
+  references_none: _LiteratureReferenceFilter
+  # references_not
+  references_not: _LiteratureReferenceFilter
+  # references_not_in
+  references_not_in: _LiteratureReferenceFilter
+  # references_single
+  references_single: _LiteratureReferenceFilter
+  # references_some
+  references_some: _LiteratureReferenceFilter
+}
+
+# Ordering Enum for Journal
+enum _JournalOrdering {
+  # Ascending sort for id
+  id_asc
+  # Descending sort for id
+  id_desc
+  # Ascending sort for lower_case_search_string
+  lower_case_search_string_asc
+  # Descending sort for lower_case_search_string
+  lower_case_search_string_desc
+  # Ascending sort for name
+  name_asc
+  # Descending sort for name
+  name_desc
+}
+
+# Filter Input Type for LiteratureReference
+input _LiteratureReferenceFilter {
+  # AND
+  AND: [_LiteratureReferenceFilter!]
+  # DOI
+  DOI: String
+  # DOI_contains
+  DOI_contains: String
+  # DOI_ends_with
+  DOI_ends_with: String
+  # DOI_gt
+  DOI_gt: String
+  # DOI_gte
+  DOI_gte: String
+  # DOI_in
+  DOI_in: [String!]
+  # DOI_lt
+  DOI_lt: String
+  # DOI_lte
+  DOI_lte: String
+  # DOI_not
+  DOI_not: String
+  # DOI_not_contains
+  DOI_not_contains: String
+  # DOI_not_ends_with
+  DOI_not_ends_with: String
+  # DOI_not_in
+  DOI_not_in: [String!]
+  # DOI_not_starts_with
+  DOI_not_starts_with: String
+  # DOI_starts_with
+  DOI_starts_with: String
+  # OR
+  OR: [_LiteratureReferenceFilter!]
+  # PMID
+  PMID: String
+  # PMID_contains
+  PMID_contains: String
+  # PMID_ends_with
+  PMID_ends_with: String
+  # PMID_gt
+  PMID_gt: String
+  # PMID_gte
+  PMID_gte: String
+  # PMID_in
+  PMID_in: [String!]
+  # PMID_lt
+  PMID_lt: String
+  # PMID_lte
+  PMID_lte: String
+  # PMID_not
+  PMID_not: String
+  # PMID_not_contains
+  PMID_not_contains: String
+  # PMID_not_ends_with
+  PMID_not_ends_with: String
+  # PMID_not_in
+  PMID_not_in: [String!]
+  # PMID_not_starts_with
+  PMID_not_starts_with: String
+  # PMID_starts_with
+  PMID_starts_with: String
+  # abstract
+  abstract: String
+  # abstract_contains
+  abstract_contains: String
+  # abstract_ends_with
+  abstract_ends_with: String
+  # abstract_gt
+  abstract_gt: String
+  # abstract_gte
+  abstract_gte: String
+  # abstract_in
+  abstract_in: [String!]
+  # abstract_lt
+  abstract_lt: String
+  # abstract_lte
+  abstract_lte: String
+  # abstract_not
+  abstract_not: String
+  # abstract_not_contains
+  abstract_not_contains: String
+  # abstract_not_ends_with
+  abstract_not_ends_with: String
+  # abstract_not_in
+  abstract_not_in: [String!]
+  # abstract_not_starts_with
+  abstract_not_starts_with: String
+  # abstract_starts_with
+  abstract_starts_with: String
+  # authors
+  authors: _AuthorFilter
+  # authors_every
+  authors_every: _AuthorFilter
+  # authors_in
+  authors_in: _AuthorFilter
+  # authors_none
+  authors_none: _AuthorFilter
+  # authors_not
+  authors_not: _AuthorFilter
+  # authors_not_in
+  authors_not_in: _AuthorFilter
+  # authors_single
+  authors_single: _AuthorFilter
+  # authors_some
+  authors_some: _AuthorFilter
+  # coreProjects
+  coreProjects: _CoreProjectFilter
+  # coreProjects_every
+  coreProjects_every: _CoreProjectFilter
+  # coreProjects_in
+  coreProjects_in: _CoreProjectFilter
+  # coreProjects_none
+  coreProjects_none: _CoreProjectFilter
+  # coreProjects_not
+  coreProjects_not: _CoreProjectFilter
+  # coreProjects_not_in
+  coreProjects_not_in: _CoreProjectFilter
+  # coreProjects_single
+  coreProjects_single: _CoreProjectFilter
+  # coreProjects_some
+  coreProjects_some: _CoreProjectFilter
+  # firstPage
+  firstPage: String
+  # firstPage_contains
+  firstPage_contains: String
+  # firstPage_ends_with
+  firstPage_ends_with: String
+  # firstPage_gt
+  firstPage_gt: String
+  # firstPage_gte
+  firstPage_gte: String
+  # firstPage_in
+  firstPage_in: [String!]
+  # firstPage_lt
+  firstPage_lt: String
+  # firstPage_lte
+  firstPage_lte: String
+  # firstPage_not
+  firstPage_not: String
+  # firstPage_not_contains
+  firstPage_not_contains: String
+  # firstPage_not_ends_with
+  firstPage_not_ends_with: String
+  # firstPage_not_in
+  firstPage_not_in: [String!]
+  # firstPage_not_starts_with
+  firstPage_not_starts_with: String
+  # firstPage_starts_with
+  firstPage_starts_with: String
+  # id
+  id: ID
+  # id_contains
+  id_contains: ID
+  # id_ends_with
+  id_ends_with: ID
+  # id_gt
+  id_gt: ID
+  # id_gte
+  id_gte: ID
+  # id_in
+  id_in: [ID!]
+  # id_lt
+  id_lt: ID
+  # id_lte
+  id_lte: ID
+  # id_not
+  id_not: ID
+  # id_not_contains
+  id_not_contains: ID
+  # id_not_ends_with
+  id_not_ends_with: ID
+  # id_not_in
+  id_not_in: [ID!]
+  # id_not_starts_with
+  id_not_starts_with: ID
+  # id_starts_with
+  id_starts_with: ID
+  # journal
+  journal: _JournalFilter
+  # journal_in
+  journal_in: _JournalFilter
+  # journal_not
+  journal_not: _JournalFilter
+  # journal_not_in
+  journal_not_in: _JournalFilter
+  # lastPage
+  lastPage: String
+  # lastPage_contains
+  lastPage_contains: String
+  # lastPage_ends_with
+  lastPage_ends_with: String
+  # lastPage_gt
+  lastPage_gt: String
+  # lastPage_gte
+  lastPage_gte: String
+  # lastPage_in
+  lastPage_in: [String!]
+  # lastPage_lt
+  lastPage_lt: String
+  # lastPage_lte
+  lastPage_lte: String
+  # lastPage_not
+  lastPage_not: String
+  # lastPage_not_contains
+  lastPage_not_contains: String
+  # lastPage_not_ends_with
+  lastPage_not_ends_with: String
+  # lastPage_not_in
+  lastPage_not_in: [String!]
+  # lastPage_not_starts_with
+  lastPage_not_starts_with: String
+  # lastPage_starts_with
+  lastPage_starts_with: String
+  # lower_case_search_string
+  lower_case_search_string: String
+  # lower_case_search_string_contains
+  lower_case_search_string_contains: String
+  # lower_case_search_string_ends_with
+  lower_case_search_string_ends_with: String
+  # lower_case_search_string_gt
+  lower_case_search_string_gt: String
+  # lower_case_search_string_gte
+  lower_case_search_string_gte: String
+  # lower_case_search_string_in
+  lower_case_search_string_in: [String!]
+  # lower_case_search_string_lt
+  lower_case_search_string_lt: String
+  # lower_case_search_string_lte
+  lower_case_search_string_lte: String
+  # lower_case_search_string_not
+  lower_case_search_string_not: String
+  # lower_case_search_string_not_contains
+  lower_case_search_string_not_contains: String
+  # lower_case_search_string_not_ends_with
+  lower_case_search_string_not_ends_with: String
+  # lower_case_search_string_not_in
+  lower_case_search_string_not_in: [String!]
+  # lower_case_search_string_not_starts_with
+  lower_case_search_string_not_starts_with: String
+  # lower_case_search_string_starts_with
+  lower_case_search_string_starts_with: String
+  # publicationYear
+  publicationYear: String
+  # publicationYear_contains
+  publicationYear_contains: String
+  # publicationYear_ends_with
+  publicationYear_ends_with: String
+  # publicationYear_gt
+  publicationYear_gt: String
+  # publicationYear_gte
+  publicationYear_gte: String
+  # publicationYear_in
+  publicationYear_in: [String!]
+  # publicationYear_lt
+  publicationYear_lt: String
+  # publicationYear_lte
+  publicationYear_lte: String
+  # publicationYear_not
+  publicationYear_not: String
+  # publicationYear_not_contains
+  publicationYear_not_contains: String
+  # publicationYear_not_ends_with
+  publicationYear_not_ends_with: String
+  # publicationYear_not_in
+  publicationYear_not_in: [String!]
+  # publicationYear_not_starts_with
+  publicationYear_not_starts_with: String
+  # publicationYear_starts_with
+  publicationYear_starts_with: String
+  # shortReference
+  shortReference: String
+  # shortReference_contains
+  shortReference_contains: String
+  # shortReference_ends_with
+  shortReference_ends_with: String
+  # shortReference_gt
+  shortReference_gt: String
+  # shortReference_gte
+  shortReference_gte: String
+  # shortReference_in
+  shortReference_in: [String!]
+  # shortReference_lt
+  shortReference_lt: String
+  # shortReference_lte
+  shortReference_lte: String
+  # shortReference_not
+  shortReference_not: String
+  # shortReference_not_contains
+  shortReference_not_contains: String
+  # shortReference_not_ends_with
+  shortReference_not_ends_with: String
+  # shortReference_not_in
+  shortReference_not_in: [String!]
+  # shortReference_not_starts_with
+  shortReference_not_starts_with: String
+  # shortReference_starts_with
+  shortReference_starts_with: String
+  # title
+  title: String
+  # title_contains
+  title_contains: String
+  # title_ends_with
+  title_ends_with: String
+  # title_gt
+  title_gt: String
+  # title_gte
+  title_gte: String
+  # title_in
+  title_in: [String!]
+  # title_lt
+  title_lt: String
+  # title_lte
+  title_lte: String
+  # title_not
+  title_not: String
+  # title_not_contains
+  title_not_contains: String
+  # title_not_ends_with
+  title_not_ends_with: String
+  # title_not_in
+  title_not_in: [String!]
+  # title_not_starts_with
+  title_not_starts_with: String
+  # title_starts_with
+  title_starts_with: String
+  # volume
+  volume: String
+  # volume_contains
+  volume_contains: String
+  # volume_ends_with
+  volume_ends_with: String
+  # volume_gt
+  volume_gt: String
+  # volume_gte
+  volume_gte: String
+  # volume_in
+  volume_in: [String!]
+  # volume_lt
+  volume_lt: String
+  # volume_lte
+  volume_lte: String
+  # volume_not
+  volume_not: String
+  # volume_not_contains
+  volume_not_contains: String
+  # volume_not_ends_with
+  volume_not_ends_with: String
+  # volume_not_in
+  volume_not_in: [String!]
+  # volume_not_starts_with
+  volume_not_starts_with: String
+  # volume_starts_with
+  volume_starts_with: String
+}
+
+# Ordering Enum for LiteratureReference
+enum _LiteratureReferenceOrdering {
+  # Ascending sort for DOI
+  DOI_asc
+  # Descending sort for DOI
+  DOI_desc
+  # Ascending sort for PMID
+  PMID_asc
+  # Descending sort for PMID
+  PMID_desc
+  # Ascending sort for abstract
+  abstract_asc
+  # Descending sort for abstract
+  abstract_desc
+  # Ascending sort for firstPage
+  firstPage_asc
+  # Descending sort for firstPage
+  firstPage_desc
+  # Ascending sort for id
+  id_asc
+  # Descending sort for id
+  id_desc
+  # Ascending sort for lastPage
+  lastPage_asc
+  # Descending sort for lastPage
+  lastPage_desc
+  # Ascending sort for lower_case_search_string
+  lower_case_search_string_asc
+  # Descending sort for lower_case_search_string
+  lower_case_search_string_desc
+  # Ascending sort for publicationYear
+  publicationYear_asc
+  # Descending sort for publicationYear
+  publicationYear_desc
+  # Ascending sort for shortReference
+  shortReference_asc
+  # Descending sort for shortReference
+  shortReference_desc
+  # Ascending sort for title
+  title_asc
+  # Descending sort for title
+  title_desc
+  # Ascending sort for volume
+  volume_asc
+  # Descending sort for volume
+  volume_desc
+}
+
+# Filter Input Type for NIHGrant
+input _NIHGrantFilter {
+  # AND
+  AND: [_NIHGrantFilter!]
+  # CFDACode
+  CFDACode: String
+  # CFDACode_contains
+  CFDACode_contains: String
+  # CFDACode_ends_with
+  CFDACode_ends_with: String
+  # CFDACode_gt
+  CFDACode_gt: String
+  # CFDACode_gte
+  CFDACode_gte: String
+  # CFDACode_in
+  CFDACode_in: [String!]
+  # CFDACode_lt
+  CFDACode_lt: String
+  # CFDACode_lte
+  CFDACode_lte: String
+  # CFDACode_not
+  CFDACode_not: String
+  # CFDACode_not_contains
+  CFDACode_not_contains: String
+  # CFDACode_not_ends_with
+  CFDACode_not_ends_with: String
+  # CFDACode_not_in
+  CFDACode_not_in: [String!]
+  # CFDACode_not_starts_with
+  CFDACode_not_starts_with: String
+  # CFDACode_starts_with
+  CFDACode_starts_with: String
+  # FOA
+  FOA: String
+  # FOA_contains
+  FOA_contains: String
+  # FOA_ends_with
+  FOA_ends_with: String
+  # FOA_gt
+  FOA_gt: String
+  # FOA_gte
+  FOA_gte: String
+  # FOA_in
+  FOA_in: [String!]
+  # FOA_lt
+  FOA_lt: String
+  # FOA_lte
+  FOA_lte: String
+  # FOA_not
+  FOA_not: String
+  # FOA_not_contains
+  FOA_not_contains: String
+  # FOA_not_ends_with
+  FOA_not_ends_with: String
+  # FOA_not_in
+  FOA_not_in: [String!]
+  # FOA_not_starts_with
+  FOA_not_starts_with: String
+  # FOA_starts_with
+  FOA_starts_with: String
+  # IC
+  IC: String
+  # IC_contains
+  IC_contains: String
+  # IC_ends_with
+  IC_ends_with: String
+  # IC_gt
+  IC_gt: String
+  # IC_gte
+  IC_gte: String
+  # IC_in
+  IC_in: [String!]
+  # IC_lt
+  IC_lt: String
+  # IC_lte
+  IC_lte: String
+  # IC_not
+  IC_not: String
+  # IC_not_contains
+  IC_not_contains: String
+  # IC_not_ends_with
+  IC_not_ends_with: String
+  # IC_not_in
+  IC_not_in: [String!]
+  # IC_not_starts_with
+  IC_not_starts_with: String
+  # IC_starts_with
+  IC_starts_with: String
+  # NIHCOVID19Response
+  NIHCOVID19Response: String
+  # NIHCOVID19Response_contains
+  NIHCOVID19Response_contains: String
+  # NIHCOVID19Response_ends_with
+  NIHCOVID19Response_ends_with: String
+  # NIHCOVID19Response_gt
+  NIHCOVID19Response_gt: String
+  # NIHCOVID19Response_gte
+  NIHCOVID19Response_gte: String
+  # NIHCOVID19Response_in
+  NIHCOVID19Response_in: [String!]
+  # NIHCOVID19Response_lt
+  NIHCOVID19Response_lt: String
+  # NIHCOVID19Response_lte
+  NIHCOVID19Response_lte: String
+  # NIHCOVID19Response_not
+  NIHCOVID19Response_not: String
+  # NIHCOVID19Response_not_contains
+  NIHCOVID19Response_not_contains: String
+  # NIHCOVID19Response_not_ends_with
+  NIHCOVID19Response_not_ends_with: String
+  # NIHCOVID19Response_not_in
+  NIHCOVID19Response_not_in: [String!]
+  # NIHCOVID19Response_not_starts_with
+  NIHCOVID19Response_not_starts_with: String
+  # NIHCOVID19Response_starts_with
+  NIHCOVID19Response_starts_with: String
+  # OR
+  OR: [_NIHGrantFilter!]
+  # abstract
+  abstract: String
+  # abstract_contains
+  abstract_contains: String
+  # abstract_ends_with
+  abstract_ends_with: String
+  # abstract_gt
+  abstract_gt: String
+  # abstract_gte
+  abstract_gte: String
+  # abstract_in
+  abstract_in: [String!]
+  # abstract_lt
+  abstract_lt: String
+  # abstract_lte
+  abstract_lte: String
+  # abstract_not
+  abstract_not: String
+  # abstract_not_contains
+  abstract_not_contains: String
+  # abstract_not_ends_with
+  abstract_not_ends_with: String
+  # abstract_not_in
+  abstract_not_in: [String!]
+  # abstract_not_starts_with
+  abstract_not_starts_with: String
+  # abstract_starts_with
+  abstract_starts_with: String
+  # activity
+  activity: String
+  # activity_contains
+  activity_contains: String
+  # activity_ends_with
+  activity_ends_with: String
+  # activity_gt
+  activity_gt: String
+  # activity_gte
+  activity_gte: String
+  # activity_in
+  activity_in: [String!]
+  # activity_lt
+  activity_lt: String
+  # activity_lte
+  activity_lte: String
+  # activity_not
+  activity_not: String
+  # activity_not_contains
+  activity_not_contains: String
+  # activity_not_ends_with
+  activity_not_ends_with: String
+  # activity_not_in
+  activity_not_in: [String!]
+  # activity_not_starts_with
+  activity_not_starts_with: String
+  # activity_starts_with
+  activity_starts_with: String
+  # administeringIC
+  administeringIC: _NIHInstituteOrCenterFilter
+  # administeringIC_in
+  administeringIC_in: _NIHInstituteOrCenterFilter
+  # administeringIC_not
+  administeringIC_not: _NIHInstituteOrCenterFilter
+  # administeringIC_not_in
+  administeringIC_not_in: _NIHInstituteOrCenterFilter
+  # applicationID
+  applicationID: String
+  # applicationID_contains
+  applicationID_contains: String
+  # applicationID_ends_with
+  applicationID_ends_with: String
+  # applicationID_gt
+  applicationID_gt: String
+  # applicationID_gte
+  applicationID_gte: String
+  # applicationID_in
+  applicationID_in: [String!]
+  # applicationID_lt
+  applicationID_lt: String
+  # applicationID_lte
+  applicationID_lte: String
+  # applicationID_not
+  applicationID_not: String
+  # applicationID_not_contains
+  applicationID_not_contains: String
+  # applicationID_not_ends_with
+  applicationID_not_ends_with: String
+  # applicationID_not_in
+  applicationID_not_in: [String!]
+  # applicationID_not_starts_with
+  applicationID_not_starts_with: String
+  # applicationID_starts_with
+  applicationID_starts_with: String
+  # awardNoticeDate
+  awardNoticeDate: String
+  # awardNoticeDate_contains
+  awardNoticeDate_contains: String
+  # awardNoticeDate_ends_with
+  awardNoticeDate_ends_with: String
+  # awardNoticeDate_gt
+  awardNoticeDate_gt: String
+  # awardNoticeDate_gte
+  awardNoticeDate_gte: String
+  # awardNoticeDate_in
+  awardNoticeDate_in: [String!]
+  # awardNoticeDate_lt
+  awardNoticeDate_lt: String
+  # awardNoticeDate_lte
+  awardNoticeDate_lte: String
+  # awardNoticeDate_not
+  awardNoticeDate_not: String
+  # awardNoticeDate_not_contains
+  awardNoticeDate_not_contains: String
+  # awardNoticeDate_not_ends_with
+  awardNoticeDate_not_ends_with: String
+  # awardNoticeDate_not_in
+  awardNoticeDate_not_in: [String!]
+  # awardNoticeDate_not_starts_with
+  awardNoticeDate_not_starts_with: String
+  # awardNoticeDate_starts_with
+  awardNoticeDate_starts_with: String
+  # budgetEndDate
+  budgetEndDate: String
+  # budgetEndDate_contains
+  budgetEndDate_contains: String
+  # budgetEndDate_ends_with
+  budgetEndDate_ends_with: String
+  # budgetEndDate_gt
+  budgetEndDate_gt: String
+  # budgetEndDate_gte
+  budgetEndDate_gte: String
+  # budgetEndDate_in
+  budgetEndDate_in: [String!]
+  # budgetEndDate_lt
+  budgetEndDate_lt: String
+  # budgetEndDate_lte
+  budgetEndDate_lte: String
+  # budgetEndDate_not
+  budgetEndDate_not: String
+  # budgetEndDate_not_contains
+  budgetEndDate_not_contains: String
+  # budgetEndDate_not_ends_with
+  budgetEndDate_not_ends_with: String
+  # budgetEndDate_not_in
+  budgetEndDate_not_in: [String!]
+  # budgetEndDate_not_starts_with
+  budgetEndDate_not_starts_with: String
+  # budgetEndDate_starts_with
+  budgetEndDate_starts_with: String
+  # budgetStartDate
+  budgetStartDate: String
+  # budgetStartDate_contains
+  budgetStartDate_contains: String
+  # budgetStartDate_ends_with
+  budgetStartDate_ends_with: String
+  # budgetStartDate_gt
+  budgetStartDate_gt: String
+  # budgetStartDate_gte
+  budgetStartDate_gte: String
+  # budgetStartDate_in
+  budgetStartDate_in: [String!]
+  # budgetStartDate_lt
+  budgetStartDate_lt: String
+  # budgetStartDate_lte
+  budgetStartDate_lte: String
+  # budgetStartDate_not
+  budgetStartDate_not: String
+  # budgetStartDate_not_contains
+  budgetStartDate_not_contains: String
+  # budgetStartDate_not_ends_with
+  budgetStartDate_not_ends_with: String
+  # budgetStartDate_not_in
+  budgetStartDate_not_in: [String!]
+  # budgetStartDate_not_starts_with
+  budgetStartDate_not_starts_with: String
+  # budgetStartDate_starts_with
+  budgetStartDate_starts_with: String
+  # contactPIorProjectLeader
+  contactPIorProjectLeader: _PrincipalInvestigatorFilter
+  # contactPIorProjectLeader_in
+  contactPIorProjectLeader_in: _PrincipalInvestigatorFilter
+  # contactPIorProjectLeader_not
+  contactPIorProjectLeader_not: _PrincipalInvestigatorFilter
+  # contactPIorProjectLeader_not_in
+  contactPIorProjectLeader_not_in: _PrincipalInvestigatorFilter
+  # coreProject
+  coreProject: _CoreProjectFilter
+  # coreProject_in
+  coreProject_in: _CoreProjectFilter
+  # coreProject_not
+  coreProject_not: _CoreProjectFilter
+  # coreProject_not_in
+  coreProject_not_in: _CoreProjectFilter
+  # department
+  department: String
+  # department_contains
+  department_contains: String
+  # department_ends_with
+  department_ends_with: String
+  # department_gt
+  department_gt: String
+  # department_gte
+  department_gte: String
+  # department_in
+  department_in: [String!]
+  # department_lt
+  department_lt: String
+  # department_lte
+  department_lte: String
+  # department_not
+  department_not: String
+  # department_not_contains
+  department_not_contains: String
+  # department_not_ends_with
+  department_not_ends_with: String
+  # department_not_in
+  department_not_in: [String!]
+  # department_not_starts_with
+  department_not_starts_with: String
+  # department_starts_with
+  department_starts_with: String
+  # directCost_IC
+  directCost_IC: Int
+  # directCost_IC_gt
+  directCost_IC_gt: Int
+  # directCost_IC_gte
+  directCost_IC_gte: Int
+  # directCost_IC_in
+  directCost_IC_in: [Int!]
+  # directCost_IC_lt
+  directCost_IC_lt: Int
+  # directCost_IC_lte
+  directCost_IC_lte: Int
+  # directCost_IC_not
+  directCost_IC_not: Int
+  # directCost_IC_not_in
+  directCost_IC_not_in: [Int!]
+  # fiscalYear
+  fiscalYear: String
+  # fiscalYear_contains
+  fiscalYear_contains: String
+  # fiscalYear_ends_with
+  fiscalYear_ends_with: String
+  # fiscalYear_gt
+  fiscalYear_gt: String
+  # fiscalYear_gte
+  fiscalYear_gte: String
+  # fiscalYear_in
+  fiscalYear_in: [String!]
+  # fiscalYear_lt
+  fiscalYear_lt: String
+  # fiscalYear_lte
+  fiscalYear_lte: String
+  # fiscalYear_not
+  fiscalYear_not: String
+  # fiscalYear_not_contains
+  fiscalYear_not_contains: String
+  # fiscalYear_not_ends_with
+  fiscalYear_not_ends_with: String
+  # fiscalYear_not_in
+  fiscalYear_not_in: [String!]
+  # fiscalYear_not_starts_with
+  fiscalYear_not_starts_with: String
+  # fiscalYear_starts_with
+  fiscalYear_starts_with: String
+  # fundingIC
+  fundingIC: _NIHInstituteOrCenterFilter
+  # fundingIC_in
+  fundingIC_in: _NIHInstituteOrCenterFilter
+  # fundingIC_not
+  fundingIC_not: _NIHInstituteOrCenterFilter
+  # fundingIC_not_in
+  fundingIC_not_in: _NIHInstituteOrCenterFilter
+  # fundingMechanism
+  fundingMechanism: String
+  # fundingMechanism_contains
+  fundingMechanism_contains: String
+  # fundingMechanism_ends_with
+  fundingMechanism_ends_with: String
+  # fundingMechanism_gt
+  fundingMechanism_gt: String
+  # fundingMechanism_gte
+  fundingMechanism_gte: String
+  # fundingMechanism_in
+  fundingMechanism_in: [String!]
+  # fundingMechanism_lt
+  fundingMechanism_lt: String
+  # fundingMechanism_lte
+  fundingMechanism_lte: String
+  # fundingMechanism_not
+  fundingMechanism_not: String
+  # fundingMechanism_not_contains
+  fundingMechanism_not_contains: String
+  # fundingMechanism_not_ends_with
+  fundingMechanism_not_ends_with: String
+  # fundingMechanism_not_in
+  fundingMechanism_not_in: [String!]
+  # fundingMechanism_not_starts_with
+  fundingMechanism_not_starts_with: String
+  # fundingMechanism_starts_with
+  fundingMechanism_starts_with: String
+  # id
+  id: ID
+  # id_contains
+  id_contains: ID
+  # id_ends_with
+  id_ends_with: ID
+  # id_gt
+  id_gt: ID
+  # id_gte
+  id_gte: ID
+  # id_in
+  id_in: [ID!]
+  # id_lt
+  id_lt: ID
+  # id_lte
+  id_lte: ID
+  # id_not
+  id_not: ID
+  # id_not_contains
+  id_not_contains: ID
+  # id_not_ends_with
+  id_not_ends_with: ID
+  # id_not_in
+  id_not_in: [ID!]
+  # id_not_starts_with
+  id_not_starts_with: ID
+  # id_starts_with
+  id_starts_with: ID
+  # inDirectCost_IC
+  inDirectCost_IC: Int
+  # inDirectCost_IC_gt
+  inDirectCost_IC_gt: Int
+  # inDirectCost_IC_gte
+  inDirectCost_IC_gte: Int
+  # inDirectCost_IC_in
+  inDirectCost_IC_in: [Int!]
+  # inDirectCost_IC_lt
+  inDirectCost_IC_lt: Int
+  # inDirectCost_IC_lte
+  inDirectCost_IC_lte: Int
+  # inDirectCost_IC_not
+  inDirectCost_IC_not: Int
+  # inDirectCost_IC_not_in
+  inDirectCost_IC_not_in: [Int!]
+  # lower_case_search_string
+  lower_case_search_string: String
+  # lower_case_search_string_contains
+  lower_case_search_string_contains: String
+  # lower_case_search_string_ends_with
+  lower_case_search_string_ends_with: String
+  # lower_case_search_string_gt
+  lower_case_search_string_gt: String
+  # lower_case_search_string_gte
+  lower_case_search_string_gte: String
+  # lower_case_search_string_in
+  lower_case_search_string_in: [String!]
+  # lower_case_search_string_lt
+  lower_case_search_string_lt: String
+  # lower_case_search_string_lte
+  lower_case_search_string_lte: String
+  # lower_case_search_string_not
+  lower_case_search_string_not: String
+  # lower_case_search_string_not_contains
+  lower_case_search_string_not_contains: String
+  # lower_case_search_string_not_ends_with
+  lower_case_search_string_not_ends_with: String
+  # lower_case_search_string_not_in
+  lower_case_search_string_not_in: [String!]
+  # lower_case_search_string_not_starts_with
+  lower_case_search_string_not_starts_with: String
+  # lower_case_search_string_starts_with
+  lower_case_search_string_starts_with: String
+  # nihSpendingCategorization
+  nihSpendingCategorization: String
+  # nihSpendingCategorization_contains
+  nihSpendingCategorization_contains: String
+  # nihSpendingCategorization_ends_with
+  nihSpendingCategorization_ends_with: String
+  # nihSpendingCategorization_gt
+  nihSpendingCategorization_gt: String
+  # nihSpendingCategorization_gte
+  nihSpendingCategorization_gte: String
+  # nihSpendingCategorization_in
+  nihSpendingCategorization_in: [String!]
+  # nihSpendingCategorization_lt
+  nihSpendingCategorization_lt: String
+  # nihSpendingCategorization_lte
+  nihSpendingCategorization_lte: String
+  # nihSpendingCategorization_not
+  nihSpendingCategorization_not: String
+  # nihSpendingCategorization_not_contains
+  nihSpendingCategorization_not_contains: String
+  # nihSpendingCategorization_not_ends_with
+  nihSpendingCategorization_not_ends_with: String
+  # nihSpendingCategorization_not_in
+  nihSpendingCategorization_not_in: [String!]
+  # nihSpendingCategorization_not_starts_with
+  nihSpendingCategorization_not_starts_with: String
+  # nihSpendingCategorization_starts_with
+  nihSpendingCategorization_starts_with: String
+  # organization
+  organization: _FundedOrganizationFilter
+  # organization_in
+  organization_in: _FundedOrganizationFilter
+  # organization_not
+  organization_not: _FundedOrganizationFilter
+  # organization_not_in
+  organization_not_in: _FundedOrganizationFilter
+  # otherPIorProjectLeaders
+  otherPIorProjectLeaders: String
+  # otherPIorProjectLeaders_contains
+  otherPIorProjectLeaders_contains: String
+  # otherPIorProjectLeaders_ends_with
+  otherPIorProjectLeaders_ends_with: String
+  # otherPIorProjectLeaders_gt
+  otherPIorProjectLeaders_gt: String
+  # otherPIorProjectLeaders_gte
+  otherPIorProjectLeaders_gte: String
+  # otherPIorProjectLeaders_in
+  otherPIorProjectLeaders_in: [String!]
+  # otherPIorProjectLeaders_lt
+  otherPIorProjectLeaders_lt: String
+  # otherPIorProjectLeaders_lte
+  otherPIorProjectLeaders_lte: String
+  # otherPIorProjectLeaders_not
+  otherPIorProjectLeaders_not: String
+  # otherPIorProjectLeaders_not_contains
+  otherPIorProjectLeaders_not_contains: String
+  # otherPIorProjectLeaders_not_ends_with
+  otherPIorProjectLeaders_not_ends_with: String
+  # otherPIorProjectLeaders_not_in
+  otherPIorProjectLeaders_not_in: [String!]
+  # otherPIorProjectLeaders_not_starts_with
+  otherPIorProjectLeaders_not_starts_with: String
+  # otherPIorProjectLeaders_starts_with
+  otherPIorProjectLeaders_starts_with: String
+  # programOfficialInformation
+  programOfficialInformation: String
+  # programOfficialInformation_contains
+  programOfficialInformation_contains: String
+  # programOfficialInformation_ends_with
+  programOfficialInformation_ends_with: String
+  # programOfficialInformation_gt
+  programOfficialInformation_gt: String
+  # programOfficialInformation_gte
+  programOfficialInformation_gte: String
+  # programOfficialInformation_in
+  programOfficialInformation_in: [String!]
+  # programOfficialInformation_lt
+  programOfficialInformation_lt: String
+  # programOfficialInformation_lte
+  programOfficialInformation_lte: String
+  # programOfficialInformation_not
+  programOfficialInformation_not: String
+  # programOfficialInformation_not_contains
+  programOfficialInformation_not_contains: String
+  # programOfficialInformation_not_ends_with
+  programOfficialInformation_not_ends_with: String
+  # programOfficialInformation_not_in
+  programOfficialInformation_not_in: [String!]
+  # programOfficialInformation_not_starts_with
+  programOfficialInformation_not_starts_with: String
+  # programOfficialInformation_starts_with
+  programOfficialInformation_starts_with: String
+  # projectEndDate
+  projectEndDate: String
+  # projectEndDate_contains
+  projectEndDate_contains: String
+  # projectEndDate_ends_with
+  projectEndDate_ends_with: String
+  # projectEndDate_gt
+  projectEndDate_gt: String
+  # projectEndDate_gte
+  projectEndDate_gte: String
+  # projectEndDate_in
+  projectEndDate_in: [String!]
+  # projectEndDate_lt
+  projectEndDate_lt: String
+  # projectEndDate_lte
+  projectEndDate_lte: String
+  # projectEndDate_not
+  projectEndDate_not: String
+  # projectEndDate_not_contains
+  projectEndDate_not_contains: String
+  # projectEndDate_not_ends_with
+  projectEndDate_not_ends_with: String
+  # projectEndDate_not_in
+  projectEndDate_not_in: [String!]
+  # projectEndDate_not_starts_with
+  projectEndDate_not_starts_with: String
+  # projectEndDate_starts_with
+  projectEndDate_starts_with: String
+  # projectNumber
+  projectNumber: String
+  # projectNumber_contains
+  projectNumber_contains: String
+  # projectNumber_ends_with
+  projectNumber_ends_with: String
+  # projectNumber_gt
+  projectNumber_gt: String
+  # projectNumber_gte
+  projectNumber_gte: String
+  # projectNumber_in
+  projectNumber_in: [String!]
+  # projectNumber_lt
+  projectNumber_lt: String
+  # projectNumber_lte
+  projectNumber_lte: String
+  # projectNumber_not
+  projectNumber_not: String
+  # projectNumber_not_contains
+  projectNumber_not_contains: String
+  # projectNumber_not_ends_with
+  projectNumber_not_ends_with: String
+  # projectNumber_not_in
+  projectNumber_not_in: [String!]
+  # projectNumber_not_starts_with
+  projectNumber_not_starts_with: String
+  # projectNumber_starts_with
+  projectNumber_starts_with: String
+  # projectStartDate
+  projectStartDate: String
+  # projectStartDate_contains
+  projectStartDate_contains: String
+  # projectStartDate_ends_with
+  projectStartDate_ends_with: String
+  # projectStartDate_gt
+  projectStartDate_gt: String
+  # projectStartDate_gte
+  projectStartDate_gte: String
+  # projectStartDate_in
+  projectStartDate_in: [String!]
+  # projectStartDate_lt
+  projectStartDate_lt: String
+  # projectStartDate_lte
+  projectStartDate_lte: String
+  # projectStartDate_not
+  projectStartDate_not: String
+  # projectStartDate_not_contains
+  projectStartDate_not_contains: String
+  # projectStartDate_not_ends_with
+  projectStartDate_not_ends_with: String
+  # projectStartDate_not_in
+  projectStartDate_not_in: [String!]
+  # projectStartDate_not_starts_with
+  projectStartDate_not_starts_with: String
+  # projectStartDate_starts_with
+  projectStartDate_starts_with: String
+  # projectTerms
+  projectTerms: String
+  # projectTerms_contains
+  projectTerms_contains: String
+  # projectTerms_ends_with
+  projectTerms_ends_with: String
+  # projectTerms_gt
+  projectTerms_gt: String
+  # projectTerms_gte
+  projectTerms_gte: String
+  # projectTerms_in
+  projectTerms_in: [String!]
+  # projectTerms_lt
+  projectTerms_lt: String
+  # projectTerms_lte
+  projectTerms_lte: String
+  # projectTerms_not
+  projectTerms_not: String
+  # projectTerms_not_contains
+  projectTerms_not_contains: String
+  # projectTerms_not_ends_with
+  projectTerms_not_ends_with: String
+  # projectTerms_not_in
+  projectTerms_not_in: [String!]
+  # projectTerms_not_starts_with
+  projectTerms_not_starts_with: String
+  # projectTerms_starts_with
+  projectTerms_starts_with: String
+  # projectTitle
+  projectTitle: String
+  # projectTitle_contains
+  projectTitle_contains: String
+  # projectTitle_ends_with
+  projectTitle_ends_with: String
+  # projectTitle_gt
+  projectTitle_gt: String
+  # projectTitle_gte
+  projectTitle_gte: String
+  # projectTitle_in
+  projectTitle_in: [String!]
+  # projectTitle_lt
+  projectTitle_lt: String
+  # projectTitle_lte
+  projectTitle_lte: String
+  # projectTitle_not
+  projectTitle_not: String
+  # projectTitle_not_contains
+  projectTitle_not_contains: String
+  # projectTitle_not_ends_with
+  projectTitle_not_ends_with: String
+  # projectTitle_not_in
+  projectTitle_not_in: [String!]
+  # projectTitle_not_starts_with
+  projectTitle_not_starts_with: String
+  # projectTitle_starts_with
+  projectTitle_starts_with: String
+  # publicHealthRelevance
+  publicHealthRelevance: String
+  # publicHealthRelevance_contains
+  publicHealthRelevance_contains: String
+  # publicHealthRelevance_ends_with
+  publicHealthRelevance_ends_with: String
+  # publicHealthRelevance_gt
+  publicHealthRelevance_gt: String
+  # publicHealthRelevance_gte
+  publicHealthRelevance_gte: String
+  # publicHealthRelevance_in
+  publicHealthRelevance_in: [String!]
+  # publicHealthRelevance_lt
+  publicHealthRelevance_lt: String
+  # publicHealthRelevance_lte
+  publicHealthRelevance_lte: String
+  # publicHealthRelevance_not
+  publicHealthRelevance_not: String
+  # publicHealthRelevance_not_contains
+  publicHealthRelevance_not_contains: String
+  # publicHealthRelevance_not_ends_with
+  publicHealthRelevance_not_ends_with: String
+  # publicHealthRelevance_not_in
+  publicHealthRelevance_not_in: [String!]
+  # publicHealthRelevance_not_starts_with
+  publicHealthRelevance_not_starts_with: String
+  # publicHealthRelevance_starts_with
+  publicHealthRelevance_starts_with: String
+  # serialNumber
+  serialNumber: String
+  # serialNumber_contains
+  serialNumber_contains: String
+  # serialNumber_ends_with
+  serialNumber_ends_with: String
+  # serialNumber_gt
+  serialNumber_gt: String
+  # serialNumber_gte
+  serialNumber_gte: String
+  # serialNumber_in
+  serialNumber_in: [String!]
+  # serialNumber_lt
+  serialNumber_lt: String
+  # serialNumber_lte
+  serialNumber_lte: String
+  # serialNumber_not
+  serialNumber_not: String
+  # serialNumber_not_contains
+  serialNumber_not_contains: String
+  # serialNumber_not_ends_with
+  serialNumber_not_ends_with: String
+  # serialNumber_not_in
+  serialNumber_not_in: [String!]
+  # serialNumber_not_starts_with
+  serialNumber_not_starts_with: String
+  # serialNumber_starts_with
+  serialNumber_starts_with: String
+  # studySection
+  studySection: String
+  # studySection_contains
+  studySection_contains: String
+  # studySection_ends_with
+  studySection_ends_with: String
+  # studySection_gt
+  studySection_gt: String
+  # studySection_gte
+  studySection_gte: String
+  # studySection_in
+  studySection_in: [String!]
+  # studySection_lt
+  studySection_lt: String
+  # studySection_lte
+  studySection_lte: String
+  # studySection_not
+  studySection_not: String
+  # studySection_not_contains
+  studySection_not_contains: String
+  # studySection_not_ends_with
+  studySection_not_ends_with: String
+  # studySection_not_in
+  studySection_not_in: [String!]
+  # studySection_not_starts_with
+  studySection_not_starts_with: String
+  # studySection_starts_with
+  studySection_starts_with: String
+  # supportYear
+  supportYear: String
+  # supportYear_contains
+  supportYear_contains: String
+  # supportYear_ends_with
+  supportYear_ends_with: String
+  # supportYear_gt
+  supportYear_gt: String
+  # supportYear_gte
+  supportYear_gte: String
+  # supportYear_in
+  supportYear_in: [String!]
+  # supportYear_lt
+  supportYear_lt: String
+  # supportYear_lte
+  supportYear_lte: String
+  # supportYear_not
+  supportYear_not: String
+  # supportYear_not_contains
+  supportYear_not_contains: String
+  # supportYear_not_ends_with
+  supportYear_not_ends_with: String
+  # supportYear_not_in
+  supportYear_not_in: [String!]
+  # supportYear_not_starts_with
+  supportYear_not_starts_with: String
+  # supportYear_starts_with
+  supportYear_starts_with: String
+  # totalCost
+  totalCost: Int
+  # totalCost_IC
+  totalCost_IC: Int
+  # totalCost_IC_gt
+  totalCost_IC_gt: Int
+  # totalCost_IC_gte
+  totalCost_IC_gte: Int
+  # totalCost_IC_in
+  totalCost_IC_in: [Int!]
+  # totalCost_IC_lt
+  totalCost_IC_lt: Int
+  # totalCost_IC_lte
+  totalCost_IC_lte: Int
+  # totalCost_IC_not
+  totalCost_IC_not: Int
+  # totalCost_IC_not_in
+  totalCost_IC_not_in: [Int!]
+  # totalCost_SubProjects
+  totalCost_SubProjects: Int
+  # totalCost_SubProjects_gt
+  totalCost_SubProjects_gt: Int
+  # totalCost_SubProjects_gte
+  totalCost_SubProjects_gte: Int
+  # totalCost_SubProjects_in
+  totalCost_SubProjects_in: [Int!]
+  # totalCost_SubProjects_lt
+  totalCost_SubProjects_lt: Int
+  # totalCost_SubProjects_lte
+  totalCost_SubProjects_lte: Int
+  # totalCost_SubProjects_not
+  totalCost_SubProjects_not: Int
+  # totalCost_SubProjects_not_in
+  totalCost_SubProjects_not_in: [Int!]
+  # totalCost_gt
+  totalCost_gt: Int
+  # totalCost_gte
+  totalCost_gte: Int
+  # totalCost_in
+  totalCost_in: [Int!]
+  # totalCost_lt
+  totalCost_lt: Int
+  # totalCost_lte
+  totalCost_lte: Int
+  # totalCost_not
+  totalCost_not: Int
+  # totalCost_not_in
+  totalCost_not_in: [Int!]
+  # type
+  type: String
+  # type_contains
+  type_contains: String
+  # type_ends_with
+  type_ends_with: String
+  # type_gt
+  type_gt: String
+  # type_gte
+  type_gte: String
+  # type_in
+  type_in: [String!]
+  # type_lt
+  type_lt: String
+  # type_lte
+  type_lte: String
+  # type_not
+  type_not: String
+  # type_not_contains
+  type_not_contains: String
+  # type_not_ends_with
+  type_not_ends_with: String
+  # type_not_in
+  type_not_in: [String!]
+  # type_not_starts_with
+  type_not_starts_with: String
+  # type_starts_with
+  type_starts_with: String
+}
+
+# Ordering Enum for NIHGrant
+enum _NIHGrantOrdering {
+  # Ascending sort for CFDACode
+  CFDACode_asc
+  # Descending sort for CFDACode
+  CFDACode_desc
+  # Ascending sort for FOA
+  FOA_asc
+  # Descending sort for FOA
+  FOA_desc
+  # Ascending sort for IC
+  IC_asc
+  # Descending sort for IC
+  IC_desc
+  # Ascending sort for NIHCOVID19Response
+  NIHCOVID19Response_asc
+  # Descending sort for NIHCOVID19Response
+  NIHCOVID19Response_desc
+  # Ascending sort for abstract
+  abstract_asc
+  # Descending sort for abstract
+  abstract_desc
+  # Ascending sort for activity
+  activity_asc
+  # Descending sort for activity
+  activity_desc
+  # Ascending sort for applicationID
+  applicationID_asc
+  # Descending sort for applicationID
+  applicationID_desc
+  # Ascending sort for awardNoticeDate
+  awardNoticeDate_asc
+  # Descending sort for awardNoticeDate
+  awardNoticeDate_desc
+  # Ascending sort for budgetEndDate
+  budgetEndDate_asc
+  # Descending sort for budgetEndDate
+  budgetEndDate_desc
+  # Ascending sort for budgetStartDate
+  budgetStartDate_asc
+  # Descending sort for budgetStartDate
+  budgetStartDate_desc
+  # Ascending sort for department
+  department_asc
+  # Descending sort for department
+  department_desc
+  # Ascending sort for directCost_IC
+  directCost_IC_asc
+  # Descending sort for directCost_IC
+  directCost_IC_desc
+  # Ascending sort for fiscalYear
+  fiscalYear_asc
+  # Descending sort for fiscalYear
+  fiscalYear_desc
+  # Ascending sort for fundingMechanism
+  fundingMechanism_asc
+  # Descending sort for fundingMechanism
+  fundingMechanism_desc
+  # Ascending sort for id
+  id_asc
+  # Descending sort for id
+  id_desc
+  # Ascending sort for inDirectCost_IC
+  inDirectCost_IC_asc
+  # Descending sort for inDirectCost_IC
+  inDirectCost_IC_desc
+  # Ascending sort for lower_case_search_string
+  lower_case_search_string_asc
+  # Descending sort for lower_case_search_string
+  lower_case_search_string_desc
+  # Ascending sort for nihSpendingCategorization
+  nihSpendingCategorization_asc
+  # Descending sort for nihSpendingCategorization
+  nihSpendingCategorization_desc
+  # Ascending sort for otherPIorProjectLeaders
+  otherPIorProjectLeaders_asc
+  # Descending sort for otherPIorProjectLeaders
+  otherPIorProjectLeaders_desc
+  # Ascending sort for programOfficialInformation
+  programOfficialInformation_asc
+  # Descending sort for programOfficialInformation
+  programOfficialInformation_desc
+  # Ascending sort for projectEndDate
+  projectEndDate_asc
+  # Descending sort for projectEndDate
+  projectEndDate_desc
+  # Ascending sort for projectNumber
+  projectNumber_asc
+  # Descending sort for projectNumber
+  projectNumber_desc
+  # Ascending sort for projectStartDate
+  projectStartDate_asc
+  # Descending sort for projectStartDate
+  projectStartDate_desc
+  # Ascending sort for projectTerms
+  projectTerms_asc
+  # Descending sort for projectTerms
+  projectTerms_desc
+  # Ascending sort for projectTitle
+  projectTitle_asc
+  # Descending sort for projectTitle
+  projectTitle_desc
+  # Ascending sort for publicHealthRelevance
+  publicHealthRelevance_asc
+  # Descending sort for publicHealthRelevance
+  publicHealthRelevance_desc
+  # Ascending sort for serialNumber
+  serialNumber_asc
+  # Descending sort for serialNumber
+  serialNumber_desc
+  # Ascending sort for studySection
+  studySection_asc
+  # Descending sort for studySection
+  studySection_desc
+  # Ascending sort for supportYear
+  supportYear_asc
+  # Descending sort for supportYear
+  supportYear_desc
+  # Ascending sort for totalCost_IC
+  totalCost_IC_asc
+  # Descending sort for totalCost_IC
+  totalCost_IC_desc
+  # Ascending sort for totalCost_SubProjects
+  totalCost_SubProjects_asc
+  # Descending sort for totalCost_SubProjects
+  totalCost_SubProjects_desc
+  # Ascending sort for totalCost
+  totalCost_asc
+  # Descending sort for totalCost
+  totalCost_desc
+  # Ascending sort for type
+  type_asc
+  # Descending sort for type
+  type_desc
+}
+
+# Filter Input Type for NIHInstituteOrCenter
+input _NIHInstituteOrCenterFilter {
+  # AND
+  AND: [_NIHInstituteOrCenterFilter!]
+  # OR
+  OR: [_NIHInstituteOrCenterFilter!]
+  # grantsAdministered
+  grantsAdministered: _NIHGrantFilter
+  # grantsAdministered_every
+  grantsAdministered_every: _NIHGrantFilter
+  # grantsAdministered_in
+  grantsAdministered_in: _NIHGrantFilter
+  # grantsAdministered_none
+  grantsAdministered_none: _NIHGrantFilter
+  # grantsAdministered_not
+  grantsAdministered_not: _NIHGrantFilter
+  # grantsAdministered_not_in
+  grantsAdministered_not_in: _NIHGrantFilter
+  # grantsAdministered_single
+  grantsAdministered_single: _NIHGrantFilter
+  # grantsAdministered_some
+  grantsAdministered_some: _NIHGrantFilter
+  # grantsFunded
+  grantsFunded: _NIHGrantFilter
+  # grantsFunded_every
+  grantsFunded_every: _NIHGrantFilter
+  # grantsFunded_in
+  grantsFunded_in: _NIHGrantFilter
+  # grantsFunded_none
+  grantsFunded_none: _NIHGrantFilter
+  # grantsFunded_not
+  grantsFunded_not: _NIHGrantFilter
+  # grantsFunded_not_in
+  grantsFunded_not_in: _NIHGrantFilter
+  # grantsFunded_single
+  grantsFunded_single: _NIHGrantFilter
+  # grantsFunded_some
+  grantsFunded_some: _NIHGrantFilter
+  # id
+  id: ID
+  # id_contains
+  id_contains: ID
+  # id_ends_with
+  id_ends_with: ID
+  # id_gt
+  id_gt: ID
+  # id_gte
+  id_gte: ID
+  # id_in
+  id_in: [ID!]
+  # id_lt
+  id_lt: ID
+  # id_lte
+  id_lte: ID
+  # id_not
+  id_not: ID
+  # id_not_contains
+  id_not_contains: ID
+  # id_not_ends_with
+  id_not_ends_with: ID
+  # id_not_in
+  id_not_in: [ID!]
+  # id_not_starts_with
+  id_not_starts_with: ID
+  # id_starts_with
+  id_starts_with: ID
+  # lower_case_search_string
+  lower_case_search_string: String
+  # lower_case_search_string_contains
+  lower_case_search_string_contains: String
+  # lower_case_search_string_ends_with
+  lower_case_search_string_ends_with: String
+  # lower_case_search_string_gt
+  lower_case_search_string_gt: String
+  # lower_case_search_string_gte
+  lower_case_search_string_gte: String
+  # lower_case_search_string_in
+  lower_case_search_string_in: [String!]
+  # lower_case_search_string_lt
+  lower_case_search_string_lt: String
+  # lower_case_search_string_lte
+  lower_case_search_string_lte: String
+  # lower_case_search_string_not
+  lower_case_search_string_not: String
+  # lower_case_search_string_not_contains
+  lower_case_search_string_not_contains: String
+  # lower_case_search_string_not_ends_with
+  lower_case_search_string_not_ends_with: String
+  # lower_case_search_string_not_in
+  lower_case_search_string_not_in: [String!]
+  # lower_case_search_string_not_starts_with
+  lower_case_search_string_not_starts_with: String
+  # lower_case_search_string_starts_with
+  lower_case_search_string_starts_with: String
+  # name
+  name: String
+  # name_contains
+  name_contains: String
+  # name_ends_with
+  name_ends_with: String
+  # name_gt
+  name_gt: String
+  # name_gte
+  name_gte: String
+  # name_in
+  name_in: [String!]
+  # name_lt
+  name_lt: String
+  # name_lte
+  name_lte: String
+  # name_not
+  name_not: String
+  # name_not_contains
+  name_not_contains: String
+  # name_not_ends_with
+  name_not_ends_with: String
+  # name_not_in
+  name_not_in: [String!]
+  # name_not_starts_with
+  name_not_starts_with: String
+  # name_starts_with
+  name_starts_with: String
+}
+
+# Ordering Enum for NIHInstituteOrCenter
+enum _NIHInstituteOrCenterOrdering {
+  # Ascending sort for id
+  id_asc
+  # Descending sort for id
+  id_desc
+  # Ascending sort for lower_case_search_string
+  lower_case_search_string_asc
+  # Descending sort for lower_case_search_string
+  lower_case_search_string_desc
+  # Ascending sort for name
+  name_asc
+  # Descending sort for name
+  name_desc
+}
+
+# Filter Input Type for PrincipalInvestigator
+input _PrincipalInvestigatorFilter {
+  # AND
+  AND: [_PrincipalInvestigatorFilter!]
+  # OR
+  OR: [_PrincipalInvestigatorFilter!]
+  # firstName
+  firstName: String
+  # firstName_contains
+  firstName_contains: String
+  # firstName_ends_with
+  firstName_ends_with: String
+  # firstName_gt
+  firstName_gt: String
+  # firstName_gte
+  firstName_gte: String
+  # firstName_in
+  firstName_in: [String!]
+  # firstName_lt
+  firstName_lt: String
+  # firstName_lte
+  firstName_lte: String
+  # firstName_not
+  firstName_not: String
+  # firstName_not_contains
+  firstName_not_contains: String
+  # firstName_not_ends_with
+  firstName_not_ends_with: String
+  # firstName_not_in
+  firstName_not_in: [String!]
+  # firstName_not_starts_with
+  firstName_not_starts_with: String
+  # firstName_starts_with
+  firstName_starts_with: String
+  # grants
+  grants: _NIHGrantFilter
+  # grants_every
+  grants_every: _NIHGrantFilter
+  # grants_in
+  grants_in: _NIHGrantFilter
+  # grants_none
+  grants_none: _NIHGrantFilter
+  # grants_not
+  grants_not: _NIHGrantFilter
+  # grants_not_in
+  grants_not_in: _NIHGrantFilter
+  # grants_single
+  grants_single: _NIHGrantFilter
+  # grants_some
+  grants_some: _NIHGrantFilter
+  # id
+  id: ID
+  # id_contains
+  id_contains: ID
+  # id_ends_with
+  id_ends_with: ID
+  # id_gt
+  id_gt: ID
+  # id_gte
+  id_gte: ID
+  # id_in
+  id_in: [ID!]
+  # id_lt
+  id_lt: ID
+  # id_lte
+  id_lte: ID
+  # id_not
+  id_not: ID
+  # id_not_contains
+  id_not_contains: ID
+  # id_not_ends_with
+  id_not_ends_with: ID
+  # id_not_in
+  id_not_in: [ID!]
+  # id_not_starts_with
+  id_not_starts_with: ID
+  # id_starts_with
+  id_starts_with: ID
+  # lower_case_search_string
+  lower_case_search_string: String
+  # lower_case_search_string_contains
+  lower_case_search_string_contains: String
+  # lower_case_search_string_ends_with
+  lower_case_search_string_ends_with: String
+  # lower_case_search_string_gt
+  lower_case_search_string_gt: String
+  # lower_case_search_string_gte
+  lower_case_search_string_gte: String
+  # lower_case_search_string_in
+  lower_case_search_string_in: [String!]
+  # lower_case_search_string_lt
+  lower_case_search_string_lt: String
+  # lower_case_search_string_lte
+  lower_case_search_string_lte: String
+  # lower_case_search_string_not
+  lower_case_search_string_not: String
+  # lower_case_search_string_not_contains
+  lower_case_search_string_not_contains: String
+  # lower_case_search_string_not_ends_with
+  lower_case_search_string_not_ends_with: String
+  # lower_case_search_string_not_in
+  lower_case_search_string_not_in: [String!]
+  # lower_case_search_string_not_starts_with
+  lower_case_search_string_not_starts_with: String
+  # lower_case_search_string_starts_with
+  lower_case_search_string_starts_with: String
+  # middleName
+  middleName: String
+  # middleName_contains
+  middleName_contains: String
+  # middleName_ends_with
+  middleName_ends_with: String
+  # middleName_gt
+  middleName_gt: String
+  # middleName_gte
+  middleName_gte: String
+  # middleName_in
+  middleName_in: [String!]
+  # middleName_lt
+  middleName_lt: String
+  # middleName_lte
+  middleName_lte: String
+  # middleName_not
+  middleName_not: String
+  # middleName_not_contains
+  middleName_not_contains: String
+  # middleName_not_ends_with
+  middleName_not_ends_with: String
+  # middleName_not_in
+  middleName_not_in: [String!]
+  # middleName_not_starts_with
+  middleName_not_starts_with: String
+  # middleName_starts_with
+  middleName_starts_with: String
+  # personID
+  personID: String
+  # personID_contains
+  personID_contains: String
+  # personID_ends_with
+  personID_ends_with: String
+  # personID_gt
+  personID_gt: String
+  # personID_gte
+  personID_gte: String
+  # personID_in
+  personID_in: [String!]
+  # personID_lt
+  personID_lt: String
+  # personID_lte
+  personID_lte: String
+  # personID_not
+  personID_not: String
+  # personID_not_contains
+  personID_not_contains: String
+  # personID_not_ends_with
+  personID_not_ends_with: String
+  # personID_not_in
+  personID_not_in: [String!]
+  # personID_not_starts_with
+  personID_not_starts_with: String
+  # personID_starts_with
+  personID_starts_with: String
+  # surname
+  surname: String
+  # surname_contains
+  surname_contains: String
+  # surname_ends_with
+  surname_ends_with: String
+  # surname_gt
+  surname_gt: String
+  # surname_gte
+  surname_gte: String
+  # surname_in
+  surname_in: [String!]
+  # surname_lt
+  surname_lt: String
+  # surname_lte
+  surname_lte: String
+  # surname_not
+  surname_not: String
+  # surname_not_contains
+  surname_not_contains: String
+  # surname_not_ends_with
+  surname_not_ends_with: String
+  # surname_not_in
+  surname_not_in: [String!]
+  # surname_not_starts_with
+  surname_not_starts_with: String
+  # surname_starts_with
+  surname_starts_with: String
+}
+
+# Ordering Enum for PrincipalInvestigator
+enum _PrincipalInvestigatorOrdering {
+  # Ascending sort for firstName
+  firstName_asc
+  # Descending sort for firstName
+  firstName_desc
+  # Ascending sort for id
+  id_asc
+  # Descending sort for id
+  id_desc
+  # Ascending sort for lower_case_search_string
+  lower_case_search_string_asc
+  # Descending sort for lower_case_search_string
+  lower_case_search_string_desc
+  # Ascending sort for middleName
+  middleName_asc
+  # Descending sort for middleName
+  middleName_desc
+  # Ascending sort for personID
+  personID_asc
+  # Descending sort for personID
+  personID_desc
+  # Ascending sort for surname
+  surname_asc
+  # Descending sort for surname
+  surname_desc
+}
+
+# Filter Input Type for User
+input _UserFilter {
+  # AND
+  AND: [_UserFilter!]
+  # OR
+  OR: [_UserFilter!]
+  # author
+  author: _AuthorFilter
+  # author_in
+  author_in: _AuthorFilter
+  # author_not
+  author_not: _AuthorFilter
+  # author_not_in
+  author_not_in: _AuthorFilter
+  # email
+  email: String
+  # email_contains
+  email_contains: String
+  # email_ends_with
+  email_ends_with: String
+  # email_gt
+  email_gt: String
+  # email_gte
+  email_gte: String
+  # email_in
+  email_in: [String!]
+  # email_lt
+  email_lt: String
+  # email_lte
+  email_lte: String
+  # email_not
+  email_not: String
+  # email_not_contains
+  email_not_contains: String
+  # email_not_ends_with
+  email_not_ends_with: String
+  # email_not_in
+  email_not_in: [String!]
+  # email_not_starts_with
+  email_not_starts_with: String
+  # email_starts_with
+  email_starts_with: String
+  # firstInitial
+  firstInitial: String
+  # firstInitial_contains
+  firstInitial_contains: String
+  # firstInitial_ends_with
+  firstInitial_ends_with: String
+  # firstInitial_gt
+  firstInitial_gt: String
+  # firstInitial_gte
+  firstInitial_gte: String
+  # firstInitial_in
+  firstInitial_in: [String!]
+  # firstInitial_lt
+  firstInitial_lt: String
+  # firstInitial_lte
+  firstInitial_lte: String
+  # firstInitial_not
+  firstInitial_not: String
+  # firstInitial_not_contains
+  firstInitial_not_contains: String
+  # firstInitial_not_ends_with
+  firstInitial_not_ends_with: String
+  # firstInitial_not_in
+  firstInitial_not_in: [String!]
+  # firstInitial_not_starts_with
+  firstInitial_not_starts_with: String
+  # firstInitial_starts_with
+  firstInitial_starts_with: String
+  # id
+  id: ID
+  # id_contains
+  id_contains: ID
+  # id_ends_with
+  id_ends_with: ID
+  # id_gt
+  id_gt: ID
+  # id_gte
+  id_gte: ID
+  # id_in
+  id_in: [ID!]
+  # id_lt
+  id_lt: ID
+  # id_lte
+  id_lte: ID
+  # id_not
+  id_not: ID
+  # id_not_contains
+  id_not_contains: ID
+  # id_not_ends_with
+  id_not_ends_with: ID
+  # id_not_in
+  id_not_in: [ID!]
+  # id_not_starts_with
+  id_not_starts_with: ID
+  # id_starts_with
+  id_starts_with: ID
+  # lower_case_search_string
+  lower_case_search_string: String
+  # lower_case_search_string_contains
+  lower_case_search_string_contains: String
+  # lower_case_search_string_ends_with
+  lower_case_search_string_ends_with: String
+  # lower_case_search_string_gt
+  lower_case_search_string_gt: String
+  # lower_case_search_string_gte
+  lower_case_search_string_gte: String
+  # lower_case_search_string_in
+  lower_case_search_string_in: [String!]
+  # lower_case_search_string_lt
+  lower_case_search_string_lt: String
+  # lower_case_search_string_lte
+  lower_case_search_string_lte: String
+  # lower_case_search_string_not
+  lower_case_search_string_not: String
+  # lower_case_search_string_not_contains
+  lower_case_search_string_not_contains: String
+  # lower_case_search_string_not_ends_with
+  lower_case_search_string_not_ends_with: String
+  # lower_case_search_string_not_in
+  lower_case_search_string_not_in: [String!]
+  # lower_case_search_string_not_starts_with
+  lower_case_search_string_not_starts_with: String
+  # lower_case_search_string_starts_with
+  lower_case_search_string_starts_with: String
+  # password
+  password: String
+  # password_contains
+  password_contains: String
+  # password_ends_with
+  password_ends_with: String
+  # password_gt
+  password_gt: String
+  # password_gte
+  password_gte: String
+  # password_in
+  password_in: [String!]
+  # password_lt
+  password_lt: String
+  # password_lte
+  password_lte: String
+  # password_not
+  password_not: String
+  # password_not_contains
+  password_not_contains: String
+  # password_not_ends_with
+  password_not_ends_with: String
+  # password_not_in
+  password_not_in: [String!]
+  # password_not_starts_with
+  password_not_starts_with: String
+  # password_starts_with
+  password_starts_with: String
+  # pi
+  pi: _PrincipalInvestigatorFilter
+  # pi_in
+  pi_in: _PrincipalInvestigatorFilter
+  # pi_not
+  pi_not: _PrincipalInvestigatorFilter
+  # pi_not_in
+  pi_not_in: _PrincipalInvestigatorFilter
+  # surname
+  surname: String
+  # surname_contains
+  surname_contains: String
+  # surname_ends_with
+  surname_ends_with: String
+  # surname_gt
+  surname_gt: String
+  # surname_gte
+  surname_gte: String
+  # surname_in
+  surname_in: [String!]
+  # surname_lt
+  surname_lt: String
+  # surname_lte
+  surname_lte: String
+  # surname_not
+  surname_not: String
+  # surname_not_contains
+  surname_not_contains: String
+  # surname_not_ends_with
+  surname_not_ends_with: String
+  # surname_not_in
+  surname_not_in: [String!]
+  # surname_not_starts_with
+  surname_not_starts_with: String
+  # surname_starts_with
+  surname_starts_with: String
+  # user_name
+  user_name: String
+  # user_name_contains
+  user_name_contains: String
+  # user_name_ends_with
+  user_name_ends_with: String
+  # user_name_gt
+  user_name_gt: String
+  # user_name_gte
+  user_name_gte: String
+  # user_name_in
+  user_name_in: [String!]
+  # user_name_lt
+  user_name_lt: String
+  # user_name_lte
+  user_name_lte: String
+  # user_name_not
+  user_name_not: String
+  # user_name_not_contains
+  user_name_not_contains: String
+  # user_name_not_ends_with
+  user_name_not_ends_with: String
+  # user_name_not_in
+  user_name_not_in: [String!]
+  # user_name_not_starts_with
+  user_name_not_starts_with: String
+  # user_name_starts_with
+  user_name_starts_with: String
+}
+
+# Ordering Enum for User
+enum _UserOrdering {
+  # Ascending sort for email
+  email_asc
+  # Descending sort for email
+  email_desc
+  # Ascending sort for firstInitial
+  firstInitial_asc
+  # Descending sort for firstInitial
+  firstInitial_desc
+  # Ascending sort for id
+  id_asc
+  # Descending sort for id
+  id_desc
+  # Ascending sort for lower_case_search_string
+  lower_case_search_string_asc
+  # Descending sort for lower_case_search_string
+  lower_case_search_string_desc
+  # Ascending sort for password
+  password_asc
+  # Descending sort for password
+  password_desc
+  # Ascending sort for surname
+  surname_asc
+  # Descending sort for surname
+  surname_desc
+  # Ascending sort for user_name
+  user_name_asc
+  # Descending sort for user_name
+  user_name_desc
+}
+
+# Author-Node
+type Author {
+  # internal node id
+  _id: Long
+  # firstInitial of  Author
+  firstInitial: String!
+  # id of  Author
+  id: ID!
+  # lower_case_search_string of  Author
+  lower_case_search_string: String!
+  # Author references LiteratureReference
+  references(
+    # DOI of LiteratureReference
+    DOI: String
+    # DOIs is list variant of DOI of LiteratureReference
+    DOIs: [String]
+    # PMID of LiteratureReference
+    PMID: String
+    # PMIDs is list variant of PMID of LiteratureReference
+    PMIDs: [String]
+    _id: Long
+    _ids: [Long]
+    # abstract of LiteratureReference
+    abstract: String
+    # abstracts is list variant of abstract of LiteratureReference
+    abstracts: [String]
+    filter: _LiteratureReferenceFilter
+    first: Int
+    # firstPage of LiteratureReference
+    firstPage: String
+    # firstPages is list variant of firstPage of LiteratureReference
+    firstPages: [String]
+    # id of LiteratureReference
+    id: ID
+    # ids is list variant of id of LiteratureReference
+    ids: [ID]
+    # lastPage of LiteratureReference
+    lastPage: String
+    # lastPages is list variant of lastPage of LiteratureReference
+    lastPages: [String]
+    # lower_case_search_string of LiteratureReference
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of LiteratureReference
+    lower_case_search_strings: [String]
+    offset: Int
+    orderBy: [_LiteratureReferenceOrdering]
+    # publicationYear of LiteratureReference
+    publicationYear: String
+    # publicationYears is list variant of publicationYear of LiteratureReference
+    publicationYears: [String]
+    # shortReference of LiteratureReference
+    shortReference: String
+    # shortReferences is list variant of shortReference of LiteratureReference
+    shortReferences: [String]
+    # title of LiteratureReference
+    title: String
+    # titles is list variant of title of LiteratureReference
+    titles: [String]
+    # volume of LiteratureReference
+    volume: String
+    # volumes is list variant of volume of LiteratureReference
+    volumes: [String]
+  ): [LiteratureReference!]!
+  # surname of  Author
+  surname: String!
+}
+
+# ClinicalTrial-Node
+type ClinicalTrial {
+  # internal node id
+  _id: Long
+  # brief_summary of  ClinicalTrial
+  brief_summary: String!
+  # brief_title of  ClinicalTrial
+  brief_title: String!
+  # conditions of  ClinicalTrial
+  conditions: [String]!
+  # ClinicalTrial coreProject CoreProject
+  coreProject(
+    # coreProjectNumber of CoreProject
+    coreProjectNumber: String
+    # coreProjectNumbers is list variant of coreProjectNumber of CoreProject
+    coreProjectNumbers: [String]
+    filter: _CoreProjectFilter
+    # id of CoreProject
+    id: ID
+    # ids is list variant of id of CoreProject
+    ids: [ID]
+    orderBy: [_CoreProjectOrdering]
+  ): CoreProject!
+  # detailed_description of  ClinicalTrial
+  detailed_description: String!
+  # drugs of  ClinicalTrial
+  drugs: [String]!
+  # id of  ClinicalTrial
+  id: ID!
+  # lower_case_search_string of  ClinicalTrial
+  lower_case_search_string: String!
+  # nct_id of  ClinicalTrial
+  nct_id: String!
+  # official_title of  ClinicalTrial
+  official_title: String!
+  # phases of  ClinicalTrial
+  phases: [String]!
+  # status of  ClinicalTrial
+  status: String!
+  # status_date of  ClinicalTrial
+  status_date: String!
+  # study_type of  ClinicalTrial
+  study_type: String!
+}
+
+# CoreProject-Node
+type CoreProject {
+  # internal node id
+  _id: Long
+  # CoreProject clinical_trials ClinicalTrial
+  clinical_trials(
+    _id: Long
+    _ids: [Long]
+    # brief_summary of ClinicalTrial
+    brief_summary: String
+    # brief_summarys is list variant of brief_summary of ClinicalTrial
+    brief_summarys: [String]
+    # brief_title of ClinicalTrial
+    brief_title: String
+    # brief_titles is list variant of brief_title of ClinicalTrial
+    brief_titles: [String]
+    # conditions of ClinicalTrial
+    conditions: [String]
+    # conditionss is list variant of conditions of ClinicalTrial
+    conditionss: [[String]]
+    # detailed_description of ClinicalTrial
+    detailed_description: String
+    # detailed_descriptions is list variant of detailed_description of ClinicalTrial
+    detailed_descriptions: [String]
+    # drugs of ClinicalTrial
+    drugs: [String]
+    # drugss is list variant of drugs of ClinicalTrial
+    drugss: [[String]]
+    filter: _ClinicalTrialFilter
+    first: Int
+    # id of ClinicalTrial
+    id: ID
+    # ids is list variant of id of ClinicalTrial
+    ids: [ID]
+    # lower_case_search_string of ClinicalTrial
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of ClinicalTrial
+    lower_case_search_strings: [String]
+    # nct_id of ClinicalTrial
+    nct_id: String
+    # nct_ids is list variant of nct_id of ClinicalTrial
+    nct_ids: [String]
+    # official_title of ClinicalTrial
+    official_title: String
+    # official_titles is list variant of official_title of ClinicalTrial
+    official_titles: [String]
+    offset: Int
+    orderBy: [_ClinicalTrialOrdering]
+    # phases of ClinicalTrial
+    phases: [String]
+    # phasess is list variant of phases of ClinicalTrial
+    phasess: [[String]]
+    # status of ClinicalTrial
+    status: String
+    # status_date of ClinicalTrial
+    status_date: String
+    # status_dates is list variant of status_date of ClinicalTrial
+    status_dates: [String]
+    # statuss is list variant of status of ClinicalTrial
+    statuss: [String]
+    # study_type of ClinicalTrial
+    study_type: String
+    # study_types is list variant of study_type of ClinicalTrial
+    study_types: [String]
+  ): [ClinicalTrial]!
+  # coreProjectNumber of  CoreProject
+  coreProjectNumber: String!
+  # CoreProject grants NIHGrant
+  grants(
+    # CFDACode of NIHGrant
+    CFDACode: String
+    # CFDACodes is list variant of CFDACode of NIHGrant
+    CFDACodes: [String]
+    # FOA of NIHGrant
+    FOA: String
+    # FOAs is list variant of FOA of NIHGrant
+    FOAs: [String]
+    # IC of NIHGrant
+    IC: String
+    # ICs is list variant of IC of NIHGrant
+    ICs: [String]
+    # NIHCOVID19Response of NIHGrant
+    NIHCOVID19Response: String
+    # NIHCOVID19Responses is list variant of NIHCOVID19Response of NIHGrant
+    NIHCOVID19Responses: [String]
+    _id: Long
+    _ids: [Long]
+    # abstract of NIHGrant
+    abstract: String
+    # abstracts is list variant of abstract of NIHGrant
+    abstracts: [String]
+    # activity of NIHGrant
+    activity: String
+    # activitys is list variant of activity of NIHGrant
+    activitys: [String]
+    # applicationID of NIHGrant
+    applicationID: String
+    # applicationIDs is list variant of applicationID of NIHGrant
+    applicationIDs: [String]
+    # awardNoticeDate of NIHGrant
+    awardNoticeDate: String
+    # awardNoticeDates is list variant of awardNoticeDate of NIHGrant
+    awardNoticeDates: [String]
+    # budgetEndDate of NIHGrant
+    budgetEndDate: String
+    # budgetEndDates is list variant of budgetEndDate of NIHGrant
+    budgetEndDates: [String]
+    # budgetStartDate of NIHGrant
+    budgetStartDate: String
+    # budgetStartDates is list variant of budgetStartDate of NIHGrant
+    budgetStartDates: [String]
+    # department of NIHGrant
+    department: String
+    # departments is list variant of department of NIHGrant
+    departments: [String]
+    # directCost_IC of NIHGrant
+    directCost_IC: Int
+    # directCost_ICs is list variant of directCost_IC of NIHGrant
+    directCost_ICs: [Int]
+    filter: _NIHGrantFilter
+    first: Int
+    # fiscalYear of NIHGrant
+    fiscalYear: String
+    # fiscalYears is list variant of fiscalYear of NIHGrant
+    fiscalYears: [String]
+    # fundingMechanism of NIHGrant
+    fundingMechanism: String
+    # fundingMechanisms is list variant of fundingMechanism of NIHGrant
+    fundingMechanisms: [String]
+    # id of NIHGrant
+    id: ID
+    # ids is list variant of id of NIHGrant
+    ids: [ID]
+    # inDirectCost_IC of NIHGrant
+    inDirectCost_IC: Int
+    # inDirectCost_ICs is list variant of inDirectCost_IC of NIHGrant
+    inDirectCost_ICs: [Int]
+    # lower_case_search_string of NIHGrant
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of NIHGrant
+    lower_case_search_strings: [String]
+    # nihSpendingCategorization of NIHGrant
+    nihSpendingCategorization: String
+    # nihSpendingCategorizations is list variant of nihSpendingCategorization of NIHGrant
+    nihSpendingCategorizations: [String]
+    offset: Int
+    orderBy: [_NIHGrantOrdering]
+    # otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaders: String
+    # otherPIorProjectLeaderss is list variant of otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaderss: [String]
+    # programOfficialInformation of NIHGrant
+    programOfficialInformation: String
+    # programOfficialInformations is list variant of programOfficialInformation of NIHGrant
+    programOfficialInformations: [String]
+    # projectEndDate of NIHGrant
+    projectEndDate: String
+    # projectEndDates is list variant of projectEndDate of NIHGrant
+    projectEndDates: [String]
+    # projectNumber of NIHGrant
+    projectNumber: String
+    # projectNumbers is list variant of projectNumber of NIHGrant
+    projectNumbers: [String]
+    # projectStartDate of NIHGrant
+    projectStartDate: String
+    # projectStartDates is list variant of projectStartDate of NIHGrant
+    projectStartDates: [String]
+    # projectTerms of NIHGrant
+    projectTerms: String
+    # projectTermss is list variant of projectTerms of NIHGrant
+    projectTermss: [String]
+    # projectTitle of NIHGrant
+    projectTitle: String
+    # projectTitles is list variant of projectTitle of NIHGrant
+    projectTitles: [String]
+    # publicHealthRelevance of NIHGrant
+    publicHealthRelevance: String
+    # publicHealthRelevances is list variant of publicHealthRelevance of NIHGrant
+    publicHealthRelevances: [String]
+    # serialNumber of NIHGrant
+    serialNumber: String
+    # serialNumbers is list variant of serialNumber of NIHGrant
+    serialNumbers: [String]
+    # studySection of NIHGrant
+    studySection: String
+    # studySections is list variant of studySection of NIHGrant
+    studySections: [String]
+    # supportYear of NIHGrant
+    supportYear: String
+    # supportYears is list variant of supportYear of NIHGrant
+    supportYears: [String]
+    # totalCost of NIHGrant
+    totalCost: Int
+    # totalCost_IC of NIHGrant
+    totalCost_IC: Int
+    # totalCost_ICs is list variant of totalCost_IC of NIHGrant
+    totalCost_ICs: [Int]
+    # totalCost_SubProjects of NIHGrant
+    totalCost_SubProjects: Int
+    # totalCost_SubProjectss is list variant of totalCost_SubProjects of NIHGrant
+    totalCost_SubProjectss: [Int]
+    # totalCosts is list variant of totalCost of NIHGrant
+    totalCosts: [Int]
+    # type of NIHGrant
+    type: String
+    # types is list variant of type of NIHGrant
+    types: [String]
+  ): [NIHGrant]!
+  # id of  CoreProject
+  id: ID!
+  # CoreProject publications LiteratureReference
+  publications(
+    # DOI of LiteratureReference
+    DOI: String
+    # DOIs is list variant of DOI of LiteratureReference
+    DOIs: [String]
+    # PMID of LiteratureReference
+    PMID: String
+    # PMIDs is list variant of PMID of LiteratureReference
+    PMIDs: [String]
+    _id: Long
+    _ids: [Long]
+    # abstract of LiteratureReference
+    abstract: String
+    # abstracts is list variant of abstract of LiteratureReference
+    abstracts: [String]
+    filter: _LiteratureReferenceFilter
+    first: Int
+    # firstPage of LiteratureReference
+    firstPage: String
+    # firstPages is list variant of firstPage of LiteratureReference
+    firstPages: [String]
+    # id of LiteratureReference
+    id: ID
+    # ids is list variant of id of LiteratureReference
+    ids: [ID]
+    # lastPage of LiteratureReference
+    lastPage: String
+    # lastPages is list variant of lastPage of LiteratureReference
+    lastPages: [String]
+    # lower_case_search_string of LiteratureReference
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of LiteratureReference
+    lower_case_search_strings: [String]
+    offset: Int
+    orderBy: [_LiteratureReferenceOrdering]
+    # publicationYear of LiteratureReference
+    publicationYear: String
+    # publicationYears is list variant of publicationYear of LiteratureReference
+    publicationYears: [String]
+    # shortReference of LiteratureReference
+    shortReference: String
+    # shortReferences is list variant of shortReference of LiteratureReference
+    shortReferences: [String]
+    # title of LiteratureReference
+    title: String
+    # titles is list variant of title of LiteratureReference
+    titles: [String]
+    # volume of LiteratureReference
+    volume: String
+    # volumes is list variant of volume of LiteratureReference
+    volumes: [String]
+  ): [LiteratureReference]
+}
+
+# FundedOrganization-Node
+type FundedOrganization {
+  # internal node id
+  _id: Long
+  # city of  FundedOrganization
+  city: String!
+  # country of  FundedOrganization
+  country: String!
+  # FundedOrganization grants NIHGrant
+  grants(
+    # CFDACode of NIHGrant
+    CFDACode: String
+    # CFDACodes is list variant of CFDACode of NIHGrant
+    CFDACodes: [String]
+    # FOA of NIHGrant
+    FOA: String
+    # FOAs is list variant of FOA of NIHGrant
+    FOAs: [String]
+    # IC of NIHGrant
+    IC: String
+    # ICs is list variant of IC of NIHGrant
+    ICs: [String]
+    # NIHCOVID19Response of NIHGrant
+    NIHCOVID19Response: String
+    # NIHCOVID19Responses is list variant of NIHCOVID19Response of NIHGrant
+    NIHCOVID19Responses: [String]
+    _id: Long
+    _ids: [Long]
+    # abstract of NIHGrant
+    abstract: String
+    # abstracts is list variant of abstract of NIHGrant
+    abstracts: [String]
+    # activity of NIHGrant
+    activity: String
+    # activitys is list variant of activity of NIHGrant
+    activitys: [String]
+    # applicationID of NIHGrant
+    applicationID: String
+    # applicationIDs is list variant of applicationID of NIHGrant
+    applicationIDs: [String]
+    # awardNoticeDate of NIHGrant
+    awardNoticeDate: String
+    # awardNoticeDates is list variant of awardNoticeDate of NIHGrant
+    awardNoticeDates: [String]
+    # budgetEndDate of NIHGrant
+    budgetEndDate: String
+    # budgetEndDates is list variant of budgetEndDate of NIHGrant
+    budgetEndDates: [String]
+    # budgetStartDate of NIHGrant
+    budgetStartDate: String
+    # budgetStartDates is list variant of budgetStartDate of NIHGrant
+    budgetStartDates: [String]
+    # department of NIHGrant
+    department: String
+    # departments is list variant of department of NIHGrant
+    departments: [String]
+    # directCost_IC of NIHGrant
+    directCost_IC: Int
+    # directCost_ICs is list variant of directCost_IC of NIHGrant
+    directCost_ICs: [Int]
+    filter: _NIHGrantFilter
+    first: Int
+    # fiscalYear of NIHGrant
+    fiscalYear: String
+    # fiscalYears is list variant of fiscalYear of NIHGrant
+    fiscalYears: [String]
+    # fundingMechanism of NIHGrant
+    fundingMechanism: String
+    # fundingMechanisms is list variant of fundingMechanism of NIHGrant
+    fundingMechanisms: [String]
+    # id of NIHGrant
+    id: ID
+    # ids is list variant of id of NIHGrant
+    ids: [ID]
+    # inDirectCost_IC of NIHGrant
+    inDirectCost_IC: Int
+    # inDirectCost_ICs is list variant of inDirectCost_IC of NIHGrant
+    inDirectCost_ICs: [Int]
+    # lower_case_search_string of NIHGrant
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of NIHGrant
+    lower_case_search_strings: [String]
+    # nihSpendingCategorization of NIHGrant
+    nihSpendingCategorization: String
+    # nihSpendingCategorizations is list variant of nihSpendingCategorization of NIHGrant
+    nihSpendingCategorizations: [String]
+    offset: Int
+    orderBy: [_NIHGrantOrdering]
+    # otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaders: String
+    # otherPIorProjectLeaderss is list variant of otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaderss: [String]
+    # programOfficialInformation of NIHGrant
+    programOfficialInformation: String
+    # programOfficialInformations is list variant of programOfficialInformation of NIHGrant
+    programOfficialInformations: [String]
+    # projectEndDate of NIHGrant
+    projectEndDate: String
+    # projectEndDates is list variant of projectEndDate of NIHGrant
+    projectEndDates: [String]
+    # projectNumber of NIHGrant
+    projectNumber: String
+    # projectNumbers is list variant of projectNumber of NIHGrant
+    projectNumbers: [String]
+    # projectStartDate of NIHGrant
+    projectStartDate: String
+    # projectStartDates is list variant of projectStartDate of NIHGrant
+    projectStartDates: [String]
+    # projectTerms of NIHGrant
+    projectTerms: String
+    # projectTermss is list variant of projectTerms of NIHGrant
+    projectTermss: [String]
+    # projectTitle of NIHGrant
+    projectTitle: String
+    # projectTitles is list variant of projectTitle of NIHGrant
+    projectTitles: [String]
+    # publicHealthRelevance of NIHGrant
+    publicHealthRelevance: String
+    # publicHealthRelevances is list variant of publicHealthRelevance of NIHGrant
+    publicHealthRelevances: [String]
+    # serialNumber of NIHGrant
+    serialNumber: String
+    # serialNumbers is list variant of serialNumber of NIHGrant
+    serialNumbers: [String]
+    # studySection of NIHGrant
+    studySection: String
+    # studySections is list variant of studySection of NIHGrant
+    studySections: [String]
+    # supportYear of NIHGrant
+    supportYear: String
+    # supportYears is list variant of supportYear of NIHGrant
+    supportYears: [String]
+    # totalCost of NIHGrant
+    totalCost: Int
+    # totalCost_IC of NIHGrant
+    totalCost_IC: Int
+    # totalCost_ICs is list variant of totalCost_IC of NIHGrant
+    totalCost_ICs: [Int]
+    # totalCost_SubProjects of NIHGrant
+    totalCost_SubProjects: Int
+    # totalCost_SubProjectss is list variant of totalCost_SubProjects of NIHGrant
+    totalCost_SubProjectss: [Int]
+    # totalCosts is list variant of totalCost of NIHGrant
+    totalCosts: [Int]
+    # type of NIHGrant
+    type: String
+    # types is list variant of type of NIHGrant
+    types: [String]
+  ): [NIHGrant]!
+  # id of  FundedOrganization
+  id: ID!
+  # lower_case_search_string of  FundedOrganization
+  lower_case_search_string: String!
+  # name of  FundedOrganization
+  name: String!
+  # organizationID of  FundedOrganization
+  organizationID: String!
+  # state of  FundedOrganization
+  state: String!
+  # type of  FundedOrganization
+  type: String!
+}
+
+# Journal-Node
+type Journal {
+  # internal node id
+  _id: Long
+  # id of  Journal
+  id: ID!
+  # lower_case_search_string of  Journal
+  lower_case_search_string: String!
+  # name of  Journal
+  name: String!
+  # Journal references LiteratureReference
+  references(
+    # DOI of LiteratureReference
+    DOI: String
+    # DOIs is list variant of DOI of LiteratureReference
+    DOIs: [String]
+    # PMID of LiteratureReference
+    PMID: String
+    # PMIDs is list variant of PMID of LiteratureReference
+    PMIDs: [String]
+    _id: Long
+    _ids: [Long]
+    # abstract of LiteratureReference
+    abstract: String
+    # abstracts is list variant of abstract of LiteratureReference
+    abstracts: [String]
+    filter: _LiteratureReferenceFilter
+    first: Int
+    # firstPage of LiteratureReference
+    firstPage: String
+    # firstPages is list variant of firstPage of LiteratureReference
+    firstPages: [String]
+    # id of LiteratureReference
+    id: ID
+    # ids is list variant of id of LiteratureReference
+    ids: [ID]
+    # lastPage of LiteratureReference
+    lastPage: String
+    # lastPages is list variant of lastPage of LiteratureReference
+    lastPages: [String]
+    # lower_case_search_string of LiteratureReference
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of LiteratureReference
+    lower_case_search_strings: [String]
+    offset: Int
+    orderBy: [_LiteratureReferenceOrdering]
+    # publicationYear of LiteratureReference
+    publicationYear: String
+    # publicationYears is list variant of publicationYear of LiteratureReference
+    publicationYears: [String]
+    # shortReference of LiteratureReference
+    shortReference: String
+    # shortReferences is list variant of shortReference of LiteratureReference
+    shortReferences: [String]
+    # title of LiteratureReference
+    title: String
+    # titles is list variant of title of LiteratureReference
+    titles: [String]
+    # volume of LiteratureReference
+    volume: String
+    # volumes is list variant of volume of LiteratureReference
+    volumes: [String]
+  ): [LiteratureReference!]!
+}
+
+# LiteratureReference-Node
+type LiteratureReference {
+  # DOI of  LiteratureReference
+  DOI: String
+  # PMID of  LiteratureReference
+  PMID: String
+  # internal node id
+  _id: Long
+  # abstract of  LiteratureReference
+  abstract: String
+  # LiteratureReference authors Author
+  authors(
+    _id: Long
+    _ids: [Long]
+    filter: _AuthorFilter
+    first: Int
+    # firstInitial of Author
+    firstInitial: String
+    # firstInitials is list variant of firstInitial of Author
+    firstInitials: [String]
+    # id of Author
+    id: ID
+    # ids is list variant of id of Author
+    ids: [ID]
+    # lower_case_search_string of Author
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of Author
+    lower_case_search_strings: [String]
+    offset: Int
+    orderBy: [_AuthorOrdering]
+    # surname of Author
+    surname: String
+    # surnames is list variant of surname of Author
+    surnames: [String]
+  ): [Author!]!
+  # LiteratureReference coreProjects CoreProject
+  coreProjects(
+    _id: Long
+    _ids: [Long]
+    # coreProjectNumber of CoreProject
+    coreProjectNumber: String
+    # coreProjectNumbers is list variant of coreProjectNumber of CoreProject
+    coreProjectNumbers: [String]
+    filter: _CoreProjectFilter
+    first: Int
+    # id of CoreProject
+    id: ID
+    # ids is list variant of id of CoreProject
+    ids: [ID]
+    offset: Int
+    orderBy: [_CoreProjectOrdering]
+  ): [CoreProject]!
+  # firstPage of  LiteratureReference
+  firstPage: String!
+  # id of  LiteratureReference
+  id: ID!
+  # LiteratureReference journal Journal
+  journal(
+    filter: _JournalFilter
+    # id of Journal
+    id: ID
+    # ids is list variant of id of Journal
+    ids: [ID]
+    # lower_case_search_string of Journal
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of Journal
+    lower_case_search_strings: [String]
+    # name of Journal
+    name: String
+    # names is list variant of name of Journal
+    names: [String]
+    orderBy: [_JournalOrdering]
+  ): Journal!
+  # lastPage of  LiteratureReference
+  lastPage: String!
+  # lower_case_search_string of  LiteratureReference
+  lower_case_search_string: String!
+  # publicationYear of  LiteratureReference
+  publicationYear: String!
+  # shortReference of  LiteratureReference
+  shortReference: String!
+  # title of  LiteratureReference
+  title: String!
+  # volume of  LiteratureReference
+  volume: String!
+}
+
+# Long type
+scalar Long
+
+type MutationType {
+  # Adds References to Author entity
+  addAuthorReferences(id: ID!, references: [ID!]!): String
+  # Adds CoreProject to ClinicalTrial entity
+  addClinicalTrialCoreProject(coreProject: [ID!]!, id: ID!): String
+  # Adds Clinical_trials to CoreProject entity
+  addCoreProjectClinical_trials(clinical_trials: [ID!]!, id: ID!): String
+  # Adds Grants to CoreProject entity
+  addCoreProjectGrants(grants: [ID!]!, id: ID!): String
+  # Adds Publications to CoreProject entity
+  addCoreProjectPublications(id: ID!, publications: [ID!]!): String
+  # Adds Grants to FundedOrganization entity
+  addFundedOrganizationGrants(grants: [ID!]!, id: ID!): String
+  # Adds References to Journal entity
+  addJournalReferences(id: ID!, references: [ID!]!): String
+  # Adds Authors to LiteratureReference entity
+  addLiteratureReferenceAuthors(authors: [ID!]!, id: ID!): String
+  # Adds CoreProjects to LiteratureReference entity
+  addLiteratureReferenceCoreProjects(coreProjects: [ID!]!, id: ID!): String
+  # Adds Journal to LiteratureReference entity
+  addLiteratureReferenceJournal(id: ID!, journal: [ID!]!): String
+  # Adds AdministeringIC to NIHGrant entity
+  addNIHGrantAdministeringIC(administeringIC: [ID!]!, id: ID!): String
+  # Adds ContactPIorProjectLeader to NIHGrant entity
+  addNIHGrantContactPIorProjectLeader(
+    contactPIorProjectLeader: [ID!]!
+    id: ID!
+  ): String
+  # Adds CoreProject to NIHGrant entity
+  addNIHGrantCoreProject(coreProject: [ID!]!, id: ID!): String
+  # Adds FundingIC to NIHGrant entity
+  addNIHGrantFundingIC(fundingIC: [ID!]!, id: ID!): String
+  # Adds Organization to NIHGrant entity
+  addNIHGrantOrganization(id: ID!, organization: [ID!]!): String
+  # Adds GrantsAdministered to NIHInstituteOrCenter entity
+  addNIHInstituteOrCenterGrantsAdministered(
+    grantsAdministered: [ID!]!
+    id: ID!
+  ): String
+  # Adds GrantsFunded to NIHInstituteOrCenter entity
+  addNIHInstituteOrCenterGrantsFunded(grantsFunded: [ID!]!, id: ID!): String
+  # Adds Grants to PrincipalInvestigator entity
+  addPrincipalInvestigatorGrants(grants: [ID!]!, id: ID!): String
+  # Adds Author to User entity
+  addUserAuthor(author: [ID!]!, id: ID!): String
+  # Adds Pi to User entity
+  addUserPi(id: ID!, pi: [ID!]!): String
+  # Creates a Author entity
+  createAuthor(
+    firstInitial: String!
+    id: ID!
+    lower_case_search_string: String!
+    surname: String!
+  ): String
+  # Creates a ClinicalTrial entity
+  createClinicalTrial(
+    brief_summary: String!
+    brief_title: String!
+    conditions: [String]!
+    detailed_description: String!
+    drugs: [String]!
+    id: ID!
+    lower_case_search_string: String!
+    nct_id: String!
+    official_title: String!
+    phases: [String]!
+    status: String!
+    status_date: String!
+    study_type: String!
+  ): String
+  # Creates a CoreProject entity
+  createCoreProject(coreProjectNumber: String!, id: ID!): String
+  # Creates a FundedOrganization entity
+  createFundedOrganization(
+    city: String!
+    country: String!
+    id: ID!
+    lower_case_search_string: String!
+    name: String!
+    organizationID: String!
+    state: String!
+    type: String!
+  ): String
+  # Creates a Journal entity
+  createJournal(
+    id: ID!
+    lower_case_search_string: String!
+    name: String!
+  ): String
+  # Creates a LiteratureReference entity
+  createLiteratureReference(
+    DOI: String
+    PMID: String
+    abstract: String
+    firstPage: String!
+    id: ID!
+    lastPage: String!
+    lower_case_search_string: String!
+    publicationYear: String!
+    shortReference: String!
+    title: String!
+    volume: String!
+  ): String
+  # Creates a NIHGrant entity
+  createNIHGrant(
+    CFDACode: String!
+    FOA: String!
+    IC: String!
+    NIHCOVID19Response: String!
+    abstract: String
+    activity: String!
+    applicationID: String!
+    awardNoticeDate: String!
+    budgetEndDate: String!
+    budgetStartDate: String!
+    department: String!
+    directCost_IC: Int!
+    fiscalYear: String!
+    fundingMechanism: String!
+    id: ID!
+    inDirectCost_IC: Int!
+    lower_case_search_string: String!
+    nihSpendingCategorization: String!
+    otherPIorProjectLeaders: String!
+    programOfficialInformation: String!
+    projectEndDate: String!
+    projectNumber: String!
+    projectStartDate: String!
+    projectTerms: String!
+    projectTitle: String!
+    publicHealthRelevance: String!
+    serialNumber: String!
+    studySection: String!
+    supportYear: String!
+    totalCost: Int!
+    totalCost_IC: Int!
+    totalCost_SubProjects: Int!
+    type: String!
+  ): String
+  # Creates a NIHInstituteOrCenter entity
+  createNIHInstituteOrCenter(
+    id: ID!
+    lower_case_search_string: String!
+    name: String!
+  ): String
+  # Creates a PrincipalInvestigator entity
+  createPrincipalInvestigator(
+    firstName: String!
+    id: ID!
+    lower_case_search_string: String!
+    middleName: String
+    personID: String!
+    surname: String!
+  ): String
+  # Creates a User entity
+  createUser(
+    email: String!
+    firstInitial: String!
+    id: ID!
+    lower_case_search_string: String!
+    password: String!
+    surname: String!
+    user_name: String!
+  ): String
+  # Deletes a Author entity
+  deleteAuthor(id: ID!): String
+  # Deletes References from Author entity
+  deleteAuthorReferences(id: ID!, references: [ID!]!): String
+  # Deletes a ClinicalTrial entity
+  deleteClinicalTrial(id: ID!): String
+  # Deletes CoreProject from ClinicalTrial entity
+  deleteClinicalTrialCoreProject(coreProject: [ID!]!, id: ID!): String
+  # Deletes a CoreProject entity
+  deleteCoreProject(id: ID!): String
+  # Deletes Clinical_trials from CoreProject entity
+  deleteCoreProjectClinical_trials(clinical_trials: [ID!]!, id: ID!): String
+  # Deletes Grants from CoreProject entity
+  deleteCoreProjectGrants(grants: [ID!]!, id: ID!): String
+  # Deletes Publications from CoreProject entity
+  deleteCoreProjectPublications(id: ID!, publications: [ID!]!): String
+  # Deletes a FundedOrganization entity
+  deleteFundedOrganization(id: ID!): String
+  # Deletes Grants from FundedOrganization entity
+  deleteFundedOrganizationGrants(grants: [ID!]!, id: ID!): String
+  # Deletes a Journal entity
+  deleteJournal(id: ID!): String
+  # Deletes References from Journal entity
+  deleteJournalReferences(id: ID!, references: [ID!]!): String
+  # Deletes a LiteratureReference entity
+  deleteLiteratureReference(id: ID!): String
+  # Deletes Authors from LiteratureReference entity
+  deleteLiteratureReferenceAuthors(authors: [ID!]!, id: ID!): String
+  # Deletes CoreProjects from LiteratureReference entity
+  deleteLiteratureReferenceCoreProjects(coreProjects: [ID!]!, id: ID!): String
+  # Deletes Journal from LiteratureReference entity
+  deleteLiteratureReferenceJournal(id: ID!, journal: [ID!]!): String
+  # Deletes a NIHGrant entity
+  deleteNIHGrant(id: ID!): String
+  # Deletes AdministeringIC from NIHGrant entity
+  deleteNIHGrantAdministeringIC(administeringIC: [ID!]!, id: ID!): String
+  # Deletes ContactPIorProjectLeader from NIHGrant entity
+  deleteNIHGrantContactPIorProjectLeader(
+    contactPIorProjectLeader: [ID!]!
+    id: ID!
+  ): String
+  # Deletes CoreProject from NIHGrant entity
+  deleteNIHGrantCoreProject(coreProject: [ID!]!, id: ID!): String
+  # Deletes FundingIC from NIHGrant entity
+  deleteNIHGrantFundingIC(fundingIC: [ID!]!, id: ID!): String
+  # Deletes Organization from NIHGrant entity
+  deleteNIHGrantOrganization(id: ID!, organization: [ID!]!): String
+  # Deletes a NIHInstituteOrCenter entity
+  deleteNIHInstituteOrCenter(id: ID!): String
+  # Deletes GrantsAdministered from NIHInstituteOrCenter entity
+  deleteNIHInstituteOrCenterGrantsAdministered(
+    grantsAdministered: [ID!]!
+    id: ID!
+  ): String
+  # Deletes GrantsFunded from NIHInstituteOrCenter entity
+  deleteNIHInstituteOrCenterGrantsFunded(grantsFunded: [ID!]!, id: ID!): String
+  # Deletes a PrincipalInvestigator entity
+  deletePrincipalInvestigator(id: ID!): String
+  # Deletes Grants from PrincipalInvestigator entity
+  deletePrincipalInvestigatorGrants(grants: [ID!]!, id: ID!): String
+  # Deletes a User entity
+  deleteUser(id: ID!): String
+  # Deletes Author from User entity
+  deleteUserAuthor(author: [ID!]!, id: ID!): String
+  # Deletes Pi from User entity
+  deleteUserPi(id: ID!, pi: [ID!]!): String
+  # Merge a Author entity
+  mergeAuthor(
+    firstInitial: String!
+    id: ID!
+    lower_case_search_string: String!
+    surname: String!
+  ): String
+  # Merge a ClinicalTrial entity
+  mergeClinicalTrial(
+    brief_summary: String!
+    brief_title: String!
+    conditions: [String]!
+    detailed_description: String!
+    drugs: [String]!
+    id: ID!
+    lower_case_search_string: String!
+    nct_id: String!
+    official_title: String!
+    phases: [String]!
+    status: String!
+    status_date: String!
+    study_type: String!
+  ): String
+  # Merge a CoreProject entity
+  mergeCoreProject(coreProjectNumber: String!, id: ID!): String
+  # Merge a FundedOrganization entity
+  mergeFundedOrganization(
+    city: String!
+    country: String!
+    id: ID!
+    lower_case_search_string: String!
+    name: String!
+    organizationID: String!
+    state: String!
+    type: String!
+  ): String
+  # Merge a Journal entity
+  mergeJournal(
+    id: ID!
+    lower_case_search_string: String!
+    name: String!
+  ): String
+  # Merge a LiteratureReference entity
+  mergeLiteratureReference(
+    DOI: String
+    PMID: String
+    abstract: String
+    firstPage: String!
+    id: ID!
+    lastPage: String!
+    lower_case_search_string: String!
+    publicationYear: String!
+    shortReference: String!
+    title: String!
+    volume: String!
+  ): String
+  # Merge a NIHGrant entity
+  mergeNIHGrant(
+    CFDACode: String!
+    FOA: String!
+    IC: String!
+    NIHCOVID19Response: String!
+    abstract: String
+    activity: String!
+    applicationID: String!
+    awardNoticeDate: String!
+    budgetEndDate: String!
+    budgetStartDate: String!
+    department: String!
+    directCost_IC: Int!
+    fiscalYear: String!
+    fundingMechanism: String!
+    id: ID!
+    inDirectCost_IC: Int!
+    lower_case_search_string: String!
+    nihSpendingCategorization: String!
+    otherPIorProjectLeaders: String!
+    programOfficialInformation: String!
+    projectEndDate: String!
+    projectNumber: String!
+    projectStartDate: String!
+    projectTerms: String!
+    projectTitle: String!
+    publicHealthRelevance: String!
+    serialNumber: String!
+    studySection: String!
+    supportYear: String!
+    totalCost: Int!
+    totalCost_IC: Int!
+    totalCost_SubProjects: Int!
+    type: String!
+  ): String
+  # Merge a NIHInstituteOrCenter entity
+  mergeNIHInstituteOrCenter(
+    id: ID!
+    lower_case_search_string: String!
+    name: String!
+  ): String
+  # Merge a PrincipalInvestigator entity
+  mergePrincipalInvestigator(
+    firstName: String!
+    id: ID!
+    lower_case_search_string: String!
+    middleName: String
+    personID: String!
+    surname: String!
+  ): String
+  # Merge a User entity
+  mergeUser(
+    email: String!
+    firstInitial: String!
+    id: ID!
+    lower_case_search_string: String!
+    password: String!
+    surname: String!
+    user_name: String!
+  ): String
+  # Updates a Author entity
+  updateAuthor(
+    firstInitial: String!
+    id: ID!
+    lower_case_search_string: String!
+    surname: String!
+  ): String
+  # Updates a ClinicalTrial entity
+  updateClinicalTrial(
+    brief_summary: String!
+    brief_title: String!
+    conditions: [String]!
+    detailed_description: String!
+    drugs: [String]!
+    id: ID!
+    lower_case_search_string: String!
+    nct_id: String!
+    official_title: String!
+    phases: [String]!
+    status: String!
+    status_date: String!
+    study_type: String!
+  ): String
+  # Updates a CoreProject entity
+  updateCoreProject(coreProjectNumber: String!, id: ID!): String
+  # Updates a FundedOrganization entity
+  updateFundedOrganization(
+    city: String!
+    country: String!
+    id: ID!
+    lower_case_search_string: String!
+    name: String!
+    organizationID: String!
+    state: String!
+    type: String!
+  ): String
+  # Updates a Journal entity
+  updateJournal(
+    id: ID!
+    lower_case_search_string: String!
+    name: String!
+  ): String
+  # Updates a LiteratureReference entity
+  updateLiteratureReference(
+    DOI: String
+    PMID: String
+    abstract: String
+    firstPage: String!
+    id: ID!
+    lastPage: String!
+    lower_case_search_string: String!
+    publicationYear: String!
+    shortReference: String!
+    title: String!
+    volume: String!
+  ): String
+  # Updates a NIHGrant entity
+  updateNIHGrant(
+    CFDACode: String!
+    FOA: String!
+    IC: String!
+    NIHCOVID19Response: String!
+    abstract: String
+    activity: String!
+    applicationID: String!
+    awardNoticeDate: String!
+    budgetEndDate: String!
+    budgetStartDate: String!
+    department: String!
+    directCost_IC: Int!
+    fiscalYear: String!
+    fundingMechanism: String!
+    id: ID!
+    inDirectCost_IC: Int!
+    lower_case_search_string: String!
+    nihSpendingCategorization: String!
+    otherPIorProjectLeaders: String!
+    programOfficialInformation: String!
+    projectEndDate: String!
+    projectNumber: String!
+    projectStartDate: String!
+    projectTerms: String!
+    projectTitle: String!
+    publicHealthRelevance: String!
+    serialNumber: String!
+    studySection: String!
+    supportYear: String!
+    totalCost: Int!
+    totalCost_IC: Int!
+    totalCost_SubProjects: Int!
+    type: String!
+  ): String
+  # Updates a NIHInstituteOrCenter entity
+  updateNIHInstituteOrCenter(
+    id: ID!
+    lower_case_search_string: String!
+    name: String!
+  ): String
+  # Updates a PrincipalInvestigator entity
+  updatePrincipalInvestigator(
+    firstName: String!
+    id: ID!
+    lower_case_search_string: String!
+    middleName: String
+    personID: String!
+    surname: String!
+  ): String
+  # Updates a User entity
+  updateUser(
+    email: String!
+    firstInitial: String!
+    id: ID!
+    lower_case_search_string: String!
+    password: String!
+    surname: String!
+    user_name: String!
+  ): String
+}
+
+# NIHGrant-Node
+type NIHGrant {
+  # CFDACode of  NIHGrant
+  CFDACode: String!
+  # FOA of  NIHGrant
+  FOA: String!
+  # IC of  NIHGrant
+  IC: String!
+  # NIHCOVID19Response of  NIHGrant
+  NIHCOVID19Response: String!
+  # internal node id
+  _id: Long
+  # abstract of  NIHGrant
+  abstract: String
+  # activity of  NIHGrant
+  activity: String!
+  # NIHGrant administeringIC NIHInstituteOrCenter
+  administeringIC(
+    filter: _NIHInstituteOrCenterFilter
+    # id of NIHInstituteOrCenter
+    id: ID
+    # ids is list variant of id of NIHInstituteOrCenter
+    ids: [ID]
+    # lower_case_search_string of NIHInstituteOrCenter
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of NIHInstituteOrCenter
+    lower_case_search_strings: [String]
+    # name of NIHInstituteOrCenter
+    name: String
+    # names is list variant of name of NIHInstituteOrCenter
+    names: [String]
+    orderBy: [_NIHInstituteOrCenterOrdering]
+  ): NIHInstituteOrCenter!
+  # applicationID of  NIHGrant
+  applicationID: String!
+  # awardNoticeDate of  NIHGrant
+  awardNoticeDate: String!
+  # budgetEndDate of  NIHGrant
+  budgetEndDate: String!
+  # budgetStartDate of  NIHGrant
+  budgetStartDate: String!
+  # NIHGrant contactPIorProjectLeader PrincipalInvestigator
+  contactPIorProjectLeader(
+    filter: _PrincipalInvestigatorFilter
+    # firstName of PrincipalInvestigator
+    firstName: String
+    # firstNames is list variant of firstName of PrincipalInvestigator
+    firstNames: [String]
+    # id of PrincipalInvestigator
+    id: ID
+    # ids is list variant of id of PrincipalInvestigator
+    ids: [ID]
+    # lower_case_search_string of PrincipalInvestigator
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of PrincipalInvestigator
+    lower_case_search_strings: [String]
+    # middleName of PrincipalInvestigator
+    middleName: String
+    # middleNames is list variant of middleName of PrincipalInvestigator
+    middleNames: [String]
+    orderBy: [_PrincipalInvestigatorOrdering]
+    # personID of PrincipalInvestigator
+    personID: String
+    # personIDs is list variant of personID of PrincipalInvestigator
+    personIDs: [String]
+    # surname of PrincipalInvestigator
+    surname: String
+    # surnames is list variant of surname of PrincipalInvestigator
+    surnames: [String]
+  ): PrincipalInvestigator!
+  # NIHGrant coreProject CoreProject
+  coreProject(
+    # coreProjectNumber of CoreProject
+    coreProjectNumber: String
+    # coreProjectNumbers is list variant of coreProjectNumber of CoreProject
+    coreProjectNumbers: [String]
+    filter: _CoreProjectFilter
+    # id of CoreProject
+    id: ID
+    # ids is list variant of id of CoreProject
+    ids: [ID]
+    orderBy: [_CoreProjectOrdering]
+  ): CoreProject!
+  # department of  NIHGrant
+  department: String!
+  # directCost_IC of  NIHGrant
+  directCost_IC: Int!
+  # fiscalYear of  NIHGrant
+  fiscalYear: String!
+  # NIHGrant fundingIC NIHInstituteOrCenter
+  fundingIC(
+    filter: _NIHInstituteOrCenterFilter
+    # id of NIHInstituteOrCenter
+    id: ID
+    # ids is list variant of id of NIHInstituteOrCenter
+    ids: [ID]
+    # lower_case_search_string of NIHInstituteOrCenter
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of NIHInstituteOrCenter
+    lower_case_search_strings: [String]
+    # name of NIHInstituteOrCenter
+    name: String
+    # names is list variant of name of NIHInstituteOrCenter
+    names: [String]
+    orderBy: [_NIHInstituteOrCenterOrdering]
+  ): NIHInstituteOrCenter!
+  # fundingMechanism of  NIHGrant
+  fundingMechanism: String!
+  # id of  NIHGrant
+  id: ID!
+  # inDirectCost_IC of  NIHGrant
+  inDirectCost_IC: Int!
+  # lower_case_search_string of  NIHGrant
+  lower_case_search_string: String!
+  # nihSpendingCategorization of  NIHGrant
+  nihSpendingCategorization: String!
+  # NIHGrant organization FundedOrganization
+  organization(
+    # city of FundedOrganization
+    city: String
+    # citys is list variant of city of FundedOrganization
+    citys: [String]
+    # country of FundedOrganization
+    country: String
+    # countrys is list variant of country of FundedOrganization
+    countrys: [String]
+    filter: _FundedOrganizationFilter
+    # id of FundedOrganization
+    id: ID
+    # ids is list variant of id of FundedOrganization
+    ids: [ID]
+    # lower_case_search_string of FundedOrganization
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of FundedOrganization
+    lower_case_search_strings: [String]
+    # name of FundedOrganization
+    name: String
+    # names is list variant of name of FundedOrganization
+    names: [String]
+    orderBy: [_FundedOrganizationOrdering]
+    # organizationID of FundedOrganization
+    organizationID: String
+    # organizationIDs is list variant of organizationID of FundedOrganization
+    organizationIDs: [String]
+    # state of FundedOrganization
+    state: String
+    # states is list variant of state of FundedOrganization
+    states: [String]
+    # type of FundedOrganization
+    type: String
+    # types is list variant of type of FundedOrganization
+    types: [String]
+  ): FundedOrganization!
+  # otherPIorProjectLeaders of  NIHGrant
+  otherPIorProjectLeaders: String!
+  # programOfficialInformation of  NIHGrant
+  programOfficialInformation: String!
+  # projectEndDate of  NIHGrant
+  projectEndDate: String!
+  # projectNumber of  NIHGrant
+  projectNumber: String!
+  # projectStartDate of  NIHGrant
+  projectStartDate: String!
+  # projectTerms of  NIHGrant
+  projectTerms: String!
+  # projectTitle of  NIHGrant
+  projectTitle: String!
+  # publicHealthRelevance of  NIHGrant
+  publicHealthRelevance: String!
+  # serialNumber of  NIHGrant
+  serialNumber: String!
+  # studySection of  NIHGrant
+  studySection: String!
+  # supportYear of  NIHGrant
+  supportYear: String!
+  # totalCost of  NIHGrant
+  totalCost: Int!
+  # totalCost_IC of  NIHGrant
+  totalCost_IC: Int!
+  # totalCost_SubProjects of  NIHGrant
+  totalCost_SubProjects: Int!
+  # type of  NIHGrant
+  type: String!
+}
+
+# NIHInstituteOrCenter-Node
+type NIHInstituteOrCenter {
+  # internal node id
+  _id: Long
+  # NIHInstituteOrCenter grantsAdministered NIHGrant
+  grantsAdministered(
+    # CFDACode of NIHGrant
+    CFDACode: String
+    # CFDACodes is list variant of CFDACode of NIHGrant
+    CFDACodes: [String]
+    # FOA of NIHGrant
+    FOA: String
+    # FOAs is list variant of FOA of NIHGrant
+    FOAs: [String]
+    # IC of NIHGrant
+    IC: String
+    # ICs is list variant of IC of NIHGrant
+    ICs: [String]
+    # NIHCOVID19Response of NIHGrant
+    NIHCOVID19Response: String
+    # NIHCOVID19Responses is list variant of NIHCOVID19Response of NIHGrant
+    NIHCOVID19Responses: [String]
+    _id: Long
+    _ids: [Long]
+    # abstract of NIHGrant
+    abstract: String
+    # abstracts is list variant of abstract of NIHGrant
+    abstracts: [String]
+    # activity of NIHGrant
+    activity: String
+    # activitys is list variant of activity of NIHGrant
+    activitys: [String]
+    # applicationID of NIHGrant
+    applicationID: String
+    # applicationIDs is list variant of applicationID of NIHGrant
+    applicationIDs: [String]
+    # awardNoticeDate of NIHGrant
+    awardNoticeDate: String
+    # awardNoticeDates is list variant of awardNoticeDate of NIHGrant
+    awardNoticeDates: [String]
+    # budgetEndDate of NIHGrant
+    budgetEndDate: String
+    # budgetEndDates is list variant of budgetEndDate of NIHGrant
+    budgetEndDates: [String]
+    # budgetStartDate of NIHGrant
+    budgetStartDate: String
+    # budgetStartDates is list variant of budgetStartDate of NIHGrant
+    budgetStartDates: [String]
+    # department of NIHGrant
+    department: String
+    # departments is list variant of department of NIHGrant
+    departments: [String]
+    # directCost_IC of NIHGrant
+    directCost_IC: Int
+    # directCost_ICs is list variant of directCost_IC of NIHGrant
+    directCost_ICs: [Int]
+    filter: _NIHGrantFilter
+    first: Int
+    # fiscalYear of NIHGrant
+    fiscalYear: String
+    # fiscalYears is list variant of fiscalYear of NIHGrant
+    fiscalYears: [String]
+    # fundingMechanism of NIHGrant
+    fundingMechanism: String
+    # fundingMechanisms is list variant of fundingMechanism of NIHGrant
+    fundingMechanisms: [String]
+    # id of NIHGrant
+    id: ID
+    # ids is list variant of id of NIHGrant
+    ids: [ID]
+    # inDirectCost_IC of NIHGrant
+    inDirectCost_IC: Int
+    # inDirectCost_ICs is list variant of inDirectCost_IC of NIHGrant
+    inDirectCost_ICs: [Int]
+    # lower_case_search_string of NIHGrant
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of NIHGrant
+    lower_case_search_strings: [String]
+    # nihSpendingCategorization of NIHGrant
+    nihSpendingCategorization: String
+    # nihSpendingCategorizations is list variant of nihSpendingCategorization of NIHGrant
+    nihSpendingCategorizations: [String]
+    offset: Int
+    orderBy: [_NIHGrantOrdering]
+    # otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaders: String
+    # otherPIorProjectLeaderss is list variant of otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaderss: [String]
+    # programOfficialInformation of NIHGrant
+    programOfficialInformation: String
+    # programOfficialInformations is list variant of programOfficialInformation of NIHGrant
+    programOfficialInformations: [String]
+    # projectEndDate of NIHGrant
+    projectEndDate: String
+    # projectEndDates is list variant of projectEndDate of NIHGrant
+    projectEndDates: [String]
+    # projectNumber of NIHGrant
+    projectNumber: String
+    # projectNumbers is list variant of projectNumber of NIHGrant
+    projectNumbers: [String]
+    # projectStartDate of NIHGrant
+    projectStartDate: String
+    # projectStartDates is list variant of projectStartDate of NIHGrant
+    projectStartDates: [String]
+    # projectTerms of NIHGrant
+    projectTerms: String
+    # projectTermss is list variant of projectTerms of NIHGrant
+    projectTermss: [String]
+    # projectTitle of NIHGrant
+    projectTitle: String
+    # projectTitles is list variant of projectTitle of NIHGrant
+    projectTitles: [String]
+    # publicHealthRelevance of NIHGrant
+    publicHealthRelevance: String
+    # publicHealthRelevances is list variant of publicHealthRelevance of NIHGrant
+    publicHealthRelevances: [String]
+    # serialNumber of NIHGrant
+    serialNumber: String
+    # serialNumbers is list variant of serialNumber of NIHGrant
+    serialNumbers: [String]
+    # studySection of NIHGrant
+    studySection: String
+    # studySections is list variant of studySection of NIHGrant
+    studySections: [String]
+    # supportYear of NIHGrant
+    supportYear: String
+    # supportYears is list variant of supportYear of NIHGrant
+    supportYears: [String]
+    # totalCost of NIHGrant
+    totalCost: Int
+    # totalCost_IC of NIHGrant
+    totalCost_IC: Int
+    # totalCost_ICs is list variant of totalCost_IC of NIHGrant
+    totalCost_ICs: [Int]
+    # totalCost_SubProjects of NIHGrant
+    totalCost_SubProjects: Int
+    # totalCost_SubProjectss is list variant of totalCost_SubProjects of NIHGrant
+    totalCost_SubProjectss: [Int]
+    # totalCosts is list variant of totalCost of NIHGrant
+    totalCosts: [Int]
+    # type of NIHGrant
+    type: String
+    # types is list variant of type of NIHGrant
+    types: [String]
+  ): [NIHGrant]
+  # NIHInstituteOrCenter grantsFunded NIHGrant
+  grantsFunded(
+    # CFDACode of NIHGrant
+    CFDACode: String
+    # CFDACodes is list variant of CFDACode of NIHGrant
+    CFDACodes: [String]
+    # FOA of NIHGrant
+    FOA: String
+    # FOAs is list variant of FOA of NIHGrant
+    FOAs: [String]
+    # IC of NIHGrant
+    IC: String
+    # ICs is list variant of IC of NIHGrant
+    ICs: [String]
+    # NIHCOVID19Response of NIHGrant
+    NIHCOVID19Response: String
+    # NIHCOVID19Responses is list variant of NIHCOVID19Response of NIHGrant
+    NIHCOVID19Responses: [String]
+    _id: Long
+    _ids: [Long]
+    # abstract of NIHGrant
+    abstract: String
+    # abstracts is list variant of abstract of NIHGrant
+    abstracts: [String]
+    # activity of NIHGrant
+    activity: String
+    # activitys is list variant of activity of NIHGrant
+    activitys: [String]
+    # applicationID of NIHGrant
+    applicationID: String
+    # applicationIDs is list variant of applicationID of NIHGrant
+    applicationIDs: [String]
+    # awardNoticeDate of NIHGrant
+    awardNoticeDate: String
+    # awardNoticeDates is list variant of awardNoticeDate of NIHGrant
+    awardNoticeDates: [String]
+    # budgetEndDate of NIHGrant
+    budgetEndDate: String
+    # budgetEndDates is list variant of budgetEndDate of NIHGrant
+    budgetEndDates: [String]
+    # budgetStartDate of NIHGrant
+    budgetStartDate: String
+    # budgetStartDates is list variant of budgetStartDate of NIHGrant
+    budgetStartDates: [String]
+    # department of NIHGrant
+    department: String
+    # departments is list variant of department of NIHGrant
+    departments: [String]
+    # directCost_IC of NIHGrant
+    directCost_IC: Int
+    # directCost_ICs is list variant of directCost_IC of NIHGrant
+    directCost_ICs: [Int]
+    filter: _NIHGrantFilter
+    first: Int
+    # fiscalYear of NIHGrant
+    fiscalYear: String
+    # fiscalYears is list variant of fiscalYear of NIHGrant
+    fiscalYears: [String]
+    # fundingMechanism of NIHGrant
+    fundingMechanism: String
+    # fundingMechanisms is list variant of fundingMechanism of NIHGrant
+    fundingMechanisms: [String]
+    # id of NIHGrant
+    id: ID
+    # ids is list variant of id of NIHGrant
+    ids: [ID]
+    # inDirectCost_IC of NIHGrant
+    inDirectCost_IC: Int
+    # inDirectCost_ICs is list variant of inDirectCost_IC of NIHGrant
+    inDirectCost_ICs: [Int]
+    # lower_case_search_string of NIHGrant
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of NIHGrant
+    lower_case_search_strings: [String]
+    # nihSpendingCategorization of NIHGrant
+    nihSpendingCategorization: String
+    # nihSpendingCategorizations is list variant of nihSpendingCategorization of NIHGrant
+    nihSpendingCategorizations: [String]
+    offset: Int
+    orderBy: [_NIHGrantOrdering]
+    # otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaders: String
+    # otherPIorProjectLeaderss is list variant of otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaderss: [String]
+    # programOfficialInformation of NIHGrant
+    programOfficialInformation: String
+    # programOfficialInformations is list variant of programOfficialInformation of NIHGrant
+    programOfficialInformations: [String]
+    # projectEndDate of NIHGrant
+    projectEndDate: String
+    # projectEndDates is list variant of projectEndDate of NIHGrant
+    projectEndDates: [String]
+    # projectNumber of NIHGrant
+    projectNumber: String
+    # projectNumbers is list variant of projectNumber of NIHGrant
+    projectNumbers: [String]
+    # projectStartDate of NIHGrant
+    projectStartDate: String
+    # projectStartDates is list variant of projectStartDate of NIHGrant
+    projectStartDates: [String]
+    # projectTerms of NIHGrant
+    projectTerms: String
+    # projectTermss is list variant of projectTerms of NIHGrant
+    projectTermss: [String]
+    # projectTitle of NIHGrant
+    projectTitle: String
+    # projectTitles is list variant of projectTitle of NIHGrant
+    projectTitles: [String]
+    # publicHealthRelevance of NIHGrant
+    publicHealthRelevance: String
+    # publicHealthRelevances is list variant of publicHealthRelevance of NIHGrant
+    publicHealthRelevances: [String]
+    # serialNumber of NIHGrant
+    serialNumber: String
+    # serialNumbers is list variant of serialNumber of NIHGrant
+    serialNumbers: [String]
+    # studySection of NIHGrant
+    studySection: String
+    # studySections is list variant of studySection of NIHGrant
+    studySections: [String]
+    # supportYear of NIHGrant
+    supportYear: String
+    # supportYears is list variant of supportYear of NIHGrant
+    supportYears: [String]
+    # totalCost of NIHGrant
+    totalCost: Int
+    # totalCost_IC of NIHGrant
+    totalCost_IC: Int
+    # totalCost_ICs is list variant of totalCost_IC of NIHGrant
+    totalCost_ICs: [Int]
+    # totalCost_SubProjects of NIHGrant
+    totalCost_SubProjects: Int
+    # totalCost_SubProjectss is list variant of totalCost_SubProjects of NIHGrant
+    totalCost_SubProjectss: [Int]
+    # totalCosts is list variant of totalCost of NIHGrant
+    totalCosts: [Int]
+    # type of NIHGrant
+    type: String
+    # types is list variant of type of NIHGrant
+    types: [String]
+  ): [NIHGrant]
+  # id of  NIHInstituteOrCenter
+  id: ID!
+  # lower_case_search_string of  NIHInstituteOrCenter
+  lower_case_search_string: String!
+  # name of  NIHInstituteOrCenter
+  name: String!
+}
+
+# PrincipalInvestigator-Node
+type PrincipalInvestigator {
+  # internal node id
+  _id: Long
+  # firstName of  PrincipalInvestigator
+  firstName: String!
+  # PrincipalInvestigator grants NIHGrant
+  grants(
+    # CFDACode of NIHGrant
+    CFDACode: String
+    # CFDACodes is list variant of CFDACode of NIHGrant
+    CFDACodes: [String]
+    # FOA of NIHGrant
+    FOA: String
+    # FOAs is list variant of FOA of NIHGrant
+    FOAs: [String]
+    # IC of NIHGrant
+    IC: String
+    # ICs is list variant of IC of NIHGrant
+    ICs: [String]
+    # NIHCOVID19Response of NIHGrant
+    NIHCOVID19Response: String
+    # NIHCOVID19Responses is list variant of NIHCOVID19Response of NIHGrant
+    NIHCOVID19Responses: [String]
+    _id: Long
+    _ids: [Long]
+    # abstract of NIHGrant
+    abstract: String
+    # abstracts is list variant of abstract of NIHGrant
+    abstracts: [String]
+    # activity of NIHGrant
+    activity: String
+    # activitys is list variant of activity of NIHGrant
+    activitys: [String]
+    # applicationID of NIHGrant
+    applicationID: String
+    # applicationIDs is list variant of applicationID of NIHGrant
+    applicationIDs: [String]
+    # awardNoticeDate of NIHGrant
+    awardNoticeDate: String
+    # awardNoticeDates is list variant of awardNoticeDate of NIHGrant
+    awardNoticeDates: [String]
+    # budgetEndDate of NIHGrant
+    budgetEndDate: String
+    # budgetEndDates is list variant of budgetEndDate of NIHGrant
+    budgetEndDates: [String]
+    # budgetStartDate of NIHGrant
+    budgetStartDate: String
+    # budgetStartDates is list variant of budgetStartDate of NIHGrant
+    budgetStartDates: [String]
+    # department of NIHGrant
+    department: String
+    # departments is list variant of department of NIHGrant
+    departments: [String]
+    # directCost_IC of NIHGrant
+    directCost_IC: Int
+    # directCost_ICs is list variant of directCost_IC of NIHGrant
+    directCost_ICs: [Int]
+    filter: _NIHGrantFilter
+    first: Int
+    # fiscalYear of NIHGrant
+    fiscalYear: String
+    # fiscalYears is list variant of fiscalYear of NIHGrant
+    fiscalYears: [String]
+    # fundingMechanism of NIHGrant
+    fundingMechanism: String
+    # fundingMechanisms is list variant of fundingMechanism of NIHGrant
+    fundingMechanisms: [String]
+    # id of NIHGrant
+    id: ID
+    # ids is list variant of id of NIHGrant
+    ids: [ID]
+    # inDirectCost_IC of NIHGrant
+    inDirectCost_IC: Int
+    # inDirectCost_ICs is list variant of inDirectCost_IC of NIHGrant
+    inDirectCost_ICs: [Int]
+    # lower_case_search_string of NIHGrant
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of NIHGrant
+    lower_case_search_strings: [String]
+    # nihSpendingCategorization of NIHGrant
+    nihSpendingCategorization: String
+    # nihSpendingCategorizations is list variant of nihSpendingCategorization of NIHGrant
+    nihSpendingCategorizations: [String]
+    offset: Int
+    orderBy: [_NIHGrantOrdering]
+    # otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaders: String
+    # otherPIorProjectLeaderss is list variant of otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaderss: [String]
+    # programOfficialInformation of NIHGrant
+    programOfficialInformation: String
+    # programOfficialInformations is list variant of programOfficialInformation of NIHGrant
+    programOfficialInformations: [String]
+    # projectEndDate of NIHGrant
+    projectEndDate: String
+    # projectEndDates is list variant of projectEndDate of NIHGrant
+    projectEndDates: [String]
+    # projectNumber of NIHGrant
+    projectNumber: String
+    # projectNumbers is list variant of projectNumber of NIHGrant
+    projectNumbers: [String]
+    # projectStartDate of NIHGrant
+    projectStartDate: String
+    # projectStartDates is list variant of projectStartDate of NIHGrant
+    projectStartDates: [String]
+    # projectTerms of NIHGrant
+    projectTerms: String
+    # projectTermss is list variant of projectTerms of NIHGrant
+    projectTermss: [String]
+    # projectTitle of NIHGrant
+    projectTitle: String
+    # projectTitles is list variant of projectTitle of NIHGrant
+    projectTitles: [String]
+    # publicHealthRelevance of NIHGrant
+    publicHealthRelevance: String
+    # publicHealthRelevances is list variant of publicHealthRelevance of NIHGrant
+    publicHealthRelevances: [String]
+    # serialNumber of NIHGrant
+    serialNumber: String
+    # serialNumbers is list variant of serialNumber of NIHGrant
+    serialNumbers: [String]
+    # studySection of NIHGrant
+    studySection: String
+    # studySections is list variant of studySection of NIHGrant
+    studySections: [String]
+    # supportYear of NIHGrant
+    supportYear: String
+    # supportYears is list variant of supportYear of NIHGrant
+    supportYears: [String]
+    # totalCost of NIHGrant
+    totalCost: Int
+    # totalCost_IC of NIHGrant
+    totalCost_IC: Int
+    # totalCost_ICs is list variant of totalCost_IC of NIHGrant
+    totalCost_ICs: [Int]
+    # totalCost_SubProjects of NIHGrant
+    totalCost_SubProjects: Int
+    # totalCost_SubProjectss is list variant of totalCost_SubProjects of NIHGrant
+    totalCost_SubProjectss: [Int]
+    # totalCosts is list variant of totalCost of NIHGrant
+    totalCosts: [Int]
+    # type of NIHGrant
+    type: String
+    # types is list variant of type of NIHGrant
+    types: [String]
+  ): [NIHGrant]!
+  # id of  PrincipalInvestigator
+  id: ID!
+  # lower_case_search_string of  PrincipalInvestigator
+  lower_case_search_string: String!
+  # middleName of  PrincipalInvestigator
+  middleName: String
+  # personID of  PrincipalInvestigator
+  personID: String!
+  # surname of  PrincipalInvestigator
+  surname: String!
+}
+
+type QueryType {
+  Author(
+    _id: Long
+    _ids: [Long]
+    filter: _AuthorFilter
+    first: Int
+    # firstInitial of Author
+    firstInitial: String
+    # firstInitials is list variant of firstInitial of Author
+    firstInitials: [String]
+    # id of Author
+    id: ID
+    # ids is list variant of id of Author
+    ids: [ID]
+    # lower_case_search_string of Author
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of Author
+    lower_case_search_strings: [String]
+    offset: Int
+    orderBy: [_AuthorOrdering]
+    # surname of Author
+    surname: String
+    # surnames is list variant of surname of Author
+    surnames: [String]
+  ): [Author]
+  ClinicalTrial(
+    _id: Long
+    _ids: [Long]
+    # brief_summary of ClinicalTrial
+    brief_summary: String
+    # brief_summarys is list variant of brief_summary of ClinicalTrial
+    brief_summarys: [String]
+    # brief_title of ClinicalTrial
+    brief_title: String
+    # brief_titles is list variant of brief_title of ClinicalTrial
+    brief_titles: [String]
+    # conditions of ClinicalTrial
+    conditions: [String]
+    # conditionss is list variant of conditions of ClinicalTrial
+    conditionss: [[String]]
+    # detailed_description of ClinicalTrial
+    detailed_description: String
+    # detailed_descriptions is list variant of detailed_description of ClinicalTrial
+    detailed_descriptions: [String]
+    # drugs of ClinicalTrial
+    drugs: [String]
+    # drugss is list variant of drugs of ClinicalTrial
+    drugss: [[String]]
+    filter: _ClinicalTrialFilter
+    first: Int
+    # id of ClinicalTrial
+    id: ID
+    # ids is list variant of id of ClinicalTrial
+    ids: [ID]
+    # lower_case_search_string of ClinicalTrial
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of ClinicalTrial
+    lower_case_search_strings: [String]
+    # nct_id of ClinicalTrial
+    nct_id: String
+    # nct_ids is list variant of nct_id of ClinicalTrial
+    nct_ids: [String]
+    # official_title of ClinicalTrial
+    official_title: String
+    # official_titles is list variant of official_title of ClinicalTrial
+    official_titles: [String]
+    offset: Int
+    orderBy: [_ClinicalTrialOrdering]
+    # phases of ClinicalTrial
+    phases: [String]
+    # phasess is list variant of phases of ClinicalTrial
+    phasess: [[String]]
+    # status of ClinicalTrial
+    status: String
+    # status_date of ClinicalTrial
+    status_date: String
+    # status_dates is list variant of status_date of ClinicalTrial
+    status_dates: [String]
+    # statuss is list variant of status of ClinicalTrial
+    statuss: [String]
+    # study_type of ClinicalTrial
+    study_type: String
+    # study_types is list variant of study_type of ClinicalTrial
+    study_types: [String]
+  ): [ClinicalTrial]
+  CoreProject(
+    _id: Long
+    _ids: [Long]
+    # coreProjectNumber of CoreProject
+    coreProjectNumber: String
+    # coreProjectNumbers is list variant of coreProjectNumber of CoreProject
+    coreProjectNumbers: [String]
+    filter: _CoreProjectFilter
+    first: Int
+    # id of CoreProject
+    id: ID
+    # ids is list variant of id of CoreProject
+    ids: [ID]
+    offset: Int
+    orderBy: [_CoreProjectOrdering]
+  ): [CoreProject]
+  FundedOrganization(
+    _id: Long
+    _ids: [Long]
+    # city of FundedOrganization
+    city: String
+    # citys is list variant of city of FundedOrganization
+    citys: [String]
+    # country of FundedOrganization
+    country: String
+    # countrys is list variant of country of FundedOrganization
+    countrys: [String]
+    filter: _FundedOrganizationFilter
+    first: Int
+    # id of FundedOrganization
+    id: ID
+    # ids is list variant of id of FundedOrganization
+    ids: [ID]
+    # lower_case_search_string of FundedOrganization
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of FundedOrganization
+    lower_case_search_strings: [String]
+    # name of FundedOrganization
+    name: String
+    # names is list variant of name of FundedOrganization
+    names: [String]
+    offset: Int
+    orderBy: [_FundedOrganizationOrdering]
+    # organizationID of FundedOrganization
+    organizationID: String
+    # organizationIDs is list variant of organizationID of FundedOrganization
+    organizationIDs: [String]
+    # state of FundedOrganization
+    state: String
+    # states is list variant of state of FundedOrganization
+    states: [String]
+    # type of FundedOrganization
+    type: String
+    # types is list variant of type of FundedOrganization
+    types: [String]
+  ): [FundedOrganization]
+  Journal(
+    _id: Long
+    _ids: [Long]
+    filter: _JournalFilter
+    first: Int
+    # id of Journal
+    id: ID
+    # ids is list variant of id of Journal
+    ids: [ID]
+    # lower_case_search_string of Journal
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of Journal
+    lower_case_search_strings: [String]
+    # name of Journal
+    name: String
+    # names is list variant of name of Journal
+    names: [String]
+    offset: Int
+    orderBy: [_JournalOrdering]
+  ): [Journal]
+  LiteratureReference(
+    # DOI of LiteratureReference
+    DOI: String
+    # DOIs is list variant of DOI of LiteratureReference
+    DOIs: [String]
+    # PMID of LiteratureReference
+    PMID: String
+    # PMIDs is list variant of PMID of LiteratureReference
+    PMIDs: [String]
+    _id: Long
+    _ids: [Long]
+    # abstract of LiteratureReference
+    abstract: String
+    # abstracts is list variant of abstract of LiteratureReference
+    abstracts: [String]
+    filter: _LiteratureReferenceFilter
+    first: Int
+    # firstPage of LiteratureReference
+    firstPage: String
+    # firstPages is list variant of firstPage of LiteratureReference
+    firstPages: [String]
+    # id of LiteratureReference
+    id: ID
+    # ids is list variant of id of LiteratureReference
+    ids: [ID]
+    # lastPage of LiteratureReference
+    lastPage: String
+    # lastPages is list variant of lastPage of LiteratureReference
+    lastPages: [String]
+    # lower_case_search_string of LiteratureReference
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of LiteratureReference
+    lower_case_search_strings: [String]
+    offset: Int
+    orderBy: [_LiteratureReferenceOrdering]
+    # publicationYear of LiteratureReference
+    publicationYear: String
+    # publicationYears is list variant of publicationYear of LiteratureReference
+    publicationYears: [String]
+    # shortReference of LiteratureReference
+    shortReference: String
+    # shortReferences is list variant of shortReference of LiteratureReference
+    shortReferences: [String]
+    # title of LiteratureReference
+    title: String
+    # titles is list variant of title of LiteratureReference
+    titles: [String]
+    # volume of LiteratureReference
+    volume: String
+    # volumes is list variant of volume of LiteratureReference
+    volumes: [String]
+  ): [LiteratureReference]
+  NIHGrant(
+    # CFDACode of NIHGrant
+    CFDACode: String
+    # CFDACodes is list variant of CFDACode of NIHGrant
+    CFDACodes: [String]
+    # FOA of NIHGrant
+    FOA: String
+    # FOAs is list variant of FOA of NIHGrant
+    FOAs: [String]
+    # IC of NIHGrant
+    IC: String
+    # ICs is list variant of IC of NIHGrant
+    ICs: [String]
+    # NIHCOVID19Response of NIHGrant
+    NIHCOVID19Response: String
+    # NIHCOVID19Responses is list variant of NIHCOVID19Response of NIHGrant
+    NIHCOVID19Responses: [String]
+    _id: Long
+    _ids: [Long]
+    # abstract of NIHGrant
+    abstract: String
+    # abstracts is list variant of abstract of NIHGrant
+    abstracts: [String]
+    # activity of NIHGrant
+    activity: String
+    # activitys is list variant of activity of NIHGrant
+    activitys: [String]
+    # applicationID of NIHGrant
+    applicationID: String
+    # applicationIDs is list variant of applicationID of NIHGrant
+    applicationIDs: [String]
+    # awardNoticeDate of NIHGrant
+    awardNoticeDate: String
+    # awardNoticeDates is list variant of awardNoticeDate of NIHGrant
+    awardNoticeDates: [String]
+    # budgetEndDate of NIHGrant
+    budgetEndDate: String
+    # budgetEndDates is list variant of budgetEndDate of NIHGrant
+    budgetEndDates: [String]
+    # budgetStartDate of NIHGrant
+    budgetStartDate: String
+    # budgetStartDates is list variant of budgetStartDate of NIHGrant
+    budgetStartDates: [String]
+    # department of NIHGrant
+    department: String
+    # departments is list variant of department of NIHGrant
+    departments: [String]
+    # directCost_IC of NIHGrant
+    directCost_IC: Int
+    # directCost_ICs is list variant of directCost_IC of NIHGrant
+    directCost_ICs: [Int]
+    filter: _NIHGrantFilter
+    first: Int
+    # fiscalYear of NIHGrant
+    fiscalYear: String
+    # fiscalYears is list variant of fiscalYear of NIHGrant
+    fiscalYears: [String]
+    # fundingMechanism of NIHGrant
+    fundingMechanism: String
+    # fundingMechanisms is list variant of fundingMechanism of NIHGrant
+    fundingMechanisms: [String]
+    # id of NIHGrant
+    id: ID
+    # ids is list variant of id of NIHGrant
+    ids: [ID]
+    # inDirectCost_IC of NIHGrant
+    inDirectCost_IC: Int
+    # inDirectCost_ICs is list variant of inDirectCost_IC of NIHGrant
+    inDirectCost_ICs: [Int]
+    # lower_case_search_string of NIHGrant
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of NIHGrant
+    lower_case_search_strings: [String]
+    # nihSpendingCategorization of NIHGrant
+    nihSpendingCategorization: String
+    # nihSpendingCategorizations is list variant of nihSpendingCategorization of NIHGrant
+    nihSpendingCategorizations: [String]
+    offset: Int
+    orderBy: [_NIHGrantOrdering]
+    # otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaders: String
+    # otherPIorProjectLeaderss is list variant of otherPIorProjectLeaders of NIHGrant
+    otherPIorProjectLeaderss: [String]
+    # programOfficialInformation of NIHGrant
+    programOfficialInformation: String
+    # programOfficialInformations is list variant of programOfficialInformation of NIHGrant
+    programOfficialInformations: [String]
+    # projectEndDate of NIHGrant
+    projectEndDate: String
+    # projectEndDates is list variant of projectEndDate of NIHGrant
+    projectEndDates: [String]
+    # projectNumber of NIHGrant
+    projectNumber: String
+    # projectNumbers is list variant of projectNumber of NIHGrant
+    projectNumbers: [String]
+    # projectStartDate of NIHGrant
+    projectStartDate: String
+    # projectStartDates is list variant of projectStartDate of NIHGrant
+    projectStartDates: [String]
+    # projectTerms of NIHGrant
+    projectTerms: String
+    # projectTermss is list variant of projectTerms of NIHGrant
+    projectTermss: [String]
+    # projectTitle of NIHGrant
+    projectTitle: String
+    # projectTitles is list variant of projectTitle of NIHGrant
+    projectTitles: [String]
+    # publicHealthRelevance of NIHGrant
+    publicHealthRelevance: String
+    # publicHealthRelevances is list variant of publicHealthRelevance of NIHGrant
+    publicHealthRelevances: [String]
+    # serialNumber of NIHGrant
+    serialNumber: String
+    # serialNumbers is list variant of serialNumber of NIHGrant
+    serialNumbers: [String]
+    # studySection of NIHGrant
+    studySection: String
+    # studySections is list variant of studySection of NIHGrant
+    studySections: [String]
+    # supportYear of NIHGrant
+    supportYear: String
+    # supportYears is list variant of supportYear of NIHGrant
+    supportYears: [String]
+    # totalCost of NIHGrant
+    totalCost: Int
+    # totalCost_IC of NIHGrant
+    totalCost_IC: Int
+    # totalCost_ICs is list variant of totalCost_IC of NIHGrant
+    totalCost_ICs: [Int]
+    # totalCost_SubProjects of NIHGrant
+    totalCost_SubProjects: Int
+    # totalCost_SubProjectss is list variant of totalCost_SubProjects of NIHGrant
+    totalCost_SubProjectss: [Int]
+    # totalCosts is list variant of totalCost of NIHGrant
+    totalCosts: [Int]
+    # type of NIHGrant
+    type: String
+    # types is list variant of type of NIHGrant
+    types: [String]
+  ): [NIHGrant]
+  NIHInstituteOrCenter(
+    _id: Long
+    _ids: [Long]
+    filter: _NIHInstituteOrCenterFilter
+    first: Int
+    # id of NIHInstituteOrCenter
+    id: ID
+    # ids is list variant of id of NIHInstituteOrCenter
+    ids: [ID]
+    # lower_case_search_string of NIHInstituteOrCenter
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of NIHInstituteOrCenter
+    lower_case_search_strings: [String]
+    # name of NIHInstituteOrCenter
+    name: String
+    # names is list variant of name of NIHInstituteOrCenter
+    names: [String]
+    offset: Int
+    orderBy: [_NIHInstituteOrCenterOrdering]
+  ): [NIHInstituteOrCenter]
+  PrincipalInvestigator(
+    _id: Long
+    _ids: [Long]
+    filter: _PrincipalInvestigatorFilter
+    first: Int
+    # firstName of PrincipalInvestigator
+    firstName: String
+    # firstNames is list variant of firstName of PrincipalInvestigator
+    firstNames: [String]
+    # id of PrincipalInvestigator
+    id: ID
+    # ids is list variant of id of PrincipalInvestigator
+    ids: [ID]
+    # lower_case_search_string of PrincipalInvestigator
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of PrincipalInvestigator
+    lower_case_search_strings: [String]
+    # middleName of PrincipalInvestigator
+    middleName: String
+    # middleNames is list variant of middleName of PrincipalInvestigator
+    middleNames: [String]
+    offset: Int
+    orderBy: [_PrincipalInvestigatorOrdering]
+    # personID of PrincipalInvestigator
+    personID: String
+    # personIDs is list variant of personID of PrincipalInvestigator
+    personIDs: [String]
+    # surname of PrincipalInvestigator
+    surname: String
+    # surnames is list variant of surname of PrincipalInvestigator
+    surnames: [String]
+  ): [PrincipalInvestigator]
+  User(
+    _id: Long
+    _ids: [Long]
+    # email of User
+    email: String
+    # emails is list variant of email of User
+    emails: [String]
+    filter: _UserFilter
+    first: Int
+    # firstInitial of User
+    firstInitial: String
+    # firstInitials is list variant of firstInitial of User
+    firstInitials: [String]
+    # id of User
+    id: ID
+    # ids is list variant of id of User
+    ids: [ID]
+    # lower_case_search_string of User
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of User
+    lower_case_search_strings: [String]
+    offset: Int
+    orderBy: [_UserOrdering]
+    # password of User
+    password: String
+    # passwords is list variant of password of User
+    passwords: [String]
+    # surname of User
+    surname: String
+    # surnames is list variant of surname of User
+    surnames: [String]
+    # user_name of User
+    user_name: String
+    # user_names is list variant of user_name of User
+    user_names: [String]
+  ): [User]
+}
+
+# User-Node
+type User {
+  # internal node id
+  _id: Long
+  # User author Author
+  author(
+    filter: _AuthorFilter
+    # firstInitial of Author
+    firstInitial: String
+    # firstInitials is list variant of firstInitial of Author
+    firstInitials: [String]
+    # id of Author
+    id: ID
+    # ids is list variant of id of Author
+    ids: [ID]
+    # lower_case_search_string of Author
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of Author
+    lower_case_search_strings: [String]
+    orderBy: [_AuthorOrdering]
+    # surname of Author
+    surname: String
+    # surnames is list variant of surname of Author
+    surnames: [String]
+  ): Author
+  # email of  User
+  email: String!
+  # firstInitial of  User
+  firstInitial: String!
+  # id of  User
+  id: ID!
+  # lower_case_search_string of  User
+  lower_case_search_string: String!
+  # password of  User
+  password: String!
+  # User pi PrincipalInvestigator
+  pi(
+    filter: _PrincipalInvestigatorFilter
+    # firstName of PrincipalInvestigator
+    firstName: String
+    # firstNames is list variant of firstName of PrincipalInvestigator
+    firstNames: [String]
+    # id of PrincipalInvestigator
+    id: ID
+    # ids is list variant of id of PrincipalInvestigator
+    ids: [ID]
+    # lower_case_search_string of PrincipalInvestigator
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of PrincipalInvestigator
+    lower_case_search_strings: [String]
+    # middleName of PrincipalInvestigator
+    middleName: String
+    # middleNames is list variant of middleName of PrincipalInvestigator
+    middleNames: [String]
+    orderBy: [_PrincipalInvestigatorOrdering]
+    # personID of PrincipalInvestigator
+    personID: String
+    # personIDs is list variant of personID of PrincipalInvestigator
+    personIDs: [String]
+    # surname of PrincipalInvestigator
+    surname: String
+    # surnames is list variant of surname of PrincipalInvestigator
+    surnames: [String]
+  ): PrincipalInvestigator
+  # surname of  User
+  surname: String!
+  # user_name of  User
+  user_name: String!
+}
+

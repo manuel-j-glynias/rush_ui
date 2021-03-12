@@ -1,0 +1,44 @@
+
+.LogIn {
+    width: 100%;
+    height: 100%;
+}
+
+.LogIn__Container {
+    display: block;
+    width: 1000px;
+    height: 600px;
+}
+
+.form-group {
+    margin: 1.2rem 0;
+    width: 60%;
+}
+
+.form-text {
+    display: block;
+    margin-top: 0.3rem;
+    color: #888;
+}
+.form-text-danger {
+    display: block;
+    margin-top: 0.3rem;
+    color: red;
+}
+.form input[type=text],
+.form input[type=email],
+.form input[type=password],
+.form input[type=date],
+.form select,
+.form textarea {
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    font: inherit;
+}
+.form input[type=submit] {
+    font: inherit;
+}

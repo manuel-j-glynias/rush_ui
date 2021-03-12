@@ -1,0 +1,88 @@
+.PublicationDetails__Details_Panel {
+    height: 190px;
+    width: 1200px;
+    /*padding-top: 10px;*/
+    padding-left: 20px;
+    background-color: white;
+    border-bottom: 1px solid blue;
+}
+.PublicationDetails__Details_Panel_with_Abstract {
+    height: 350px;
+    width: 1200px;
+    /*padding-top: 10px;*/
+    padding-left: 20px;
+    background-color: white;
+    border-bottom: 1px solid blue;
+}
+.PublicationDetails__DetailsTable {
+    display: table;
+    width: 1200px;
+}
+
+
+.PublicationDetails__DetailsRow {
+    display: table-row;
+}
+
+.PublicationDetails__DetailsCellLeft {
+    display: table-cell;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 150px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: small;
+}
+.PublicationDetails__DetailsCellRight {
+    display: table-cell;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 250px;
+    font-family: 'Lato', sans-serif;
+    font-size: small;
+}
+.PublicationDetails__DetailsCellRightSmall {
+    display: table-cell;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100px;
+    font-family: 'Lato', sans-serif;
+    font-size: small;
+}
+.PublicationDetails__Details_Abstract {
+    height: 150px;
+    width: 1000px;
+    overflow: hidden auto;
+    /*padding-top: 10px;*/
+    padding-left: 10px;
+    background-color: white;
+    border: 1px solid blue;
+}
+.PublicationDetails__Details_Authors {
+    height: 80px;
+    width: 1000px;
+    overflow: hidden auto;
+    /*padding-top: 10px;*/
+    padding-left: 10px;
+    background-color: white;
+    border: 1px solid blue;
+}
+
+.PublicationDetails__Authors_List{
+    margin: 0;
+    padding: 0;
+}
+.PublicationDetails__Author_Item{
+    padding-right: 10px;
+}
+
+.PublicationDetails__item {
+    padding-top: 10px;
+    cursor: pointer;
+}

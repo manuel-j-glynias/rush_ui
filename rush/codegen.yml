@@ -1,0 +1,13 @@
+overwrite: true
+schema: "/Users/mglynias/WebstormProjects/rush_ui/config/schema.graphql"
+documents:
+  - "./src/components/**/*.{ts,tsx}"
+
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      withHooks: true
