@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import {Link, useHistory} from "react-router-dom";
+import {Link} from "react-router-dom";
 import logo from './rush_logo.png';
 
 interface Props {
@@ -12,13 +12,13 @@ const Navbar: React.FC<Props> = ({logged_in, set_logged_in} : Props) => {
     const logout = async () => {
         set_logged_in(false)
     }
-    const history = useHistory();
-    const back = () => {
-        history.goBack()
-    }
-    const forward = () => {
-        history.goForward()
-    }
+    // const history = useHistory();
+    // const back = () => {
+    //     history.goBack()
+    // }
+    // const forward = () => {
+    //     history.goForward()
+    // }
     const authLinks = (
         <ul>
             <li><Link to="/"><i className="fal fa-home"></i>{' '}Home</Link></li>

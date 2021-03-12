@@ -1,6 +1,5 @@
 import React, {Fragment, useState} from 'react'
 import {LiteratureReference, Maybe} from '../../generated/graphql';
-import Publications from "./Publications";
 import {Redirect} from "react-router-dom";
 import PublicationsDetails from "./PublicationsDetails";
 import StringArraySelect from "../common/StringArraySelect/StringArraySelect";

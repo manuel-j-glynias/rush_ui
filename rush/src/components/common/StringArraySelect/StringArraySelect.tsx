@@ -22,7 +22,7 @@ const StringArraySelect: React.FC<Props> = ({stringArray,selectedString,set_sele
     let options: ISelectState[] = [ ];
 
     React.useEffect(() => {
-        let i = 0;
+        let i : number;
         for(i=0;i<stringArray.length;i++){
             options.push({value:stringArray[i], label:stringArray[i]})
         }

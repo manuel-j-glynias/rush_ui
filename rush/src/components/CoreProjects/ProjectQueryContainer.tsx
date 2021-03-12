@@ -1,15 +1,6 @@
-// @ts-ignore
-import React, {Fragment, useState} from 'react'
+import React, {Fragment} from 'react'
 import {Maybe,CoreProject, useCoreProjectListQuery} from '../../generated/graphql';
 import CoreProjects from "./CoreProjects";
-// import { useAlert } from 'react-alert'
-import {Redirect} from "react-router-dom";
-// import {useAlert} from "react-alert";
-import CoreProjectDetails from "./CoreProjectDetails";
-import { useParams } from 'react-router';
-
-
-
 
 
 interface Props {
@@ -20,7 +11,7 @@ interface Props {
     set_selected_project_obj: (project:Maybe<CoreProject>)=> void;
 }
 
-const className = 'CoreProjects';
+// const className = 'CoreProjects';
 
 const ProjectQueryContainer : React.FC<Props> = ({search_string, search_string2,selected_project,set_selected_project,set_selected_project_obj}: Props) => {
 

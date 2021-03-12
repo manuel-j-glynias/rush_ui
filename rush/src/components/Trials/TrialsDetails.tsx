@@ -1,7 +1,6 @@
-import {Maybe, LiteratureReference, ClinicalTrial} from "../../generated/graphql";
+import {Maybe, ClinicalTrial} from "../../generated/graphql";
 import React, {Fragment} from 'react'
 import './styles.css';
-import PublicationDetailsContainer from "../Details/PublicationDetails";
 import {Link} from "react-router-dom";
 import TrialsDetailsContainer from "../Details/TrialsDetails";
 
@@ -14,9 +13,7 @@ const className = 'Publications';
 
 const TrialsDetails: React.FC<Props> = ({selected_trials_obj}) => {
 
-    //https://clinicaltrials.gov/ct2/show/NCT03271372
-    //<a href={'https://clinicaltrials.gov/ct2/show/' + selected_trials_obj.nct_id} target="_blank" rel="noopener noreferrer">{selected_trials_obj.nct_id }</a>
-    return (
+     return (
         <Fragment>
             {selected_trials_obj &&
             <div className={`${className}__Publications_Panel`}>

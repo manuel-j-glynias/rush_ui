@@ -4,7 +4,6 @@ import {Redirect} from "react-router-dom";
 // import {useAlert} from "react-alert";
 import { useParams } from 'react-router';
 import Trials from "./Trials";
-import TrialDetails from "../Details/TrialsDetails/TrialDetails";
 import TrialsDetails from "./TrialsDetails";
 
 
@@ -26,7 +25,7 @@ const TrialsContainer = ({logged_in, user_name}: Props) => {
     const [selected_trial, set_selected_trial] = React.useState('');
     const [selected_trial_obj, set_selected_trial_obj] = useState<Maybe<ClinicalTrial>>(null);
 
-    const {data, error, loading, refetch} = useTrialListQuery(
+    const {data, error, loading} = useTrialListQuery(
         {variables: {str: search_string, str2:search_string2}});
 
     const handleNameFilter = () => {

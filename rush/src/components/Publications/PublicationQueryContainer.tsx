@@ -1,5 +1,5 @@
-import React, {Fragment, useState} from 'react'
-import {LiteratureReference, Maybe, usePublicationListQuery,usePublicationsByAuthorQuery,usePublicationsByJournalQuery} from '../../generated/graphql';
+import React, {Fragment} from 'react'
+import {LiteratureReference, Maybe, usePublicationListQuery} from '../../generated/graphql';
 import Publications from "./Publications";
 
 
@@ -11,7 +11,7 @@ interface Props {
 
 }
 
-const className = 'Publications';
+// const className = 'Publications';
 
 const PublicationQueryContainer = ({search_string,selected_publication,set_selected_publication,set_selected_publication_obj}: Props) => {
 
