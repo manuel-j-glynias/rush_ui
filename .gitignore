@@ -1,2 +1,3 @@
 # Project exclude paths
 /rush/node_modules/
+/rush/build/
