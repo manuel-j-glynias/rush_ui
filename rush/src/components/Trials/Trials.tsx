@@ -6,7 +6,7 @@ interface Props  {
     data: TrialListQuery;
     selected_trial: string;
     set_selected_trial: (s:string) => void;
-    set_selected_trial_obj: (project:Maybe<ClinicalTrial>)=> void;
+    set_selected_trial_obj: (trial:Maybe<ClinicalTrial>)=> void;
 }
 
 const className = 'Trials';

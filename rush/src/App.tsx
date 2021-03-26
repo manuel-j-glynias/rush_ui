@@ -24,10 +24,12 @@ const App = () => {
                             <Route exact path='/login' render={() => <LogInContainer logged_in={logged_in} set_logged_in={set_logged_in}
                                                                                      set_user_name={set_user_name}/>}/>
                             <Route exact path="/core_projects" render={() => <CoreProjectsContainer logged_in={logged_in} user_name={user_name} />}/>
-                             <Route  path="/core_projects/:id" render={() => <CoreProjectsContainer logged_in={logged_in} user_name={user_name}  key={Date.now()} />}/>
-                            <Route  exact path="/publications"  render={() => <PublicationsContainer logged_in={logged_in} user_name={user_name} />}/>
+                            <Route  path="/core_projects/:type/:id" render={() => <CoreProjectsContainer logged_in={logged_in} user_name={user_name}  key={Date.now()} />}/>
+                            <Route  path="/core_projects/:id" render={() => <CoreProjectsContainer logged_in={logged_in} user_name={user_name}  key={Date.now()} />}/>
+                            <Route  exact path="/publications"  render={() => <PublicationsContainer logged_in={logged_in} user_name={user_name}  key={Date.now()} />}/>
                             <Route  path="/publications/:type/:id"  render={() => <PublicationsContainer logged_in={logged_in} user_name={user_name} key={Date.now()}/>}/>
-                            <Route  exact path="/clinical_trials"  render={() => <TrialsContainer logged_in={logged_in} user_name={user_name} />}/>
+                            <Route  path="/clinical_trials/:type/:id"  render={() => <TrialsContainer logged_in={logged_in} user_name={user_name}  key={Date.now()} />}/>
+                            <Route  exact path="/clinical_trials"  render={() => <TrialsContainer logged_in={logged_in} user_name={user_name}  key={Date.now()} />}/>
 
                             PublicationsContainer
                         </Switch>

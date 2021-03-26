@@ -242,6 +242,34 @@ input _ClinicalTrialFilter {
   brief_title_not_starts_with: String
   # brief_title_starts_with
   brief_title_starts_with: String
+  # condition_lower_case_search_string
+  condition_lower_case_search_string: String
+  # condition_lower_case_search_string_contains
+  condition_lower_case_search_string_contains: String
+  # condition_lower_case_search_string_ends_with
+  condition_lower_case_search_string_ends_with: String
+  # condition_lower_case_search_string_gt
+  condition_lower_case_search_string_gt: String
+  # condition_lower_case_search_string_gte
+  condition_lower_case_search_string_gte: String
+  # condition_lower_case_search_string_in
+  condition_lower_case_search_string_in: [String!]
+  # condition_lower_case_search_string_lt
+  condition_lower_case_search_string_lt: String
+  # condition_lower_case_search_string_lte
+  condition_lower_case_search_string_lte: String
+  # condition_lower_case_search_string_not
+  condition_lower_case_search_string_not: String
+  # condition_lower_case_search_string_not_contains
+  condition_lower_case_search_string_not_contains: String
+  # condition_lower_case_search_string_not_ends_with
+  condition_lower_case_search_string_not_ends_with: String
+  # condition_lower_case_search_string_not_in
+  condition_lower_case_search_string_not_in: [String!]
+  # condition_lower_case_search_string_not_starts_with
+  condition_lower_case_search_string_not_starts_with: String
+  # condition_lower_case_search_string_starts_with
+  condition_lower_case_search_string_starts_with: String
   # conditions
   conditions: String
   # conditions_contains
@@ -306,6 +334,34 @@ input _ClinicalTrialFilter {
   detailed_description_not_starts_with: String
   # detailed_description_starts_with
   detailed_description_starts_with: String
+  # drug_lower_case_search_string
+  drug_lower_case_search_string: String
+  # drug_lower_case_search_string_contains
+  drug_lower_case_search_string_contains: String
+  # drug_lower_case_search_string_ends_with
+  drug_lower_case_search_string_ends_with: String
+  # drug_lower_case_search_string_gt
+  drug_lower_case_search_string_gt: String
+  # drug_lower_case_search_string_gte
+  drug_lower_case_search_string_gte: String
+  # drug_lower_case_search_string_in
+  drug_lower_case_search_string_in: [String!]
+  # drug_lower_case_search_string_lt
+  drug_lower_case_search_string_lt: String
+  # drug_lower_case_search_string_lte
+  drug_lower_case_search_string_lte: String
+  # drug_lower_case_search_string_not
+  drug_lower_case_search_string_not: String
+  # drug_lower_case_search_string_not_contains
+  drug_lower_case_search_string_not_contains: String
+  # drug_lower_case_search_string_not_ends_with
+  drug_lower_case_search_string_not_ends_with: String
+  # drug_lower_case_search_string_not_in
+  drug_lower_case_search_string_not_in: [String!]
+  # drug_lower_case_search_string_not_starts_with
+  drug_lower_case_search_string_not_starts_with: String
+  # drug_lower_case_search_string_starts_with
+  drug_lower_case_search_string_starts_with: String
   # drugs
   drugs: String
   # drugs_contains
@@ -446,6 +502,34 @@ input _ClinicalTrialFilter {
   official_title_not_starts_with: String
   # official_title_starts_with
   official_title_starts_with: String
+  # phase_lower_case_search_string
+  phase_lower_case_search_string: String
+  # phase_lower_case_search_string_contains
+  phase_lower_case_search_string_contains: String
+  # phase_lower_case_search_string_ends_with
+  phase_lower_case_search_string_ends_with: String
+  # phase_lower_case_search_string_gt
+  phase_lower_case_search_string_gt: String
+  # phase_lower_case_search_string_gte
+  phase_lower_case_search_string_gte: String
+  # phase_lower_case_search_string_in
+  phase_lower_case_search_string_in: [String!]
+  # phase_lower_case_search_string_lt
+  phase_lower_case_search_string_lt: String
+  # phase_lower_case_search_string_lte
+  phase_lower_case_search_string_lte: String
+  # phase_lower_case_search_string_not
+  phase_lower_case_search_string_not: String
+  # phase_lower_case_search_string_not_contains
+  phase_lower_case_search_string_not_contains: String
+  # phase_lower_case_search_string_not_ends_with
+  phase_lower_case_search_string_not_ends_with: String
+  # phase_lower_case_search_string_not_in
+  phase_lower_case_search_string_not_in: [String!]
+  # phase_lower_case_search_string_not_starts_with
+  phase_lower_case_search_string_not_starts_with: String
+  # phase_lower_case_search_string_starts_with
+  phase_lower_case_search_string_starts_with: String
   # phases
   phases: String
   # phases_contains
@@ -570,6 +654,10 @@ enum _ClinicalTrialOrdering {
   brief_title_asc
   # Descending sort for brief_title
   brief_title_desc
+  # Ascending sort for condition_lower_case_search_string
+  condition_lower_case_search_string_asc
+  # Descending sort for condition_lower_case_search_string
+  condition_lower_case_search_string_desc
   # Ascending sort for conditions
   conditions_asc
   # Descending sort for conditions
@@ -578,6 +666,10 @@ enum _ClinicalTrialOrdering {
   detailed_description_asc
   # Descending sort for detailed_description
   detailed_description_desc
+  # Ascending sort for drug_lower_case_search_string
+  drug_lower_case_search_string_asc
+  # Descending sort for drug_lower_case_search_string
+  drug_lower_case_search_string_desc
   # Ascending sort for drugs
   drugs_asc
   # Descending sort for drugs
@@ -598,6 +690,10 @@ enum _ClinicalTrialOrdering {
   official_title_asc
   # Descending sort for official_title
   official_title_desc
+  # Ascending sort for phase_lower_case_search_string
+  phase_lower_case_search_string_asc
+  # Descending sort for phase_lower_case_search_string
+  phase_lower_case_search_string_desc
   # Ascending sort for phases
   phases_asc
   # Descending sort for phases
@@ -710,6 +806,34 @@ input _CoreProjectFilter {
   id_not_starts_with: ID
   # id_starts_with
   id_starts_with: ID
+  # lower_case_search_string
+  lower_case_search_string: String
+  # lower_case_search_string_contains
+  lower_case_search_string_contains: String
+  # lower_case_search_string_ends_with
+  lower_case_search_string_ends_with: String
+  # lower_case_search_string_gt
+  lower_case_search_string_gt: String
+  # lower_case_search_string_gte
+  lower_case_search_string_gte: String
+  # lower_case_search_string_in
+  lower_case_search_string_in: [String!]
+  # lower_case_search_string_lt
+  lower_case_search_string_lt: String
+  # lower_case_search_string_lte
+  lower_case_search_string_lte: String
+  # lower_case_search_string_not
+  lower_case_search_string_not: String
+  # lower_case_search_string_not_contains
+  lower_case_search_string_not_contains: String
+  # lower_case_search_string_not_ends_with
+  lower_case_search_string_not_ends_with: String
+  # lower_case_search_string_not_in
+  lower_case_search_string_not_in: [String!]
+  # lower_case_search_string_not_starts_with
+  lower_case_search_string_not_starts_with: String
+  # lower_case_search_string_starts_with
+  lower_case_search_string_starts_with: String
   # publications
   publications: _LiteratureReferenceFilter
   # publications_every
@@ -738,6 +862,10 @@ enum _CoreProjectOrdering {
   id_asc
   # Descending sort for id
   id_desc
+  # Ascending sort for lower_case_search_string
+  lower_case_search_string_asc
+  # Descending sort for lower_case_search_string
+  lower_case_search_string_desc
 }
 
 # Filter Input Type for FundedOrganization
@@ -3287,6 +3415,8 @@ type ClinicalTrial {
   brief_summary: String!
   # brief_title of  ClinicalTrial
   brief_title: String!
+  # condition_lower_case_search_string of  ClinicalTrial
+  condition_lower_case_search_string: String!
   # conditions of  ClinicalTrial
   conditions: [String]!
   # ClinicalTrial coreProject CoreProject
@@ -3300,10 +3430,16 @@ type ClinicalTrial {
     id: ID
     # ids is list variant of id of CoreProject
     ids: [ID]
+    # lower_case_search_string of CoreProject
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of CoreProject
+    lower_case_search_strings: [String]
     orderBy: [_CoreProjectOrdering]
-  ): CoreProject!
+  ): CoreProject
   # detailed_description of  ClinicalTrial
   detailed_description: String!
+  # drug_lower_case_search_string of  ClinicalTrial
+  drug_lower_case_search_string: String!
   # drugs of  ClinicalTrial
   drugs: [String]!
   # id of  ClinicalTrial
@@ -3314,6 +3450,8 @@ type ClinicalTrial {
   nct_id: String!
   # official_title of  ClinicalTrial
   official_title: String!
+  # phase_lower_case_search_string of  ClinicalTrial
+  phase_lower_case_search_string: String!
   # phases of  ClinicalTrial
   phases: [String]!
   # status of  ClinicalTrial
@@ -3340,6 +3478,10 @@ type CoreProject {
     brief_title: String
     # brief_titles is list variant of brief_title of ClinicalTrial
     brief_titles: [String]
+    # condition_lower_case_search_string of ClinicalTrial
+    condition_lower_case_search_string: String
+    # condition_lower_case_search_strings is list variant of condition_lower_case_search_string of ClinicalTrial
+    condition_lower_case_search_strings: [String]
     # conditions of ClinicalTrial
     conditions: [String]
     # conditionss is list variant of conditions of ClinicalTrial
@@ -3348,6 +3490,10 @@ type CoreProject {
     detailed_description: String
     # detailed_descriptions is list variant of detailed_description of ClinicalTrial
     detailed_descriptions: [String]
+    # drug_lower_case_search_string of ClinicalTrial
+    drug_lower_case_search_string: String
+    # drug_lower_case_search_strings is list variant of drug_lower_case_search_string of ClinicalTrial
+    drug_lower_case_search_strings: [String]
     # drugs of ClinicalTrial
     drugs: [String]
     # drugss is list variant of drugs of ClinicalTrial
@@ -3372,6 +3518,10 @@ type CoreProject {
     official_titles: [String]
     offset: Int
     orderBy: [_ClinicalTrialOrdering]
+    # phase_lower_case_search_string of ClinicalTrial
+    phase_lower_case_search_string: String
+    # phase_lower_case_search_strings is list variant of phase_lower_case_search_string of ClinicalTrial
+    phase_lower_case_search_strings: [String]
     # phases of ClinicalTrial
     phases: [String]
     # phasess is list variant of phases of ClinicalTrial
@@ -3534,6 +3684,8 @@ type CoreProject {
   ): [NIHGrant]!
   # id of  CoreProject
   id: ID!
+  # lower_case_search_string of  CoreProject
+  lower_case_search_string: String!
   # CoreProject publications LiteratureReference
   publications(
     # DOI of LiteratureReference
@@ -3866,6 +4018,10 @@ type LiteratureReference {
     id: ID
     # ids is list variant of id of CoreProject
     ids: [ID]
+    # lower_case_search_string of CoreProject
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of CoreProject
+    lower_case_search_strings: [String]
     offset: Int
     orderBy: [_CoreProjectOrdering]
   ): [CoreProject]!
@@ -3965,20 +4121,27 @@ type MutationType {
   createClinicalTrial(
     brief_summary: String!
     brief_title: String!
+    condition_lower_case_search_string: String!
     conditions: [String]!
     detailed_description: String!
+    drug_lower_case_search_string: String!
     drugs: [String]!
     id: ID!
     lower_case_search_string: String!
     nct_id: String!
     official_title: String!
+    phase_lower_case_search_string: String!
     phases: [String]!
     status: String!
     status_date: String!
     study_type: String!
   ): String
   # Creates a CoreProject entity
-  createCoreProject(coreProjectNumber: String!, id: ID!): String
+  createCoreProject(
+    coreProjectNumber: String!
+    id: ID!
+    lower_case_search_string: String!
+  ): String
   # Creates a FundedOrganization entity
   createFundedOrganization(
     city: String!
@@ -4148,20 +4311,27 @@ type MutationType {
   mergeClinicalTrial(
     brief_summary: String!
     brief_title: String!
+    condition_lower_case_search_string: String!
     conditions: [String]!
     detailed_description: String!
+    drug_lower_case_search_string: String!
     drugs: [String]!
     id: ID!
     lower_case_search_string: String!
     nct_id: String!
     official_title: String!
+    phase_lower_case_search_string: String!
     phases: [String]!
     status: String!
     status_date: String!
     study_type: String!
   ): String
   # Merge a CoreProject entity
-  mergeCoreProject(coreProjectNumber: String!, id: ID!): String
+  mergeCoreProject(
+    coreProjectNumber: String!
+    id: ID!
+    lower_case_search_string: String!
+  ): String
   # Merge a FundedOrganization entity
   mergeFundedOrganization(
     city: String!
@@ -4265,20 +4435,27 @@ type MutationType {
   updateClinicalTrial(
     brief_summary: String!
     brief_title: String!
+    condition_lower_case_search_string: String!
     conditions: [String]!
     detailed_description: String!
+    drug_lower_case_search_string: String!
     drugs: [String]!
     id: ID!
     lower_case_search_string: String!
     nct_id: String!
     official_title: String!
+    phase_lower_case_search_string: String!
     phases: [String]!
     status: String!
     status_date: String!
     study_type: String!
   ): String
   # Updates a CoreProject entity
-  updateCoreProject(coreProjectNumber: String!, id: ID!): String
+  updateCoreProject(
+    coreProjectNumber: String!
+    id: ID!
+    lower_case_search_string: String!
+  ): String
   # Updates a FundedOrganization entity
   updateFundedOrganization(
     city: String!
@@ -4454,6 +4631,10 @@ type NIHGrant {
     id: ID
     # ids is list variant of id of CoreProject
     ids: [ID]
+    # lower_case_search_string of CoreProject
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of CoreProject
+    lower_case_search_strings: [String]
     orderBy: [_CoreProjectOrdering]
   ): CoreProject!
   # department of  NIHGrant
@@ -5047,6 +5228,10 @@ type QueryType {
     brief_title: String
     # brief_titles is list variant of brief_title of ClinicalTrial
     brief_titles: [String]
+    # condition_lower_case_search_string of ClinicalTrial
+    condition_lower_case_search_string: String
+    # condition_lower_case_search_strings is list variant of condition_lower_case_search_string of ClinicalTrial
+    condition_lower_case_search_strings: [String]
     # conditions of ClinicalTrial
     conditions: [String]
     # conditionss is list variant of conditions of ClinicalTrial
@@ -5055,6 +5240,10 @@ type QueryType {
     detailed_description: String
     # detailed_descriptions is list variant of detailed_description of ClinicalTrial
     detailed_descriptions: [String]
+    # drug_lower_case_search_string of ClinicalTrial
+    drug_lower_case_search_string: String
+    # drug_lower_case_search_strings is list variant of drug_lower_case_search_string of ClinicalTrial
+    drug_lower_case_search_strings: [String]
     # drugs of ClinicalTrial
     drugs: [String]
     # drugss is list variant of drugs of ClinicalTrial
@@ -5079,6 +5268,10 @@ type QueryType {
     official_titles: [String]
     offset: Int
     orderBy: [_ClinicalTrialOrdering]
+    # phase_lower_case_search_string of ClinicalTrial
+    phase_lower_case_search_string: String
+    # phase_lower_case_search_strings is list variant of phase_lower_case_search_string of ClinicalTrial
+    phase_lower_case_search_strings: [String]
     # phases of ClinicalTrial
     phases: [String]
     # phasess is list variant of phases of ClinicalTrial
@@ -5109,6 +5302,10 @@ type QueryType {
     id: ID
     # ids is list variant of id of CoreProject
     ids: [ID]
+    # lower_case_search_string of CoreProject
+    lower_case_search_string: String
+    # lower_case_search_strings is list variant of lower_case_search_string of CoreProject
+    lower_case_search_strings: [String]
     offset: Int
     orderBy: [_CoreProjectOrdering]
   ): [CoreProject]

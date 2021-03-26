@@ -136,6 +136,20 @@ export type _ClinicalTrialFilter = {
   brief_title_not_in?: Maybe<Array<Scalars['String']>>;
   brief_title_not_starts_with?: Maybe<Scalars['String']>;
   brief_title_starts_with?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string_contains?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string_ends_with?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string_gt?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string_gte?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string_in?: Maybe<Array<Scalars['String']>>;
+  condition_lower_case_search_string_lt?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string_lte?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string_not?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string_not_contains?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string_not_ends_with?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string_not_in?: Maybe<Array<Scalars['String']>>;
+  condition_lower_case_search_string_not_starts_with?: Maybe<Scalars['String']>;
+  condition_lower_case_search_string_starts_with?: Maybe<Scalars['String']>;
   conditions?: Maybe<Scalars['String']>;
   conditions_contains?: Maybe<Scalars['String']>;
   conditions_ends_with?: Maybe<Scalars['String']>;
@@ -168,6 +182,20 @@ export type _ClinicalTrialFilter = {
   detailed_description_not_in?: Maybe<Array<Scalars['String']>>;
   detailed_description_not_starts_with?: Maybe<Scalars['String']>;
   detailed_description_starts_with?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string_contains?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string_ends_with?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string_gt?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string_gte?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string_in?: Maybe<Array<Scalars['String']>>;
+  drug_lower_case_search_string_lt?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string_lte?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string_not?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string_not_contains?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string_not_ends_with?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string_not_in?: Maybe<Array<Scalars['String']>>;
+  drug_lower_case_search_string_not_starts_with?: Maybe<Scalars['String']>;
+  drug_lower_case_search_string_starts_with?: Maybe<Scalars['String']>;
   drugs?: Maybe<Scalars['String']>;
   drugs_contains?: Maybe<Scalars['String']>;
   drugs_ends_with?: Maybe<Scalars['String']>;
@@ -238,6 +266,20 @@ export type _ClinicalTrialFilter = {
   official_title_not_in?: Maybe<Array<Scalars['String']>>;
   official_title_not_starts_with?: Maybe<Scalars['String']>;
   official_title_starts_with?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string_contains?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string_ends_with?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string_gt?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string_gte?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string_in?: Maybe<Array<Scalars['String']>>;
+  phase_lower_case_search_string_lt?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string_lte?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string_not?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string_not_contains?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string_not_ends_with?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string_not_in?: Maybe<Array<Scalars['String']>>;
+  phase_lower_case_search_string_not_starts_with?: Maybe<Scalars['String']>;
+  phase_lower_case_search_string_starts_with?: Maybe<Scalars['String']>;
   phases?: Maybe<Scalars['String']>;
   phases_contains?: Maybe<Scalars['String']>;
   phases_ends_with?: Maybe<Scalars['String']>;
@@ -301,10 +343,14 @@ export enum _ClinicalTrialOrdering {
   BriefSummaryDesc = 'brief_summary_desc',
   BriefTitleAsc = 'brief_title_asc',
   BriefTitleDesc = 'brief_title_desc',
+  ConditionLowerCaseSearchStringAsc = 'condition_lower_case_search_string_asc',
+  ConditionLowerCaseSearchStringDesc = 'condition_lower_case_search_string_desc',
   ConditionsAsc = 'conditions_asc',
   ConditionsDesc = 'conditions_desc',
   DetailedDescriptionAsc = 'detailed_description_asc',
   DetailedDescriptionDesc = 'detailed_description_desc',
+  DrugLowerCaseSearchStringAsc = 'drug_lower_case_search_string_asc',
+  DrugLowerCaseSearchStringDesc = 'drug_lower_case_search_string_desc',
   DrugsAsc = 'drugs_asc',
   DrugsDesc = 'drugs_desc',
   IdAsc = 'id_asc',
@@ -315,6 +361,8 @@ export enum _ClinicalTrialOrdering {
   NctIdDesc = 'nct_id_desc',
   OfficialTitleAsc = 'official_title_asc',
   OfficialTitleDesc = 'official_title_desc',
+  PhaseLowerCaseSearchStringAsc = 'phase_lower_case_search_string_asc',
+  PhaseLowerCaseSearchStringDesc = 'phase_lower_case_search_string_desc',
   PhasesAsc = 'phases_asc',
   PhasesDesc = 'phases_desc',
   StatusAsc = 'status_asc',
@@ -372,6 +420,20 @@ export type _CoreProjectFilter = {
   id_not_in?: Maybe<Array<Scalars['ID']>>;
   id_not_starts_with?: Maybe<Scalars['ID']>;
   id_starts_with?: Maybe<Scalars['ID']>;
+  lower_case_search_string?: Maybe<Scalars['String']>;
+  lower_case_search_string_contains?: Maybe<Scalars['String']>;
+  lower_case_search_string_ends_with?: Maybe<Scalars['String']>;
+  lower_case_search_string_gt?: Maybe<Scalars['String']>;
+  lower_case_search_string_gte?: Maybe<Scalars['String']>;
+  lower_case_search_string_in?: Maybe<Array<Scalars['String']>>;
+  lower_case_search_string_lt?: Maybe<Scalars['String']>;
+  lower_case_search_string_lte?: Maybe<Scalars['String']>;
+  lower_case_search_string_not?: Maybe<Scalars['String']>;
+  lower_case_search_string_not_contains?: Maybe<Scalars['String']>;
+  lower_case_search_string_not_ends_with?: Maybe<Scalars['String']>;
+  lower_case_search_string_not_in?: Maybe<Array<Scalars['String']>>;
+  lower_case_search_string_not_starts_with?: Maybe<Scalars['String']>;
+  lower_case_search_string_starts_with?: Maybe<Scalars['String']>;
   publications?: Maybe<_LiteratureReferenceFilter>;
   publications_every?: Maybe<_LiteratureReferenceFilter>;
   publications_in?: Maybe<_LiteratureReferenceFilter>;
@@ -386,7 +448,9 @@ export enum _CoreProjectOrdering {
   CoreProjectNumberAsc = 'coreProjectNumber_asc',
   CoreProjectNumberDesc = 'coreProjectNumber_desc',
   IdAsc = 'id_asc',
-  IdDesc = 'id_desc'
+  IdDesc = 'id_desc',
+  LowerCaseSearchStringAsc = 'lower_case_search_string_asc',
+  LowerCaseSearchStringDesc = 'lower_case_search_string_desc'
 }
 
 export type _FundedOrganizationFilter = {
@@ -1686,14 +1750,17 @@ export type ClinicalTrial = {
   _id?: Maybe<Scalars['Long']>;
   brief_summary: Scalars['String'];
   brief_title: Scalars['String'];
+  condition_lower_case_search_string: Scalars['String'];
   conditions: Array<Maybe<Scalars['String']>>;
-  coreProject: CoreProject;
+  coreProject?: Maybe<CoreProject>;
   detailed_description: Scalars['String'];
+  drug_lower_case_search_string: Scalars['String'];
   drugs: Array<Maybe<Scalars['String']>>;
   id: Scalars['ID'];
   lower_case_search_string: Scalars['String'];
   nct_id: Scalars['String'];
   official_title: Scalars['String'];
+  phase_lower_case_search_string: Scalars['String'];
   phases: Array<Maybe<Scalars['String']>>;
   status: Scalars['String'];
   status_date: Scalars['String'];
@@ -1707,6 +1774,8 @@ export type ClinicalTrialCoreProjectArgs = {
   filter?: Maybe<_CoreProjectFilter>;
   id?: Maybe<Scalars['ID']>;
   ids?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  lower_case_search_string?: Maybe<Scalars['String']>;
+  lower_case_search_strings?: Maybe<Array<Maybe<Scalars['String']>>>;
   orderBy?: Maybe<Array<Maybe<_CoreProjectOrdering>>>;
 };
 
@@ -1717,6 +1786,7 @@ export type CoreProject = {
   coreProjectNumber: Scalars['String'];
   grants: Array<Maybe<NihGrant>>;
   id: Scalars['ID'];
+  lower_case_search_string: Scalars['String'];
   publications?: Maybe<Array<Maybe<LiteratureReference>>>;
 };
 
@@ -1728,10 +1798,14 @@ export type CoreProjectClinical_TrialsArgs = {
   brief_summarys?: Maybe<Array<Maybe<Scalars['String']>>>;
   brief_title?: Maybe<Scalars['String']>;
   brief_titles?: Maybe<Array<Maybe<Scalars['String']>>>;
+  condition_lower_case_search_string?: Maybe<Scalars['String']>;
+  condition_lower_case_search_strings?: Maybe<Array<Maybe<Scalars['String']>>>;
   conditions?: Maybe<Array<Maybe<Scalars['String']>>>;
   conditionss?: Maybe<Array<Maybe<Array<Maybe<Scalars['String']>>>>>;
   detailed_description?: Maybe<Scalars['String']>;
   detailed_descriptions?: Maybe<Array<Maybe<Scalars['String']>>>;
+  drug_lower_case_search_string?: Maybe<Scalars['String']>;
+  drug_lower_case_search_strings?: Maybe<Array<Maybe<Scalars['String']>>>;
   drugs?: Maybe<Array<Maybe<Scalars['String']>>>;
   drugss?: Maybe<Array<Maybe<Array<Maybe<Scalars['String']>>>>>;
   filter?: Maybe<_ClinicalTrialFilter>;
@@ -1746,6 +1820,8 @@ export type CoreProjectClinical_TrialsArgs = {
   official_titles?: Maybe<Array<Maybe<Scalars['String']>>>;
   offset?: Maybe<Scalars['Int']>;
   orderBy?: Maybe<Array<Maybe<_ClinicalTrialOrdering>>>;
+  phase_lower_case_search_string?: Maybe<Scalars['String']>;
+  phase_lower_case_search_strings?: Maybe<Array<Maybe<Scalars['String']>>>;
   phases?: Maybe<Array<Maybe<Scalars['String']>>>;
   phasess?: Maybe<Array<Maybe<Array<Maybe<Scalars['String']>>>>>;
   status?: Maybe<Scalars['String']>;
@@ -2042,6 +2118,8 @@ export type LiteratureReferenceCoreProjectsArgs = {
   first?: Maybe<Scalars['Int']>;
   id?: Maybe<Scalars['ID']>;
   ids?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  lower_case_search_string?: Maybe<Scalars['String']>;
+  lower_case_search_strings?: Maybe<Array<Maybe<Scalars['String']>>>;
   offset?: Maybe<Scalars['Int']>;
   orderBy?: Maybe<Array<Maybe<_CoreProjectOrdering>>>;
 };
@@ -2275,13 +2353,16 @@ export type MutationTypeCreateAuthorArgs = {
 export type MutationTypeCreateClinicalTrialArgs = {
   brief_summary: Scalars['String'];
   brief_title: Scalars['String'];
+  condition_lower_case_search_string: Scalars['String'];
   conditions: Array<Maybe<Scalars['String']>>;
   detailed_description: Scalars['String'];
+  drug_lower_case_search_string: Scalars['String'];
   drugs: Array<Maybe<Scalars['String']>>;
   id: Scalars['ID'];
   lower_case_search_string: Scalars['String'];
   nct_id: Scalars['String'];
   official_title: Scalars['String'];
+  phase_lower_case_search_string: Scalars['String'];
   phases: Array<Maybe<Scalars['String']>>;
   status: Scalars['String'];
   status_date: Scalars['String'];
@@ -2292,6 +2373,7 @@ export type MutationTypeCreateClinicalTrialArgs = {
 export type MutationTypeCreateCoreProjectArgs = {
   coreProjectNumber: Scalars['String'];
   id: Scalars['ID'];
+  lower_case_search_string: Scalars['String'];
 };
 
 
@@ -2575,13 +2657,16 @@ export type MutationTypeMergeAuthorArgs = {
 export type MutationTypeMergeClinicalTrialArgs = {
   brief_summary: Scalars['String'];
   brief_title: Scalars['String'];
+  condition_lower_case_search_string: Scalars['String'];
   conditions: Array<Maybe<Scalars['String']>>;
   detailed_description: Scalars['String'];
+  drug_lower_case_search_string: Scalars['String'];
   drugs: Array<Maybe<Scalars['String']>>;
   id: Scalars['ID'];
   lower_case_search_string: Scalars['String'];
   nct_id: Scalars['String'];
   official_title: Scalars['String'];
+  phase_lower_case_search_string: Scalars['String'];
   phases: Array<Maybe<Scalars['String']>>;
   status: Scalars['String'];
   status_date: Scalars['String'];
@@ -2592,6 +2677,7 @@ export type MutationTypeMergeClinicalTrialArgs = {
 export type MutationTypeMergeCoreProjectArgs = {
   coreProjectNumber: Scalars['String'];
   id: Scalars['ID'];
+  lower_case_search_string: Scalars['String'];
 };
 
 
@@ -2705,13 +2791,16 @@ export type MutationTypeUpdateAuthorArgs = {
 export type MutationTypeUpdateClinicalTrialArgs = {
   brief_summary: Scalars['String'];
   brief_title: Scalars['String'];
+  condition_lower_case_search_string: Scalars['String'];
   conditions: Array<Maybe<Scalars['String']>>;
   detailed_description: Scalars['String'];
+  drug_lower_case_search_string: Scalars['String'];
   drugs: Array<Maybe<Scalars['String']>>;
   id: Scalars['ID'];
   lower_case_search_string: Scalars['String'];
   nct_id: Scalars['String'];
   official_title: Scalars['String'];
+  phase_lower_case_search_string: Scalars['String'];
   phases: Array<Maybe<Scalars['String']>>;
   status: Scalars['String'];
   status_date: Scalars['String'];
@@ -2722,6 +2811,7 @@ export type MutationTypeUpdateClinicalTrialArgs = {
 export type MutationTypeUpdateCoreProjectArgs = {
   coreProjectNumber: Scalars['String'];
   id: Scalars['ID'];
+  lower_case_search_string: Scalars['String'];
 };
 
 
@@ -2903,6 +2993,8 @@ export type NihGrantCoreProjectArgs = {
   filter?: Maybe<_CoreProjectFilter>;
   id?: Maybe<Scalars['ID']>;
   ids?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  lower_case_search_string?: Maybe<Scalars['String']>;
+  lower_case_search_strings?: Maybe<Array<Maybe<Scalars['String']>>>;
   orderBy?: Maybe<Array<Maybe<_CoreProjectOrdering>>>;
 };
 
@@ -3230,10 +3322,14 @@ export type QueryTypeClinicalTrialArgs = {
   brief_summarys?: Maybe<Array<Maybe<Scalars['String']>>>;
   brief_title?: Maybe<Scalars['String']>;
   brief_titles?: Maybe<Array<Maybe<Scalars['String']>>>;
+  condition_lower_case_search_string?: Maybe<Scalars['String']>;
+  condition_lower_case_search_strings?: Maybe<Array<Maybe<Scalars['String']>>>;
   conditions?: Maybe<Array<Maybe<Scalars['String']>>>;
   conditionss?: Maybe<Array<Maybe<Array<Maybe<Scalars['String']>>>>>;
   detailed_description?: Maybe<Scalars['String']>;
   detailed_descriptions?: Maybe<Array<Maybe<Scalars['String']>>>;
+  drug_lower_case_search_string?: Maybe<Scalars['String']>;
+  drug_lower_case_search_strings?: Maybe<Array<Maybe<Scalars['String']>>>;
   drugs?: Maybe<Array<Maybe<Scalars['String']>>>;
   drugss?: Maybe<Array<Maybe<Array<Maybe<Scalars['String']>>>>>;
   filter?: Maybe<_ClinicalTrialFilter>;
@@ -3248,6 +3344,8 @@ export type QueryTypeClinicalTrialArgs = {
   official_titles?: Maybe<Array<Maybe<Scalars['String']>>>;
   offset?: Maybe<Scalars['Int']>;
   orderBy?: Maybe<Array<Maybe<_ClinicalTrialOrdering>>>;
+  phase_lower_case_search_string?: Maybe<Scalars['String']>;
+  phase_lower_case_search_strings?: Maybe<Array<Maybe<Scalars['String']>>>;
   phases?: Maybe<Array<Maybe<Scalars['String']>>>;
   phasess?: Maybe<Array<Maybe<Array<Maybe<Scalars['String']>>>>>;
   status?: Maybe<Scalars['String']>;
@@ -3268,6 +3366,8 @@ export type QueryTypeCoreProjectArgs = {
   first?: Maybe<Scalars['Int']>;
   id?: Maybe<Scalars['ID']>;
   ids?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  lower_case_search_string?: Maybe<Scalars['String']>;
+  lower_case_search_strings?: Maybe<Array<Maybe<Scalars['String']>>>;
   offset?: Maybe<Scalars['Int']>;
   orderBy?: Maybe<Array<Maybe<_CoreProjectOrdering>>>;
 };
@@ -3554,6 +3654,75 @@ export type CoreProjectListQuery = (
   )>>> }
 );
 
+export type CoreProjectListByPiQueryVariables = {
+  str?: Maybe<Scalars['String']>;
+};
+
+
+export type CoreProjectListByPiQuery = (
+  { __typename?: 'QueryType' }
+  & { CoreProject?: Maybe<Array<Maybe<(
+    { __typename?: 'CoreProject' }
+    & Pick<CoreProject, 'id' | 'coreProjectNumber'>
+    & { grants: Array<Maybe<(
+      { __typename?: 'NIHGrant' }
+      & Pick<NihGrant, 'id' | 'projectTitle' | 'fiscalYear'>
+    )>>, clinical_trials: Array<Maybe<(
+      { __typename?: 'ClinicalTrial' }
+      & Pick<ClinicalTrial, 'id' | 'nct_id' | 'brief_title'>
+    )>>, publications?: Maybe<Array<Maybe<(
+      { __typename?: 'LiteratureReference' }
+      & Pick<LiteratureReference, 'id' | 'title' | 'shortReference'>
+    )>>> }
+  )>>> }
+);
+
+export type CoreProjectListByOrganizationQueryVariables = {
+  str?: Maybe<Scalars['String']>;
+};
+
+
+export type CoreProjectListByOrganizationQuery = (
+  { __typename?: 'QueryType' }
+  & { CoreProject?: Maybe<Array<Maybe<(
+    { __typename?: 'CoreProject' }
+    & Pick<CoreProject, 'id' | 'coreProjectNumber'>
+    & { grants: Array<Maybe<(
+      { __typename?: 'NIHGrant' }
+      & Pick<NihGrant, 'id' | 'projectTitle' | 'fiscalYear'>
+    )>>, clinical_trials: Array<Maybe<(
+      { __typename?: 'ClinicalTrial' }
+      & Pick<ClinicalTrial, 'id' | 'nct_id' | 'brief_title'>
+    )>>, publications?: Maybe<Array<Maybe<(
+      { __typename?: 'LiteratureReference' }
+      & Pick<LiteratureReference, 'id' | 'title' | 'shortReference'>
+    )>>> }
+  )>>> }
+);
+
+export type CoreProjectListByFundingIcQueryVariables = {
+  str?: Maybe<Scalars['String']>;
+};
+
+
+export type CoreProjectListByFundingIcQuery = (
+  { __typename?: 'QueryType' }
+  & { CoreProject?: Maybe<Array<Maybe<(
+    { __typename?: 'CoreProject' }
+    & Pick<CoreProject, 'id' | 'coreProjectNumber'>
+    & { grants: Array<Maybe<(
+      { __typename?: 'NIHGrant' }
+      & Pick<NihGrant, 'id' | 'projectTitle' | 'fiscalYear'>
+    )>>, clinical_trials: Array<Maybe<(
+      { __typename?: 'ClinicalTrial' }
+      & Pick<ClinicalTrial, 'id' | 'nct_id' | 'brief_title'>
+    )>>, publications?: Maybe<Array<Maybe<(
+      { __typename?: 'LiteratureReference' }
+      & Pick<LiteratureReference, 'id' | 'title' | 'shortReference'>
+    )>>> }
+  )>>> }
+);
+
 export type GrantQueryVariables = {
   id?: Maybe<Scalars['ID']>;
 };
@@ -3701,10 +3870,61 @@ export type TrialListQuery = (
   & { ClinicalTrial?: Maybe<Array<Maybe<(
     { __typename?: 'ClinicalTrial' }
     & Pick<ClinicalTrial, 'id' | 'nct_id' | 'brief_title' | 'brief_summary' | 'conditions' | 'detailed_description' | 'drugs' | 'official_title' | 'phases' | 'status' | 'status_date' | 'study_type'>
-    & { coreProject: (
+    & { coreProject?: Maybe<(
       { __typename?: 'CoreProject' }
       & Pick<CoreProject, 'id' | 'coreProjectNumber'>
-    ) }
+    )> }
+  )>>> }
+);
+
+export type TrialListByPhaseQueryVariables = {
+  str?: Maybe<Scalars['String']>;
+};
+
+
+export type TrialListByPhaseQuery = (
+  { __typename?: 'QueryType' }
+  & { ClinicalTrial?: Maybe<Array<Maybe<(
+    { __typename?: 'ClinicalTrial' }
+    & Pick<ClinicalTrial, 'id' | 'nct_id' | 'brief_title' | 'brief_summary' | 'conditions' | 'detailed_description' | 'drugs' | 'official_title' | 'phases' | 'status' | 'status_date' | 'study_type'>
+    & { coreProject?: Maybe<(
+      { __typename?: 'CoreProject' }
+      & Pick<CoreProject, 'id' | 'coreProjectNumber'>
+    )> }
+  )>>> }
+);
+
+export type TrialListByDrugQueryVariables = {
+  str?: Maybe<Scalars['String']>;
+};
+
+
+export type TrialListByDrugQuery = (
+  { __typename?: 'QueryType' }
+  & { ClinicalTrial?: Maybe<Array<Maybe<(
+    { __typename?: 'ClinicalTrial' }
+    & Pick<ClinicalTrial, 'id' | 'nct_id' | 'brief_title' | 'brief_summary' | 'conditions' | 'detailed_description' | 'drugs' | 'official_title' | 'phases' | 'status' | 'status_date' | 'study_type'>
+    & { coreProject?: Maybe<(
+      { __typename?: 'CoreProject' }
+      & Pick<CoreProject, 'id' | 'coreProjectNumber'>
+    )> }
+  )>>> }
+);
+
+export type TrialListByConditionQueryVariables = {
+  str?: Maybe<Scalars['String']>;
+};
+
+
+export type TrialListByConditionQuery = (
+  { __typename?: 'QueryType' }
+  & { ClinicalTrial?: Maybe<Array<Maybe<(
+    { __typename?: 'ClinicalTrial' }
+    & Pick<ClinicalTrial, 'id' | 'nct_id' | 'brief_title' | 'brief_summary' | 'conditions' | 'detailed_description' | 'drugs' | 'official_title' | 'phases' | 'status' | 'status_date' | 'study_type'>
+    & { coreProject?: Maybe<(
+      { __typename?: 'CoreProject' }
+      & Pick<CoreProject, 'id' | 'coreProjectNumber'>
+    )> }
   )>>> }
 );
 
@@ -3778,6 +3998,210 @@ export function useCoreProjectListLazyQuery(baseOptions?: ApolloReactHooks.LazyQ
 export type CoreProjectListQueryHookResult = ReturnType<typeof useCoreProjectListQuery>;
 export type CoreProjectListLazyQueryHookResult = ReturnType<typeof useCoreProjectListLazyQuery>;
 export type CoreProjectListQueryResult = ApolloReactCommon.QueryResult<CoreProjectListQuery, CoreProjectListQueryVariables>;
+export const CoreProjectListByPiDocument = gql`
+    query CoreProjectListByPI($str: String) {
+  CoreProject(first: 100, filter: {grants: {contactPIorProjectLeader: {lower_case_search_string_contains: $str}}}) {
+    id
+    coreProjectNumber
+    grants {
+      id
+      projectTitle
+      fiscalYear
+    }
+    clinical_trials {
+      id
+      nct_id
+      brief_title
+    }
+    publications {
+      id
+      title
+      shortReference
+    }
+  }
+}
+    `;
+export type CoreProjectListByPiComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<CoreProjectListByPiQuery, CoreProjectListByPiQueryVariables>, 'query'>;
+
+    export const CoreProjectListByPiComponent = (props: CoreProjectListByPiComponentProps) => (
+      <ApolloReactComponents.Query<CoreProjectListByPiQuery, CoreProjectListByPiQueryVariables> query={CoreProjectListByPiDocument} {...props} />
+    );
+    
+export type CoreProjectListByPiProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<CoreProjectListByPiQuery, CoreProjectListByPiQueryVariables>
+    } & TChildProps;
+export function withCoreProjectListByPi<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  CoreProjectListByPiQuery,
+  CoreProjectListByPiQueryVariables,
+  CoreProjectListByPiProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, CoreProjectListByPiQuery, CoreProjectListByPiQueryVariables, CoreProjectListByPiProps<TChildProps, TDataName>>(CoreProjectListByPiDocument, {
+      alias: 'coreProjectListByPi',
+      ...operationOptions
+    });
+};
+
+/**
+ * __useCoreProjectListByPiQuery__
+ *
+ * To run a query within a React component, call `useCoreProjectListByPiQuery` and pass it any options that fit your needs.
+ * When your component renders, `useCoreProjectListByPiQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useCoreProjectListByPiQuery({
+ *   variables: {
+ *      str: // value for 'str'
+ *   },
+ * });
+ */
+export function useCoreProjectListByPiQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<CoreProjectListByPiQuery, CoreProjectListByPiQueryVariables>) {
+        return ApolloReactHooks.useQuery<CoreProjectListByPiQuery, CoreProjectListByPiQueryVariables>(CoreProjectListByPiDocument, baseOptions);
+      }
+export function useCoreProjectListByPiLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<CoreProjectListByPiQuery, CoreProjectListByPiQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<CoreProjectListByPiQuery, CoreProjectListByPiQueryVariables>(CoreProjectListByPiDocument, baseOptions);
+        }
+export type CoreProjectListByPiQueryHookResult = ReturnType<typeof useCoreProjectListByPiQuery>;
+export type CoreProjectListByPiLazyQueryHookResult = ReturnType<typeof useCoreProjectListByPiLazyQuery>;
+export type CoreProjectListByPiQueryResult = ApolloReactCommon.QueryResult<CoreProjectListByPiQuery, CoreProjectListByPiQueryVariables>;
+export const CoreProjectListByOrganizationDocument = gql`
+    query CoreProjectListByOrganization($str: String) {
+  CoreProject(first: 100, filter: {grants: {organization: {lower_case_search_string_contains: $str}}}) {
+    id
+    coreProjectNumber
+    grants {
+      id
+      projectTitle
+      fiscalYear
+    }
+    clinical_trials {
+      id
+      nct_id
+      brief_title
+    }
+    publications {
+      id
+      title
+      shortReference
+    }
+  }
+}
+    `;
+export type CoreProjectListByOrganizationComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<CoreProjectListByOrganizationQuery, CoreProjectListByOrganizationQueryVariables>, 'query'>;
+
+    export const CoreProjectListByOrganizationComponent = (props: CoreProjectListByOrganizationComponentProps) => (
+      <ApolloReactComponents.Query<CoreProjectListByOrganizationQuery, CoreProjectListByOrganizationQueryVariables> query={CoreProjectListByOrganizationDocument} {...props} />
+    );
+    
+export type CoreProjectListByOrganizationProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<CoreProjectListByOrganizationQuery, CoreProjectListByOrganizationQueryVariables>
+    } & TChildProps;
+export function withCoreProjectListByOrganization<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  CoreProjectListByOrganizationQuery,
+  CoreProjectListByOrganizationQueryVariables,
+  CoreProjectListByOrganizationProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, CoreProjectListByOrganizationQuery, CoreProjectListByOrganizationQueryVariables, CoreProjectListByOrganizationProps<TChildProps, TDataName>>(CoreProjectListByOrganizationDocument, {
+      alias: 'coreProjectListByOrganization',
+      ...operationOptions
+    });
+};
+
+/**
+ * __useCoreProjectListByOrganizationQuery__
+ *
+ * To run a query within a React component, call `useCoreProjectListByOrganizationQuery` and pass it any options that fit your needs.
+ * When your component renders, `useCoreProjectListByOrganizationQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useCoreProjectListByOrganizationQuery({
+ *   variables: {
+ *      str: // value for 'str'
+ *   },
+ * });
+ */
+export function useCoreProjectListByOrganizationQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<CoreProjectListByOrganizationQuery, CoreProjectListByOrganizationQueryVariables>) {
+        return ApolloReactHooks.useQuery<CoreProjectListByOrganizationQuery, CoreProjectListByOrganizationQueryVariables>(CoreProjectListByOrganizationDocument, baseOptions);
+      }
+export function useCoreProjectListByOrganizationLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<CoreProjectListByOrganizationQuery, CoreProjectListByOrganizationQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<CoreProjectListByOrganizationQuery, CoreProjectListByOrganizationQueryVariables>(CoreProjectListByOrganizationDocument, baseOptions);
+        }
+export type CoreProjectListByOrganizationQueryHookResult = ReturnType<typeof useCoreProjectListByOrganizationQuery>;
+export type CoreProjectListByOrganizationLazyQueryHookResult = ReturnType<typeof useCoreProjectListByOrganizationLazyQuery>;
+export type CoreProjectListByOrganizationQueryResult = ApolloReactCommon.QueryResult<CoreProjectListByOrganizationQuery, CoreProjectListByOrganizationQueryVariables>;
+export const CoreProjectListByFundingIcDocument = gql`
+    query CoreProjectListByFundingIC($str: String) {
+  CoreProject(first: 100, filter: {grants: {fundingIC: {lower_case_search_string_contains: $str}}}) {
+    id
+    coreProjectNumber
+    grants {
+      id
+      projectTitle
+      fiscalYear
+    }
+    clinical_trials {
+      id
+      nct_id
+      brief_title
+    }
+    publications {
+      id
+      title
+      shortReference
+    }
+  }
+}
+    `;
+export type CoreProjectListByFundingIcComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<CoreProjectListByFundingIcQuery, CoreProjectListByFundingIcQueryVariables>, 'query'>;
+
+    export const CoreProjectListByFundingIcComponent = (props: CoreProjectListByFundingIcComponentProps) => (
+      <ApolloReactComponents.Query<CoreProjectListByFundingIcQuery, CoreProjectListByFundingIcQueryVariables> query={CoreProjectListByFundingIcDocument} {...props} />
+    );
+    
+export type CoreProjectListByFundingIcProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<CoreProjectListByFundingIcQuery, CoreProjectListByFundingIcQueryVariables>
+    } & TChildProps;
+export function withCoreProjectListByFundingIc<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  CoreProjectListByFundingIcQuery,
+  CoreProjectListByFundingIcQueryVariables,
+  CoreProjectListByFundingIcProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, CoreProjectListByFundingIcQuery, CoreProjectListByFundingIcQueryVariables, CoreProjectListByFundingIcProps<TChildProps, TDataName>>(CoreProjectListByFundingIcDocument, {
+      alias: 'coreProjectListByFundingIc',
+      ...operationOptions
+    });
+};
+
+/**
+ * __useCoreProjectListByFundingIcQuery__
+ *
+ * To run a query within a React component, call `useCoreProjectListByFundingIcQuery` and pass it any options that fit your needs.
+ * When your component renders, `useCoreProjectListByFundingIcQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useCoreProjectListByFundingIcQuery({
+ *   variables: {
+ *      str: // value for 'str'
+ *   },
+ * });
+ */
+export function useCoreProjectListByFundingIcQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<CoreProjectListByFundingIcQuery, CoreProjectListByFundingIcQueryVariables>) {
+        return ApolloReactHooks.useQuery<CoreProjectListByFundingIcQuery, CoreProjectListByFundingIcQueryVariables>(CoreProjectListByFundingIcDocument, baseOptions);
+      }
+export function useCoreProjectListByFundingIcLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<CoreProjectListByFundingIcQuery, CoreProjectListByFundingIcQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<CoreProjectListByFundingIcQuery, CoreProjectListByFundingIcQueryVariables>(CoreProjectListByFundingIcDocument, baseOptions);
+        }
+export type CoreProjectListByFundingIcQueryHookResult = ReturnType<typeof useCoreProjectListByFundingIcQuery>;
+export type CoreProjectListByFundingIcLazyQueryHookResult = ReturnType<typeof useCoreProjectListByFundingIcLazyQuery>;
+export type CoreProjectListByFundingIcQueryResult = ApolloReactCommon.QueryResult<CoreProjectListByFundingIcQuery, CoreProjectListByFundingIcQueryVariables>;
 export const GrantDocument = gql`
     query grant($id: ID) {
   NIHGrant(id: $id) {
@@ -4315,3 +4739,204 @@ export function useTrialListLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHo
 export type TrialListQueryHookResult = ReturnType<typeof useTrialListQuery>;
 export type TrialListLazyQueryHookResult = ReturnType<typeof useTrialListLazyQuery>;
 export type TrialListQueryResult = ApolloReactCommon.QueryResult<TrialListQuery, TrialListQueryVariables>;
+export const TrialListByPhaseDocument = gql`
+    query trialListByPhase($str: String) {
+  ClinicalTrial(first: 100, filter: {phase_lower_case_search_string_contains: $str}) {
+    id
+    nct_id
+    brief_title
+    brief_summary
+    conditions
+    detailed_description
+    drugs
+    official_title
+    phases
+    status
+    status_date
+    study_type
+    coreProject {
+      id
+      coreProjectNumber
+    }
+  }
+}
+    `;
+export type TrialListByPhaseComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<TrialListByPhaseQuery, TrialListByPhaseQueryVariables>, 'query'>;
+
+    export const TrialListByPhaseComponent = (props: TrialListByPhaseComponentProps) => (
+      <ApolloReactComponents.Query<TrialListByPhaseQuery, TrialListByPhaseQueryVariables> query={TrialListByPhaseDocument} {...props} />
+    );
+    
+export type TrialListByPhaseProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<TrialListByPhaseQuery, TrialListByPhaseQueryVariables>
+    } & TChildProps;
+export function withTrialListByPhase<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  TrialListByPhaseQuery,
+  TrialListByPhaseQueryVariables,
+  TrialListByPhaseProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, TrialListByPhaseQuery, TrialListByPhaseQueryVariables, TrialListByPhaseProps<TChildProps, TDataName>>(TrialListByPhaseDocument, {
+      alias: 'trialListByPhase',
+      ...operationOptions
+    });
+};
+
+/**
+ * __useTrialListByPhaseQuery__
+ *
+ * To run a query within a React component, call `useTrialListByPhaseQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTrialListByPhaseQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTrialListByPhaseQuery({
+ *   variables: {
+ *      str: // value for 'str'
+ *   },
+ * });
+ */
+export function useTrialListByPhaseQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<TrialListByPhaseQuery, TrialListByPhaseQueryVariables>) {
+        return ApolloReactHooks.useQuery<TrialListByPhaseQuery, TrialListByPhaseQueryVariables>(TrialListByPhaseDocument, baseOptions);
+      }
+export function useTrialListByPhaseLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<TrialListByPhaseQuery, TrialListByPhaseQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<TrialListByPhaseQuery, TrialListByPhaseQueryVariables>(TrialListByPhaseDocument, baseOptions);
+        }
+export type TrialListByPhaseQueryHookResult = ReturnType<typeof useTrialListByPhaseQuery>;
+export type TrialListByPhaseLazyQueryHookResult = ReturnType<typeof useTrialListByPhaseLazyQuery>;
+export type TrialListByPhaseQueryResult = ApolloReactCommon.QueryResult<TrialListByPhaseQuery, TrialListByPhaseQueryVariables>;
+export const TrialListByDrugDocument = gql`
+    query trialListByDrug($str: String) {
+  ClinicalTrial(first: 100, filter: {drug_lower_case_search_string_contains: $str}) {
+    id
+    nct_id
+    brief_title
+    brief_summary
+    conditions
+    detailed_description
+    drugs
+    official_title
+    phases
+    status
+    status_date
+    study_type
+    coreProject {
+      id
+      coreProjectNumber
+    }
+  }
+}
+    `;
+export type TrialListByDrugComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<TrialListByDrugQuery, TrialListByDrugQueryVariables>, 'query'>;
+
+    export const TrialListByDrugComponent = (props: TrialListByDrugComponentProps) => (
+      <ApolloReactComponents.Query<TrialListByDrugQuery, TrialListByDrugQueryVariables> query={TrialListByDrugDocument} {...props} />
+    );
+    
+export type TrialListByDrugProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<TrialListByDrugQuery, TrialListByDrugQueryVariables>
+    } & TChildProps;
+export function withTrialListByDrug<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  TrialListByDrugQuery,
+  TrialListByDrugQueryVariables,
+  TrialListByDrugProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, TrialListByDrugQuery, TrialListByDrugQueryVariables, TrialListByDrugProps<TChildProps, TDataName>>(TrialListByDrugDocument, {
+      alias: 'trialListByDrug',
+      ...operationOptions
+    });
+};
+
+/**
+ * __useTrialListByDrugQuery__
+ *
+ * To run a query within a React component, call `useTrialListByDrugQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTrialListByDrugQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTrialListByDrugQuery({
+ *   variables: {
+ *      str: // value for 'str'
+ *   },
+ * });
+ */
+export function useTrialListByDrugQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<TrialListByDrugQuery, TrialListByDrugQueryVariables>) {
+        return ApolloReactHooks.useQuery<TrialListByDrugQuery, TrialListByDrugQueryVariables>(TrialListByDrugDocument, baseOptions);
+      }
+export function useTrialListByDrugLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<TrialListByDrugQuery, TrialListByDrugQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<TrialListByDrugQuery, TrialListByDrugQueryVariables>(TrialListByDrugDocument, baseOptions);
+        }
+export type TrialListByDrugQueryHookResult = ReturnType<typeof useTrialListByDrugQuery>;
+export type TrialListByDrugLazyQueryHookResult = ReturnType<typeof useTrialListByDrugLazyQuery>;
+export type TrialListByDrugQueryResult = ApolloReactCommon.QueryResult<TrialListByDrugQuery, TrialListByDrugQueryVariables>;
+export const TrialListByConditionDocument = gql`
+    query trialListByCondition($str: String) {
+  ClinicalTrial(first: 100, filter: {condition_lower_case_search_string_contains: $str}) {
+    id
+    nct_id
+    brief_title
+    brief_summary
+    conditions
+    detailed_description
+    drugs
+    official_title
+    phases
+    status
+    status_date
+    study_type
+    coreProject {
+      id
+      coreProjectNumber
+    }
+  }
+}
+    `;
+export type TrialListByConditionComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<TrialListByConditionQuery, TrialListByConditionQueryVariables>, 'query'>;
+
+    export const TrialListByConditionComponent = (props: TrialListByConditionComponentProps) => (
+      <ApolloReactComponents.Query<TrialListByConditionQuery, TrialListByConditionQueryVariables> query={TrialListByConditionDocument} {...props} />
+    );
+    
+export type TrialListByConditionProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<TrialListByConditionQuery, TrialListByConditionQueryVariables>
+    } & TChildProps;
+export function withTrialListByCondition<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  TrialListByConditionQuery,
+  TrialListByConditionQueryVariables,
+  TrialListByConditionProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, TrialListByConditionQuery, TrialListByConditionQueryVariables, TrialListByConditionProps<TChildProps, TDataName>>(TrialListByConditionDocument, {
+      alias: 'trialListByCondition',
+      ...operationOptions
+    });
+};
+
+/**
+ * __useTrialListByConditionQuery__
+ *
+ * To run a query within a React component, call `useTrialListByConditionQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTrialListByConditionQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTrialListByConditionQuery({
+ *   variables: {
+ *      str: // value for 'str'
+ *   },
+ * });
+ */
+export function useTrialListByConditionQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<TrialListByConditionQuery, TrialListByConditionQueryVariables>) {
+        return ApolloReactHooks.useQuery<TrialListByConditionQuery, TrialListByConditionQueryVariables>(TrialListByConditionDocument, baseOptions);
+      }
+export function useTrialListByConditionLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<TrialListByConditionQuery, TrialListByConditionQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<TrialListByConditionQuery, TrialListByConditionQueryVariables>(TrialListByConditionDocument, baseOptions);
+        }
+export type TrialListByConditionQueryHookResult = ReturnType<typeof useTrialListByConditionQuery>;
+export type TrialListByConditionLazyQueryHookResult = ReturnType<typeof useTrialListByConditionLazyQuery>;
+export type TrialListByConditionQueryResult = ApolloReactCommon.QueryResult<TrialListByConditionQuery, TrialListByConditionQueryVariables>;

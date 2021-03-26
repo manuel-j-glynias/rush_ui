@@ -1,5 +1,7 @@
 import React, {Fragment,useState} from 'react'
 import {Maybe, TrialQuery} from '../../../generated/graphql';
+import {Link} from "react-router-dom";
+
 import './styles.css';
 
 interface Props {
@@ -12,19 +14,19 @@ const className = 'TrialDetails'
 const TrialDetails: React.FC<Props> = ({data,show_abstract}) => {
     const [show_brief_summary, set_show_brief_summary] = useState<boolean>(show_abstract)
 
-    const show_list = (list:Maybe<string>[]):string => {
-        let s= ''
-        if (list!=null && list[0]!=null){
-            let i = 0
-            for (i=0;i<list.length;i++){
-                if (s!==''){
-                    s += ', '
-                }
-                s += list[i]
-            }
-        }
-        return s
-    }
+    // const show_list = (list:Maybe<string>[]):string => {
+    //     let s= ''
+    //     if (list!=null && list[0]!=null){
+    //         let i = 0
+    //         for (i=0;i<list.length;i++){
+    //             if (s!==''){
+    //                 s += ', '
+    //             }
+    //             s += list[i]
+    //         }
+    //     }
+    //     return s
+    // }
 
     return (
         <Fragment>
@@ -35,15 +37,67 @@ const TrialDetails: React.FC<Props> = ({data,show_abstract}) => {
                         <div className={`${className}__DetailsCellLeft`}>Status:</div>
                         <div className={`${className}__DetailsCellRight`}> {data.ClinicalTrial[0].status} on {data.ClinicalTrial[0].status_date}</div>
                         <div className={`${className}__DetailsCellLeft`}>Phases:</div>
-                        <div className={`${className}__DetailsCellRight`}>{show_list(data.ClinicalTrial[0].phases)} </div>
+                        <div className={`${className}__DetailsCellRight`}>
+                            <div className={`${className}__Details_Phases`}>
+                                <ol className={`${className}__conditionList`} >
+                                    {data.ClinicalTrial[0].phases.map( (phase,i:number) =>
+                                        !!phase && (
+                                            <li key={i}
+                                                className={`${className}__conditionItem`}
+                                            >
+                                                <Link to={`/clinical_trials/Phase/${encodeURIComponent(
+                                                    phase.toLowerCase())}`} >
+                                                    {phase} </Link>
+
+                                            </li>
+                                        )
+                                    )}
+                                </ol>
+                            </div>
+                        </div>
                         <div className={`${className}__DetailsCellLeft`}>Study Type:</div>
                         <div className={`${className}__DetailsCellRight`}> {data.ClinicalTrial[0].study_type} </div>
                     </div>
                     <div className={`${className}__DetailsRow`}>
                         <div className={`${className}__DetailsCellLeft`}>Conditions</div>
-                        <div className={`${className}__DetailsCellRight`}><div className={'TrialDetails__Details_Conditions'}>{show_list(data.ClinicalTrial[0].conditions)}</div></div>
+                        <div className={`${className}__DetailsCellRightLarge`}>
+                            <div className={`${className}__Details_Conditions`}>
+                                <ol className={`${className}__conditionList`} >
+                            {data.ClinicalTrial[0].conditions.map( (condition,i:number) =>
+                                !!condition && (
+                                    <li key={i}
+                                    className={`${className}__conditionItem`}
+                                    >
+                                        <Link to={`/clinical_trials/Condition/${encodeURIComponent(
+                                            condition.toLowerCase())}`} >
+                                            {condition} </Link>
+
+                                    </li>
+                                )
+                            )}
+                                </ol>
+                            </div>
+                        </div>
                         <div className={`${className}__DetailsCellLeft`}>Drugs:</div>
-                        <div className={`${className}__DetailsCellRight`}>{show_list(data.ClinicalTrial[0].drugs)} </div>
+                        <div className={`${className}__DetailsCellRight`}>
+                            <div className={`${className}__Details_Conditions`}>
+                                <ol className={`${className}__conditionList`} >
+                                    {data.ClinicalTrial[0].drugs.map( (drug,i:number) =>
+                                        !!drug && (
+                                            <li key={i}
+                                                className={`${className}__conditionItem`}
+                                            >
+                                                <Link to={`/clinical_trials/Drug/${encodeURIComponent(
+                                                    drug.toLowerCase())}`} >
+                                                    {drug} </Link>
+
+                                            </li>
+                                        )
+                                    )}
+                                </ol>
+                            </div>
+
+                        </div>
                      </div>
 
                 </div>

@@ -29,7 +29,7 @@
     height: 150px;
 }
 .CoreProjects__Buttons {
-    height: 50px;
+    height: 40px;
     width: 350px;
     padding-top: 10px;
     padding-left: 20px;
@@ -38,7 +38,7 @@
 .CoreProjects__Filter {
     height: 80px;
     width: 448px;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 20px;
 }
 

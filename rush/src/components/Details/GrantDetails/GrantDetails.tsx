@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react'
 import {GrantQuery} from "../../../generated/graphql";
 import './styles.css';
+import {Link} from "react-router-dom";
 
 interface Props {
     data: GrantQuery;
@@ -54,7 +55,11 @@ const GrantDetails: React.FC<Props> = ({data}) => {
 
                     <div className={`${className}__DetailsRow`}>
                         <div className={`${className}__DetailsCellLeft`}>Principal Investigator:</div>
-                        <div className={`${className}__DetailsCellRight`}>{data.NIHGrant[0].contactPIorProjectLeader.firstName} {data.NIHGrant[0].contactPIorProjectLeader.middleName} {data.NIHGrant[0].contactPIorProjectLeader.surname} </div>
+                        <div className={`${className}__DetailsCellRight`}>
+                            <Link to={`/core_projects/Principal Investigator/${encodeURIComponent(
+                                (data.NIHGrant[0].contactPIorProjectLeader.firstName + ' ' + data.NIHGrant[0].contactPIorProjectLeader.surname).toLowerCase())}`} >
+                            {data.NIHGrant[0].contactPIorProjectLeader.firstName} {data.NIHGrant[0].contactPIorProjectLeader.middleName} {data.NIHGrant[0].contactPIorProjectLeader.surname} </Link>
+                        </div>
                         <div className={`${className}__DetailsCellLeft`}>Person ID:</div>
                         <div className={`${className}__DetailsCellRight`}>{data.NIHGrant[0].contactPIorProjectLeader.personID} </div>
                         <div className={`${className}__DetailsCellLeft`}>Other Project Leaders:</div>
@@ -65,7 +70,12 @@ const GrantDetails: React.FC<Props> = ({data}) => {
 
                     <div className={`${className}__DetailsRow`}>
                         <div className={`${className}__DetailsCellLeft`}>Organization Name:</div>
-                        <div className={`${className}__DetailsCellRight`}>{data.NIHGrant[0].organization.name} </div>
+                        <div className={`${className}__DetailsCellRight`}>
+                            <Link to={`/core_projects/Organization/${encodeURIComponent(
+                                data.NIHGrant[0].organization.name.toLowerCase())}`} >
+                                {data.NIHGrant[0].organization.name} </Link>
+
+                        </div>
                         <div className={`${className}__DetailsCellLeft`}>Organization ID:</div>
                         <div className={`${className}__DetailsCellRight`}>{data.NIHGrant[0].organization.organizationID} </div>
                         <div className={`${className}__DetailsCellLeft`}>Organization Type:</div>
@@ -106,7 +116,12 @@ const GrantDetails: React.FC<Props> = ({data}) => {
                         <div className={`${className}__DetailsCellLeft`}>Administering IC:</div>
                         <div className={`${className}__DetailsCellRight`}>{data.NIHGrant[0].administeringIC.name} </div>
                         <div className={`${className}__DetailsCellLeft`}>Funding IC:</div>
-                        <div className={`${className}__DetailsCellRight`}>{data.NIHGrant[0].fundingIC.name} </div>
+                        <div className={`${className}__DetailsCellRight`}>
+                            <Link to={`/core_projects/Funding IC/${encodeURIComponent(
+                                data.NIHGrant[0].fundingIC.name.toLowerCase())}`} >
+                                {data.NIHGrant[0].fundingIC.name}  </Link>
+
+                        </div>
                         <div className={`${className}__DetailsCellLeft`}>Study Section:</div>
                         <div className={`${className}__DetailsCellRight`}>{data.NIHGrant[0].studySection} </div>
 
